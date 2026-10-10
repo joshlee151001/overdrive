@@ -75,6 +75,69 @@ p{margin:0}
 .ctrl kbd{font-family:var(--disp);font-size:14px;padding:1px 7px;border:1px solid var(--line);background:var(--panel2);white-space:nowrap}
 .danger{border:1px solid rgba(255,77,94,.45);background:var(--panel);padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .btn.red{background:var(--bad);color:#200307}
+/* profile & login */
+.pchip{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);padding:5px 13px 5px 6px;cursor:pointer;text-align:left}
+.pchip:hover{border-color:var(--nitro)}
+.pchip b{display:block;font-size:14px;line-height:1.2;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pchip small{color:var(--muted);font-size:12px}
+.av{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;font-size:20px;flex-shrink:0;background:var(--panel2);box-shadow:inset 0 0 0 2px var(--avc,var(--line))}
+.av.big{width:84px;height:84px;font-size:44px}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.login{max-width:560px;padding-top:8vh}
+.ulist{display:flex;flex-direction:column;gap:8px}
+.ucard{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);padding:12px 14px;cursor:pointer;text-align:left;width:100%}
+.ucard:hover{border-color:var(--nitro)}
+.ucard b{font-size:17px;display:block}
+.ucard small{color:var(--muted);font-size:12px}
+.fbox{background:var(--panel);border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;color:var(--muted);font-weight:600}
+.field input{background:var(--bg);border:1px solid var(--line);color:var(--fg);padding:11px 12px;font:inherit;font-size:16px;width:100%}
+.field input:focus{border-color:var(--nitro);outline:none}
+.avpick{display:flex;gap:8px;flex-wrap:wrap}
+.avpick button{width:46px;height:46px;border-radius:50%;border:2px solid var(--line);background:var(--panel2);font-size:22px;cursor:pointer;padding:0}
+.avpick button[aria-pressed="true"]{border-color:var(--signal);background:var(--bg)}
+.err{color:var(--bad);font-size:14px;min-height:1.2em}
+.okmsg{color:var(--good);font-size:14px}
+.check{display:flex;gap:8px;align-items:center;font-size:14px}
+.profhead{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);padding:18px}
+.profhead .nm{font-family:var(--disp);font-style:italic;font-weight:800;font-size:40px;line-height:1}
+.xpbar{height:10px;background:var(--line);transform:skewX(-20deg);overflow:hidden;width:min(320px,70vw)}
+.xpbar i{display:block;height:100%;background:var(--signal)}
+.statgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.statgrid div{min-width:0;background:var(--panel);padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.statgrid small{color:var(--muted);font-size:12px}
+.statgrid b{font-family:var(--disp);font-size:26px;font-variant-numeric:tabular-nums}
+@media (max-width:700px){.statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.twocol{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;align-items:start}
+.xpline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);padding:10px 14px;font-size:14px}
+.xpline b{color:var(--signal)}
+.guestbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:rgba(255,207,63,.08);border:1px solid rgba(255,207,63,.45);padding:10px 14px;font-size:14px}
+.guestbar b{color:var(--warn)}
+.guestlink{display:flex;flex-direction:column;gap:6px;align-items:flex-start;border-top:1px solid var(--line);padding-top:16px}
+/* race modes */
+.modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:700px){.modes{grid-template-columns:minmax(0,1fr)}}
+.mode{position:relative;overflow:hidden;background:var(--panel);border:1px solid var(--line);padding:22px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:10px;min-height:230px;min-width:0}
+.mode::after{content:"";position:absolute;right:-50px;top:0;bottom:0;width:160px;background:linear-gradient(90deg,transparent,rgba(255,122,26,.14));transform:skewX(-14deg);pointer-events:none}
+.mode.fr::after{background:linear-gradient(90deg,transparent,rgba(63,215,255,.14))}
+.mode:hover{border-color:var(--signal)}.mode.fr:hover{border-color:var(--nitro)}
+.mode .mk{font-family:var(--disp);font-style:italic;font-weight:800;font-size:15px;letter-spacing:.16em;color:var(--signal)}
+.mode.fr .mk{color:var(--nitro)}
+.mode b{font-family:var(--disp);font-style:italic;font-weight:800;font-size:clamp(36px,5vw,48px);line-height:.9}
+.mode p{color:var(--muted);font-size:14px;line-height:1.6;max-width:44ch}
+.mode .meta{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.freegrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:860px){.freegrid{grid-template-columns:minmax(0,1fr)}}
+.lgroup{display:flex;flex-direction:column;gap:8px}
+.fcity{background:var(--panel);border:1px solid var(--line);padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.fcity>b{font-family:var(--disp);font-style:italic;font-weight:800;font-size:22px;line-height:1}
+.ftracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.ftrack{background:var(--panel2);border:1px solid var(--line);padding:9px 10px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:2px;min-width:0}
+.ftrack[aria-pressed="true"]{border-color:var(--nitro);box-shadow:inset 0 0 0 1px var(--nitro)}
+.ftrack b{font-size:14px}.ftrack small{color:var(--muted);font-size:12px}
+.fset{position:sticky;top:12px}
+.fname{font-family:var(--disp);font-style:italic;font-weight:800;font-size:36px;line-height:1}
 /* world */
 .mapbox{background:var(--panel);border:1px solid var(--line);padding:10px;overflow:hidden}
 #worldMap{width:100%;height:auto;display:block}
@@ -264,12 +327,26 @@ p{margin:0}
 .banner b{font-weight:800;font-style:italic;font-size:clamp(30px,6vw,56px);line-height:1}
 .touch{display:none}
 @media (pointer:coarse){
-  .touch{display:flex;position:absolute;left:0;right:0;bottom:calc(10px + env(safe-area-inset-bottom,0px));justify-content:space-between;padding-inline:12px;pointer-events:none}
-  .touch .grp{display:flex;gap:10px;pointer-events:auto}
-  .touch button{width:74px;height:74px;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:rgba(10,14,20,.45);color:var(--fg);font-family:var(--body);font-weight:700;font-size:14px;touch-action:none}
+  .touch{display:flex;position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom,0px));justify-content:space-between;align-items:flex-end;padding-inline:14px;pointer-events:none}
+  .touch .grp{display:flex;gap:14px;align-items:flex-end;pointer-events:auto}
+  .touch button{width:100px;height:100px;border-radius:50%;border:3px solid rgba(255,255,255,.35);background:rgba(10,14,20,.5);color:var(--fg);font-family:var(--body);font-weight:700;font-size:17px;touch-action:none;-webkit-user-select:none;user-select:none}
+  .touch button[data-k="left"],.touch button[data-k="right"]{font-size:30px}
+  .touch button[data-k="nitro"]{width:112px;height:112px}
   .touch button.on{background:rgba(63,215,255,.35)}
   .touch .n{border-color:var(--nitro);color:var(--nitro)}
-  .hud-br{bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+  .hud-br{bottom:calc(140px + env(safe-area-inset-bottom,0px))}
+  .hbtns button{font-size:16px;padding:12px 18px}
+  .hbtns button#pauseBtn{min-width:56px;font-size:18px}
+  .btn{font-size:21px;padding:14px 28px}
+  .btn.sm{font-size:17px;padding:11px 20px}
+  .btn.buy{font-size:18px;padding:11px 20px}
+  .btab{padding:12px 4px 14px;font-size:13px}
+  .btab svg{width:28px;height:28px}
+  .btab.race svg{width:32px;height:32px}
+  .sub button{padding:10px 16px;font-size:15px}
+  .chips button{padding:9px 14px;font-size:14px}
+  .sw button{width:38px;height:38px}
+  .avpick button{width:52px;height:52px}
   .hspd b{font-size:52px}.hbar div{width:120px}
 }
 @media (max-width:520px){.hpos b{font-size:48px}}
@@ -296,7 +373,7 @@ p{margin:0}
     <div id="count" class="count"></div>
     <div class="touch">
       <div class="grp"><button data-k="left" type="button">◀</button><button data-k="right" type="button">▶</button></div>
-      <div class="grp"><button data-k="brake" type="button">드리프트</button><button data-k="nitro" class="n" type="button">니트로</button></div>
+      <div class="grp"><button data-k="brake" type="button">브레이크</button><button data-k="nitro" class="n" type="button">니트로</button></div>
     </div>
   </div>
 
@@ -305,16 +382,21 @@ p{margin:0}
       <header class="top">
         <div class="brand"><span class="logo">OVER<em>DRIVE</em></span><small>월드 투어 레이싱</small></div>
         <div class="wallet">
+          <button class="pchip" id="pchip" type="button" data-act="profile" aria-label="프로필"></button>
           <div class="money cr"><small>상금</small><b id="hMoney">0</b><small>CR</small></div>
           <div class="money"><small>트로피</small><b id="hStars">0</b><small>★</small></div>
         </div>
       </header>
+      <div id="guestBar" class="guestbar" hidden><span><b>둘러보기 중</b> · 여기서 한 건 저장되지 않아.</span><button class="btn sm primary" type="button" data-act="guestsignup">프로필 만들고 이어하기 ▸</button></div>
+      <div id="pMode" class="panel" hidden></div>
+      <div id="pFree" class="panel" hidden></div>
       <div id="pWorld" class="panel"></div>
       <div id="pLeague" class="panel" hidden></div>
       <div id="pGarage" class="panel" hidden></div>
       <div id="pShow" class="panel" hidden></div>
       <div id="pShop" class="panel" hidden></div>
       <div id="pSet" class="panel" hidden></div>
+      <div id="pProf" class="panel" hidden></div>
     </div>
     <nav class="btabs" role="tablist" id="tabs" aria-label="메뉴">
       <button class="btab" role="tab" type="button" data-act="tab" data-v="show"><svg viewBox="0 0 24 24"><path d="M3 15v-3l2.2-4.4A2 2 0 0 1 7 6.5h10a2 2 0 0 1 1.8 1.1L21 12v3"/><path d="M3 15h18v2H3z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>쇼룸</button>
@@ -325,12 +407,14 @@ p{margin:0}
     </nav>
   </section>
 
+  <section id="sLogin" class="screen" hidden><div class="wrap login"><div class="brand"><span class="logo">OVER<em>DRIVE</em></span><small>월드 투어 레이싱</small></div><div id="loginBody"></div></div></section>
   <section id="sPrep" class="screen" hidden><div class="wrap" id="prepWrap"></div></section>
   <section id="sResult" class="screen" hidden><div class="wrap" id="resWrap"></div></section>
   <section id="sPause" class="screen" hidden>
-    <div class="wrap" style="padding-top:18vh">
+    <div class="wrap" style="padding-top:12vh;max-width:720px">
       <h2>일시정지</h2>
       <div class="cta" style="justify-content:flex-start"><button class="btn primary" data-act="resume" type="button">계속 달리기</button><button class="btn" data-act="quit" type="button">레이스 포기</button></div>
+      <div class="sec"><h3>조작 방법</h3><div id="pauseCtrl"></div></div>
     </div>
   </section>
 </div>
@@ -363,17 +447,68 @@ const CARS=[
   {id:'hauler',name:'SY 8',cls:'D',body:'pickup',top:232,t200:4.6,grip:0.96,nitro:1.34,price:10000,color:'#7bc142',desc:'힘 좋은 픽업트럭. 니트로가 제일 세.'},
   {id:'zip',name:'SY 9',cls:'D',body:'wedge',top:226,t200:3.9,grip:1.03,nitro:1.27,price:11000,color:'#18c48f',desc:'작은 전기차. 가속은 D등급 1등.'},
   {id:'vela',name:'SY 10',cls:'D',body:'gt',top:246,t200:4.6,grip:1.08,nitro:1.3,price:12500,color:'#9b5cff',desc:'D등급 최상위 그랜드 투어러. 다 잘해.'},
-  {id:'bull',name:'불도그 V8',cls:'C',body:'muscle',top:252,t200:4.3,grip:0.9,nitro:1.3,price:15000,color:'#e8352f',desc:'직선에서 무식하게 빠른 머슬카. 코너는 조심.'},
-  {id:'kite',name:'카이트 RS',cls:'C',body:'coupe',top:244,t200:4.6,grip:1.1,nitro:1.28,price:18000,color:'#eef1f5',desc:'속도랑 코너링이 고르게 좋은 스포츠 쿠페.'},
-  {id:'strata',name:'스트라타 GT',cls:'B',body:'gt',top:270,t200:3.9,grip:1.12,nitro:1.3,price:38000,color:'#18c48f',desc:'장거리 그랜드 투어러. 고속에서 안정적이야.'},
-  {id:'volt',name:'볼트 E',cls:'B',body:'wedge',top:262,t200:3.1,grip:1.06,nitro:1.27,price:42000,color:'#9b5cff',desc:'전기차. 가속은 최강인데 최고속도는 살짝 낮아.'},
-  {id:'razor',name:'레이저 X',cls:'A',body:'super',top:296,t200:3.0,grip:1.2,nitro:1.32,price:85000,color:'#ff6a00',desc:'엔진이 가운데 있는 미드십 슈퍼카.'},
-  {id:'halo',name:'헤일로 원',cls:'S',body:'hyper',top:328,t200:2.6,grip:1.26,nitro:1.35,price:160000,color:'#2a303c',desc:'하이퍼카. 한국 리그에선 반칙 수준.'}
+{id:'ve1',name:'VELOCE 01',cls:'C',body:'coupe',top:261,t200:4.2,grip:0.957,nitro:1.3,price:15000,color:'#e8352f',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve2',name:'VELOCE 02',cls:'C',body:'muscle',top:286,t200:4.0,grip:0.987,nitro:1.3,price:32000,color:'#2f7bff',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve3',name:'VELOCE 03',cls:'B',body:'gt',top:309,t200:3.45,grip:1.067,nitro:1.32,price:48000,color:'#f5c400',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve4',name:'VELOCE 04',cls:'B',body:'wedge',top:338,t200:3.29,grip:1.1,nitro:1.32,price:100000,color:'#18c48f',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve5',name:'VELOCE 05',cls:'A',body:'super',top:386,t200:2.75,grip:1.158,nitro:1.36,price:160000,color:'#9b5cff',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve6',name:'VELOCE 06',cls:'A',body:'gt',top:422,t200:2.62,grip:1.194,nitro:1.36,price:300000,color:'#ff6a00',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve7',name:'VELOCE 07',cls:'S',body:'hyper',top:487,t200:2.15,grip:1.258,nitro:1.42,price:400000,color:'#ff5fa8',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'ve8',name:'VELOCE 08',cls:'S',body:'super',top:548,t200:2.05,grip:1.297,nitro:1.42,price:750000,color:'#3fd7ff',brand:'veloce',reqLv:8,desc:'속도형 · 직선 최강'},
+  {id:'ap1',name:'APEX 01',cls:'C',body:'muscle',top:230,t200:4.2,grip:1.11,nitro:1.3,price:15000,color:'#eef1f5',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap2',name:'APEX 02',cls:'C',body:'sedan',top:251,t200:4.0,grip:1.145,nitro:1.3,price:32000,color:'#2a303c',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap3',name:'APEX 03',cls:'B',body:'wedge',top:272,t200:3.45,grip:1.237,nitro:1.32,price:48000,color:'#7bc142',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap4',name:'APEX 04',cls:'B',body:'coupe',top:297,t200:3.29,grip:1.275,nitro:1.32,price:100000,color:'#c4124a',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap5',name:'APEX 05',cls:'A',body:'gt',top:339,t200:2.75,grip:1.343,nitro:1.36,price:160000,color:'#8a929e',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap6',name:'APEX 06',cls:'A',body:'wedge',top:371,t200:2.62,grip:1.384,nitro:1.36,price:300000,color:'#0d0f13',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap7',name:'APEX 07',cls:'S',body:'super',top:429,t200:2.15,grip:1.459,nitro:1.42,price:400000,color:'#e8352f',brand:'apex',desc:'코너형 · 접지력 최고'},
+  {id:'ap8',name:'APEX 08',cls:'S',body:'hyper',top:482,t200:2.05,grip:1.504,nitro:1.42,price:750000,color:'#2f7bff',brand:'apex',reqLv:10,desc:'코너형 · 접지력 최고'},
+  {id:'ax1',name:'AXIS 01',cls:'C',body:'sedan',top:242,t200:4.2,grip:1.018,nitro:1.32,price:15000,color:'#f5c400',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax2',name:'AXIS 02',cls:'C',body:'rally',top:265,t200:4.0,grip:1.05,nitro:1.32,price:32000,color:'#18c48f',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax3',name:'AXIS 03',cls:'B',body:'coupe',top:286,t200:3.45,grip:1.135,nitro:1.34,price:48000,color:'#9b5cff',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax4',name:'AXIS 04',cls:'B',body:'sedan',top:313,t200:3.29,grip:1.17,nitro:1.34,price:100000,color:'#ff6a00',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax5',name:'AXIS 05',cls:'A',body:'wedge',top:357,t200:2.75,grip:1.232,nitro:1.38,price:160000,color:'#ff5fa8',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax6',name:'AXIS 06',cls:'A',body:'super',top:391,t200:2.62,grip:1.27,nitro:1.38,price:300000,color:'#3fd7ff',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax7',name:'AXIS 07',cls:'S',body:'hyper',top:451,t200:2.15,grip:1.339,nitro:1.44,price:400000,color:'#eef1f5',brand:'axis',desc:'균형형 · 다 잘함'},
+  {id:'ax8',name:'AXIS 08',cls:'S',body:'super',top:508,t200:2.05,grip:1.38,nitro:1.44,price:750000,color:'#2a303c',brand:'axis',reqLv:12,desc:'균형형 · 다 잘함'},
+  {id:'ze1',name:'ZEN 01',cls:'C',body:'rally',top:235,t200:4.28,grip:1.059,nitro:1.36,price:15000,color:'#7bc142',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze2',name:'ZEN 02',cls:'C',body:'coupe',top:257,t200:4.08,grip:1.092,nitro:1.36,price:32000,color:'#c4124a',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze3',name:'ZEN 03',cls:'B',body:'sedan',top:277,t200:3.52,grip:1.18,nitro:1.38,price:48000,color:'#8a929e',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze4',name:'ZEN 04',cls:'B',body:'gt',top:304,t200:3.35,grip:1.217,nitro:1.38,price:100000,color:'#0d0f13',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze5',name:'ZEN 05',cls:'A',body:'super',top:346,t200:2.81,grip:1.281,nitro:1.42,price:160000,color:'#e8352f',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze6',name:'ZEN 06',cls:'A',body:'gt',top:379,t200:2.67,grip:1.321,nitro:1.42,price:300000,color:'#2f7bff',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze7',name:'ZEN 07',cls:'S',body:'super',top:438,t200:2.19,grip:1.392,nitro:1.48,price:400000,color:'#f5c400',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'ze8',name:'ZEN 08',cls:'S',body:'hyper',top:492,t200:2.09,grip:1.435,nitro:1.48,price:750000,color:'#18c48f',brand:'zen',reqLv:14,desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'vo1',name:'VOLTA 01',cls:'C',body:'coupe',top:230,t200:3.65,grip:1.018,nitro:1.3,price:15000,color:'#9b5cff',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo2',name:'VOLTA 02',cls:'C',body:'muscle',top:251,t200:3.48,grip:1.05,nitro:1.3,price:32000,color:'#ff6a00',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo3',name:'VOLTA 03',cls:'B',body:'gt',top:272,t200:3.0,grip:1.135,nitro:1.32,price:48000,color:'#ff5fa8',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo4',name:'VOLTA 04',cls:'B',body:'wedge',top:297,t200:2.86,grip:1.17,nitro:1.32,price:100000,color:'#3fd7ff',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo5',name:'VOLTA 05',cls:'A',body:'gt',top:339,t200:2.39,grip:1.232,nitro:1.36,price:160000,color:'#eef1f5',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo6',name:'VOLTA 06',cls:'A',body:'wedge',top:371,t200:2.28,grip:1.27,nitro:1.36,price:300000,color:'#2a303c',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo7',name:'VOLTA 07',cls:'S',body:'hyper',top:429,t200:1.87,grip:1.339,nitro:1.42,price:400000,color:'#7bc142',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vo8',name:'VOLTA 08',cls:'S',body:'super',top:482,t200:1.78,grip:1.38,nitro:1.42,price:750000,color:'#c4124a',brand:'volta',reqLv:16,desc:'가속형 · 전기 파워트레인'},
+  {id:'ze1',name:'ZENITH 01',cls:'C',body:'muscle',top:256,t200:3.99,grip:1.09,nitro:1.33,price:15000,color:'#8a929e',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze2',name:'ZENITH 02',cls:'C',body:'sedan',top:280,t200:3.8,grip:1.124,nitro:1.33,price:32000,color:'#0d0f13',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze3',name:'ZENITH 03',cls:'B',body:'wedge',top:303,t200:3.28,grip:1.214,nitro:1.35,price:48000,color:'#e8352f',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze4',name:'ZENITH 04',cls:'B',body:'coupe',top:332,t200:3.12,grip:1.252,nitro:1.35,price:100000,color:'#2f7bff',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze5',name:'ZENITH 05',cls:'A',body:'wedge',top:379,t200:2.61,grip:1.318,nitro:1.39,price:160000,color:'#f5c400',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze6',name:'ZENITH 06',cls:'A',body:'super',top:414,t200:2.49,grip:1.359,nitro:1.39,price:300000,color:'#18c48f',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze7',name:'ZENITH 07',cls:'S',body:'super',top:478,t200:2.04,grip:1.432,nitro:1.45,price:400000,color:'#9b5cff',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'ze8',name:'ZENITH 08',cls:'S',body:'hyper',top:538,t200:1.95,grip:1.477,nitro:1.45,price:750000,color:'#ff6a00',brand:'zenith',reqLv:22,desc:'프리미엄 · 최상급 하이퍼카'},
 ];
-CARS.forEach(c=>c.brand=c.cls==='D'?'SY':'etc');
-const BRANDS=[{id:'SY',name:'SY',sub:'D등급 · 입문부터 D등급 최상위까지'},{id:'etc',name:'기타',sub:'C~S등급 · 여러 제조사'}];
+CARS.forEach(c=>{if(!c.brand)c.brand=c.cls==='D'?'SY':'etc'});
+const BRANDS=[
+  {id:'SY',name:'SY',sub:'D등급 · 입문부터 D등급 최상위까지'},
+  {id:'veloce',name:'VELOCE',sub:'속도형 · C~S · 직선 최강'},
+  {id:'apex',name:'APEX',sub:'코너형 · C~S · 접지력 최고'},
+  {id:'axis',name:'AXIS',sub:'균형형 · C~S · 다 잘함'},
+  {id:'zen',name:'ZEN',sub:'드리프트형 · C~S · 니트로가 잘 참'},
+  {id:'volta',name:'VOLTA',sub:'가속형 · C~S · 전기 파워트레인'},
+  {id:'zenith',name:'ZENITH',sub:'프리미엄 · C~S · 최상급 하이퍼카'}
+];
 const CAR=Object.fromEntries(CARS.map(c=>[c.id,c]));
-const OPENCLS=['D'];
+const OPENCLS=['D','C','B','A','S'];
+const carLocked=c=>c.reqLv&&lvInfo(save.xp).lv<c.reqLv;
 const CLSMUL={D:1,C:1.8,B:3,A:5,S:8};
 const hatchPts=[[-0.5,0.07],[-0.5,0.27],[-0.47,0.40],[-0.38,0.43],[0.04,0.44],[0.2,0.3],[0.44,0.27],[0.5,0.2],[0.5,0.07]];
 const hatchWin=[[-0.42,0.31],[-0.39,0.395],[0.03,0.405],[0.16,0.31]];
@@ -399,7 +534,8 @@ const PARTS=[
   {k:'grip',name:'서스펜션',desc:'코너 접지력 +5%'},
   {k:'brake',name:'브레이크',desc:'드리프트 감속 −10%, 제동력 +10%'},
   {k:'aero',name:'에어로',desc:'고속 코너에서 덜 밀려남 −5%'},
-  {k:'turbo',name:'터보',desc:'니트로 속도 증가, 오래 감'}
+  {k:'turbo',name:'터보',desc:'니트로 속도 증가, 오래 감'},
+  {k:'tire',name:'타이어',desc:'접지력 +3%, 타이어 마모 −10%'}
 ];
 const MAXLV=6,SLOTLV=[2,4,6];
 const RAR=[{name:'일반',price:1500},{name:'희귀',price:5000},{name:'전설',price:14000}];
@@ -410,7 +546,8 @@ const SPECIALS=[
   ['grip','강화 부싱',0.03,'접지력 +3%'],['grip','차고 조절 서스',0.05,'접지력 +5%'],['grip','액티브 댐퍼',0.08,'접지력 +8%'],
   ['brake','슬롯 디스크',0.08,'드리프트 감속 −8%'],['brake','6피스톤 캘리퍼',0.14,'드리프트 감속 −14%'],['brake','카본 세라믹',0.2,'드리프트 감속 −20%'],
   ['aero','립 스포일러',0.03,'고속 밀림 −3%'],['aero','디퓨저',0.06,'고속 밀림 −6%'],['aero','액티브 윙',0.1,'고속 밀림 −10%'],
-  ['turbo','고압 인젝터',0.02,'니트로 속도 +2%p'],['turbo','듀얼 노즐',0.04,'니트로 속도 +4%p'],['turbo','퓨전 코어',0.07,'니트로 속도 +7%p']
+  ['turbo','고압 인젝터',0.02,'니트로 속도 +2%p'],['turbo','듀얼 노즐',0.04,'니트로 속도 +4%p'],['turbo','퓨전 코어',0.07,'니트로 속도 +7%p'],
+  ['tire','스포츠 컴파운드',0.025,'접지력 +2.5%, 마모 −5%'],['tire','레이싱 슬릭',0.05,'접지력 +5%, 마모 −10%'],['tire','하이퍼 그립',0.08,'접지력 +8%, 마모 −16%']
 ].map((a,i)=>({id:a[0]+(i%3),cat:a[0],rar:i%3,name:a[1],val:a[2],eff:a[3]}));
 const SPEC=Object.fromEntries(SPECIALS.map(s=>[s.id,s]));
 const PAINTS=['#f5c400','#ff6a00','#e8352f','#c4124a','#ff5fa8','#9b5cff','#2f7bff','#3fd7ff','#18c48f','#7bc142','#eef1f5','#8a929e','#2a303c','#0d0f13'];
@@ -430,8 +567,8 @@ const COUNTRIES=[
   {id:'kr',name:'대한민국',tier:'루키 리그',lon:127,lat:37.5,open:true,cities:'서울 · 부산 · 제주'},
   {id:'jp',name:'일본',tier:'프로 리그',lon:139.7,lat:35.7,cities:'도쿄 · 오사카 · 홋카이도'},
   {id:'us',name:'미국',tier:'마스터 리그',lon:-118,lat:34,cities:'LA · 라스베이거스 · 뉴욕'},
-  {id:'de',name:'독일',tier:'엘리트 리그',lon:10,lat:51,cities:'뉘르부르크 · 베를린 · 알프스'},
-  {id:'ae',name:'UAE',tier:'레전드 리그',lon:55.3,lat:25.2,cities:'두바이 · 아부다비'}
+  {id:'de',name:'독일',tier:'엘리트 리그',lon:10,lat:51,cities:'뉘르부르크링 · 베를린 · 알프스'},
+  {id:'ae',name:'UAE',tier:'레전드 리그',lon:55.3,lat:25.2,cities:'두바이 · 아부다비 · 사막 듀나'}
 ];
 const CITIES=[
   {id:'seoul',name:'서울',sub:'한강 야경 · 도심',theme:'seoul',need:0,events:[
@@ -448,19 +585,102 @@ const CITIES=[
     {id:'j3',name:'한라산 1100도로',sub:'구름 위까지 올라가는 산길',pace:292,laps:2,prize:7000,rec:900,grip:.94,seed:303,gen:{len:1600,straight:.2,sharp:.52,hill:85},water:[],hint:'한국 리그에서 제일 어려운 산길. 노면도 미끄러워서 접지력 세팅이 필수야.'}]}
 ];
 const FINAL={id:'kf',name:'코리아 챔피언십',sub:'서울 도심 3랩 결승 · 리그 최강자들',pace:305,laps:3,prize:15000,rec:980,grip:1,seed:401,gen:{len:1500,straight:.35,sharp:.35,hill:40},water:[[.45,.6]],hint:'리그 최종전. 상대가 전부 빨라. 권장 PR을 넘기고 오는 걸 추천해.',final:true,need:20};
-const EVENTS={};for(const c of CITIES)c.events.forEach((e,i)=>{e.city=c;e.idx=i;EVENTS[e.id]=e});FINAL.city={...CITIES[0],name:'서울'};FINAL.idx=0;EVENTS[FINAL.id]=FINAL;
-const MAXSTARS=(CITIES.reduce((s,c)=>s+c.events.length,0)+1)*3;
+const JP_CITIES=[
+  {id:'tokyo',name:'도쿄',sub:'네온 도심 · 수도고',theme:'tokyo',need:0,events:[
+    {id:'t1',name:'시부야 스크램블',sub:'네온 간판 사이 도심 코스',pace:310,laps:2,prize:9000,rec:1000,grip:1,seed:501,gen:{len:1400,straight:.4,sharp:.25,hill:15},water:[],hint:'일본 리그는 상대가 훨씬 빨라. 튜닝을 꽉 채우고 특수 부품도 끼우고 와.'},
+    {id:'t2',name:'레인보우 브리지',sub:'바다 위를 건너는 긴 다리',pace:315,laps:2,prize:9500,rec:1040,grip:1,seed:502,gen:{len:1600,straight:.6,sharp:.1,hill:15},water:[[.15,.8]],hint:'거의 다리 위야. 난간에 긁히지 않게 차선 가운데를 지켜.'},
+    {id:'t3',name:'수도고 C1',sub:'고가도로 연속 커브',pace:320,laps:2,prize:10000,rec:1080,grip:1,seed:503,gen:{len:1500,straight:.3,sharp:.45,hill:30},water:[[.6,.7]],hint:'빠른 속도로 급커브가 이어져. 에어로랑 브레이크 튜닝이 중요해.'}]},
+  {id:'osaka',name:'오사카',sub:'운하 · 항구 · 산길',theme:'osaka',need:5,events:[
+    {id:'o1',name:'도톤보리 나이트',sub:'운하 옆 네온 거리',pace:322,laps:2,prize:11000,rec:1110,grip:1,seed:601,gen:{len:1500,straight:.4,sharp:.25,hill:10},water:[[.4,.52]],hint:'운하 다리를 건널 때 난간 조심. 코너랑 직선이 반반이야.'},
+    {id:'o2',name:'한신 고속도로',sub:'항구를 따라 뻗은 고속도로',pace:326,laps:2,prize:12000,rec:1140,grip:1,seed:602,gen:{len:1700,straight:.6,sharp:.12,hill:20},water:[[.2,.35]],hint:'긴 직선이 많아. 최고속도랑 터보가 승부를 갈라.'},
+    {id:'o3',name:'롯코산 와인딩',sub:'야경이 보이는 산 위 굽잇길',pace:330,laps:2,prize:13000,rec:1170,grip:1,seed:603,gen:{len:1500,straight:.2,sharp:.55,hill:80},water:[],hint:'쉬지 않고 꺾이는 산길. 드리프트로 니트로를 계속 채워.'}]},
+  {id:'hokkaido',name:'홋카이도',sub:'눈길 · 설원 · 고개',theme:'hokkaido',need:12,events:[
+    {id:'h1',name:'삿포로 설원',sub:'눈 덮인 넓은 도로',pace:332,laps:2,prize:14000,rec:1200,grip:.9,seed:701,gen:{len:1600,straight:.5,sharp:.15,hill:20},water:[],hint:'눈길이라 미끄러워. 빨간 화살표 기둥이 길 가장자리를 알려 줘.'},
+    {id:'h2',name:'비에이 언덕길',sub:'언덕이 끝없이 이어지는 길',pace:336,laps:2,prize:15000,rec:1230,grip:.9,seed:702,gen:{len:1700,straight:.45,sharp:.2,hill:70},water:[],hint:'언덕 너머가 안 보여. 소프트 타이어나 타이어 튜닝이 도움돼.'},
+    {id:'h3',name:'아칸 고개',sub:'얼어붙은 호수를 지나는 산 고개',pace:340,laps:2,prize:16000,rec:1260,grip:.86,seed:703,gen:{len:1500,straight:.2,sharp:.55,hill:75},water:[[.5,.58]],hint:'일본 리그에서 제일 미끄럽고 어려운 고개야. 접지력 세팅이 필수.'}]}
+];
+const JFINAL={id:'jf',name:'재팬 그랑프리',sub:'도쿄 수도고 3랩 결승 · 프로 리그 최강자들',pace:345,laps:3,prize:30000,rec:1320,grip:1,seed:801,gen:{len:1500,straight:.4,sharp:.35,hill:30},water:[[.3,.45]],hint:'프로 리그 최종전. 상대가 전부 엄청 빨라. 니트로를 아껴 뒀다가 마지막 랩에 써.',final:true,need:20};
+const US_CITIES=[
+  {id:'la',name:'LA',sub:'선셋 야자수 · 할리우드',theme:'la',need:0,events:[
+    {id:'u1',name:'선셋 대로',sub:'야자수 늘어선 해질녘 대로',pace:342,laps:2,prize:18000,rec:1360,grip:1,seed:901,gen:{len:1500,straight:.48,sharp:.14,hill:20},water:[],hint:'마스터 리그 시작. 상대가 일본보다 더 빨라. 차를 끝까지 키우고 와.'},
+    {id:'u2',name:'퍼시픽 코스트',sub:'바다 옆 해안 고속도로',pace:348,laps:2,prize:19000,rec:1420,grip:1,seed:902,gen:{len:1700,straight:.58,sharp:.1,hill:25},water:[[.1,.5]],hint:'긴 해안 직선. 최고속도랑 니트로 싸움이야.'},
+    {id:'u3',name:'멀홀랜드 드라이브',sub:'할리우드 힐 굽잇길',pace:354,laps:2,prize:20000,rec:1480,grip:1,seed:903,gen:{len:1500,straight:.22,sharp:.5,hill:65},water:[],hint:'언덕 위 급커브가 계속 나와. 드리프트로 니트로를 채워.'}]},
+  {id:'vegas',name:'라스베이거스',sub:'네온 카지노 · 밤',theme:'vegas',need:5,events:[
+    {id:'v1',name:'더 스트립',sub:'카지노 네온 사이 대로',pace:356,laps:2,prize:21000,rec:1520,grip:1,seed:1001,gen:{len:1500,straight:.5,sharp:.15,hill:10},water:[],hint:'번쩍이는 네온 거리. 코너랑 직선이 반반이야.'},
+    {id:'v2',name:'프리몬트 나이트',sub:'빛의 터널 같은 도심',pace:362,laps:2,prize:22000,rec:1570,grip:1,seed:1002,gen:{len:1600,straight:.55,sharp:.12,hill:15},water:[],hint:'빠른 도심 코스. 터보로 직선을 지배해.'},
+    {id:'v3',name:'레드록 캐니언',sub:'사막 바위 협곡 와인딩',pace:368,laps:2,prize:23000,rec:1620,grip:.98,seed:1003,gen:{len:1500,straight:.25,sharp:.5,hill:70},water:[],hint:'도시를 벗어난 사막 협곡 산길. 접지력 세팅이 중요해.'}]},
+  {id:'ny',name:'뉴욕',sub:'마천루 · 브루클린 브리지',theme:'ny',need:12,events:[
+    {id:'n1',name:'맨해튼 미드타운',sub:'마천루 사이 도심',pace:372,laps:2,prize:24000,rec:1670,grip:1,seed:1101,gen:{len:1500,straight:.4,sharp:.25,hill:15},water:[],hint:'빌딩 숲 사이 빠른 코너. 에어로랑 브레이크가 중요해.'},
+    {id:'n2',name:'브루클린 브리지',sub:'강 위를 건너는 대교',pace:378,laps:2,prize:25000,rec:1720,grip:1,seed:1102,gen:{len:1700,straight:.6,sharp:.1,hill:15},water:[[.2,.75]],hint:'긴 다리 위 고속 구간. 난간 조심.'},
+    {id:'n3',name:'센트럴파크 루프',sub:'공원을 도는 야간 코스',pace:384,laps:2,prize:26000,rec:1770,grip:1,seed:1103,gen:{len:1500,straight:.3,sharp:.42,hill:35},water:[],hint:'마스터 리그에서 제일 어려운 야간 코스. 꽉 찬 튜닝이 필요해.'}]}
+];
+const USFINAL={id:'uf',name:'아메리칸 그랑프리',sub:'뉴욕 도심 3랩 결승 · 마스터 리그 최강자들',pace:392,laps:3,prize:50000,rec:1860,grip:1,seed:1201,gen:{len:1500,straight:.4,sharp:.35,hill:25},water:[[.3,.45]],hint:'마스터 리그 최종전. 상대가 전부 괴물이야.',final:true,need:20};
+const DE_CITIES=[
+  {id:'nur',name:'뉘르부르크링',sub:'녹색 지옥 · 숲속 서킷',theme:'nur',need:0,events:[
+    {id:'d1',name:'노르트슐라이페',sub:'숲을 가르는 전설의 서킷',pace:388,laps:2,prize:24000,rec:1560,grip:1,seed:1301,gen:{len:1600,straight:.35,sharp:.35,hill:45},water:[],hint:'엘리트 리그 시작. 숲속 서킷이라 코너가 끝없이 나와.'},
+    {id:'d2',name:'카루셀',sub:'뱅크드 코너의 연속',pace:394,laps:2,prize:25000,rec:1610,grip:1,seed:1302,gen:{len:1500,straight:.25,sharp:.5,hill:55},water:[],hint:'급커브 천국. 드리프트랑 서스펜션이 핵심이야.'},
+    {id:'d3',name:'되팅거 회헤',sub:'긴 직선과 고속 코너',pace:400,laps:2,prize:26000,rec:1660,grip:1,seed:1303,gen:{len:1700,straight:.55,sharp:.2,hill:35},water:[],hint:'긴 직선 끝에 고속 코너. 에어로가 승부를 갈라.'}]},
+  {id:'berlin',name:'베를린',sub:'브란덴부르크 · 도심',theme:'berlin',need:5,events:[
+    {id:'e1',name:'운터 덴 린덴',sub:'브란덴부르크 문 앞 대로',pace:402,laps:2,prize:27000,rec:1710,grip:1,seed:1401,gen:{len:1500,straight:.45,sharp:.18,hill:15},water:[],hint:'역사적인 도심 대로. 코너랑 직선이 섞여 있어.'},
+    {id:'e2',name:'아우토반 A10',sub:'속도 제한 없는 고속도로',pace:410,laps:2,prize:28000,rec:1760,grip:1,seed:1402,gen:{len:1800,straight:.68,sharp:.08,hill:20},water:[],hint:'속도 제한 없는 아우토반. 최고속도가 전부야.'},
+    {id:'e3',name:'슈프레강 순환로',sub:'강을 따라 도는 야간 코스',pace:416,laps:2,prize:29000,rec:1810,grip:1,seed:1403,gen:{len:1500,straight:.3,sharp:.4,hill:30},water:[[.4,.55]],hint:'강변 야간 코스. 다리 구간 난간 조심.'}]},
+  {id:'alps',name:'알프스',sub:'설산 고개 · 눈길',theme:'alps',need:12,events:[
+    {id:'a1',name:'슈틸프서요흐',sub:'48개의 헤어핀 고갯길',pace:418,laps:2,prize:30000,rec:1860,grip:.88,seed:1501,gen:{len:1500,straight:.15,sharp:.6,hill:85},water:[],hint:'헤어핀이 끝없이 이어지는 눈 덮인 고개. 접지력이 생명이야.'},
+    {id:'a2',name:'그로스글로크너',sub:'빙하가 보이는 산악도로',pace:424,laps:2,prize:31000,rec:1910,grip:.88,seed:1502,gen:{len:1600,straight:.3,sharp:.42,hill:80},water:[],hint:'빙하 옆 산악도로. 미끄러운 노면에 언덕이 커.'},
+    {id:'a3',name:'마터호른 패스',sub:'구름 위 설산 정상',pace:430,laps:2,prize:32000,rec:1960,grip:.84,seed:1503,gen:{len:1500,straight:.2,sharp:.55,hill:90},water:[],hint:'엘리트 리그에서 제일 미끄럽고 험한 고개야.'}]}
+];
+const DEFINAL={id:'df',name:'유로 챔피언십',sub:'뉘르부르크링 3랩 결승 · 엘리트 리그 최강자들',pace:438,laps:3,prize:60000,rec:2060,grip:1,seed:1601,gen:{len:1600,straight:.4,sharp:.38,hill:40},water:[],hint:'엘리트 리그 최종전. 유럽 최강들과의 승부.',final:true,need:20};
+const AE_CITIES=[
+  {id:'dubai',name:'두바이',sub:'부르즈 할리파 · 야경',theme:'dubai',need:0,events:[
+    {id:'ad1',name:'셰이크 자이드 로드',sub:'초고층 빌딩 사이 대로',pace:434,laps:2,prize:32000,rec:1820,grip:1,seed:1701,gen:{len:1600,straight:.5,sharp:.15,hill:15},water:[],hint:'레전드 리그 시작. 세계에서 제일 빠른 상대들이야.'},
+    {id:'ad2',name:'팜 주메이라',sub:'인공섬 야자수 도로',pace:440,laps:2,prize:33000,rec:1870,grip:1,seed:1702,gen:{len:1700,straight:.55,sharp:.12,hill:15},water:[[.15,.6]],hint:'바다 위 인공섬을 도는 코스. 물가 구간을 조심해.'},
+    {id:'ad3',name:'마리나 서킷',sub:'요트 항구 야간 서킷',pace:446,laps:2,prize:34000,rec:1920,grip:1,seed:1703,gen:{len:1500,straight:.35,sharp:.4,hill:20},water:[[.5,.6]],hint:'항구 야간 서킷. 빠른 코너가 이어져.'}]},
+  {id:'abudhabi',name:'아부다비',sub:'야스 마리나 · 조명 서킷',theme:'abudhabi',need:5,events:[
+    {id:'ab1',name:'야스 마리나',sub:'F1 조명 아래 서킷',pace:448,laps:2,prize:35000,rec:1970,grip:1,seed:1801,gen:{len:1500,straight:.4,sharp:.28,hill:15},water:[[.3,.4]],hint:'F1 서킷처럼 조명이 환해. 코너 구성이 까다로워.'},
+    {id:'ab2',name:'코니쉬 하이웨이',sub:'해변을 따라 뻗은 대로',pace:454,laps:2,prize:36000,rec:2020,grip:1,seed:1802,gen:{len:1700,straight:.6,sharp:.1,hill:20},water:[[.1,.4]],hint:'긴 해안 직선. 최고속도 세팅으로 밀어붙여.'},
+    {id:'ab3',name:'제벨 하피트',sub:'산 정상까지 오르는 굽잇길',pace:460,laps:2,prize:37000,rec:2070,grip:.98,seed:1803,gen:{len:1500,straight:.2,sharp:.55,hill:85},water:[],hint:'사막 산을 오르는 급커브 길. 접지력 세팅 필수.'}]},
+  {id:'dune',name:'사막 듀나',sub:'리우악 사막 · 모래 언덕',theme:'dune',need:12,events:[
+    {id:'du1',name:'골든 듄',sub:'끝없는 모래 언덕 사이 길',pace:462,laps:2,prize:38000,rec:2120,grip:.95,seed:1901,gen:{len:1700,straight:.45,sharp:.2,hill:55},water:[],hint:'모래가 날려서 노면이 미끄러워. 넓은 사막을 질주해.'},
+    {id:'du2',name:'오아시스 런',sub:'야자수 오아시스를 지나는 길',pace:468,laps:2,prize:39000,rec:2170,grip:.95,seed:1902,gen:{len:1600,straight:.4,sharp:.28,hill:45},water:[],hint:'사막 오아시스 코스. 모래 언덕을 넘는 점프 구간이 있어.'},
+    {id:'du3',name:'리우악 크레스트',sub:'사막 최고봉 모래 능선',pace:474,laps:2,prize:40000,rec:2220,grip:.92,seed:1903,gen:{len:1500,straight:.2,sharp:.55,hill:95},water:[],hint:'게임에서 제일 어려운 사막 능선길. 모든 튜닝을 꽉 채우고 와.'}]}
+];
+const AEFINAL={id:'af',name:'데저트 킹',sub:'두바이 야경 3랩 결승 · 레전드 리그 최강자들',pace:482,laps:3,prize:90000,rec:2340,grip:1,seed:2001,gen:{len:1600,straight:.45,sharp:.35,hill:30},water:[[.3,.45]],hint:'최종 리그 최종전. 세계 최강 레이서들과의 마지막 승부.',final:true,need:20};
+const LEAGUES={kr:{id:'kr',name:'대한민국',tier:'루키 리그',cities:CITIES,final:FINAL},jp:{id:'jp',name:'일본',tier:'프로 리그',cities:JP_CITIES,final:JFINAL},us:{id:'us',name:'미국',tier:'마스터 리그',cities:US_CITIES,final:USFINAL},de:{id:'de',name:'독일',tier:'엘리트 리그',cities:DE_CITIES,final:DEFINAL},ae:{id:'ae',name:'UAE',tier:'레전드 리그',cities:AE_CITIES,final:AEFINAL}};
+const EVENTS={};for(const lg of Object.values(LEAGUES)){for(const c of lg.cities){c.league=lg.id;c.events.forEach((e,i)=>{e.city=c;e.idx=i;e.league=lg.id;EVENTS[e.id]=e})}const F=lg.final;F.city={...lg.cities[0]};F.idx=0;F.league=lg.id;EVENTS[F.id]=F}
+const leagueMax=lg=>(LEAGUES[lg].cities.reduce((s,c)=>s+c.events.length,0)+1)*3;
+const MAXSTARS=Object.keys(LEAGUES).reduce((s,k)=>s+leagueMax(k),0);
 
 /* ================= SAVE ================= */
-const SAVE_KEY='overdrive.v1';
+const LEGACY_KEY='overdrive.v1',ACC_KEY='overdrive.accounts',SESS_KEY='overdrive.session';
+const lsGet=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}};
+const saveKey=id=>'overdrive.save.'+id;
 function newCar(id){const lv={},slots={};for(const p of PARTS){lv[p.k]=0;slots[p.k]=[null,null,null]}return{lv,slots,paint:{color:CAR[id].color,finish:'gloss'},wheel:{style:'five',color:'#c9ced6'},sticker:{style:'none',color:'#f2f2f2'},plate:'12가 3456'}}
-let save={settings:{sound:true,shake:true,quality:'high'},money:3000,cur:'mono',owned:{mono:newCar('mono')},inv:{},career:{},tire:'medium',ev:'s1'};
-try{const s=JSON.parse(localStorage.getItem(SAVE_KEY));if(s&&s.owned){save=Object.assign(save,s);for(const id in save.owned){if(!CAR[id]){delete save.owned[id];continue}const d=newCar(id),o=save.owned[id];save.owned[id]=Object.assign(d,o,{lv:Object.assign(d.lv,o.lv),slots:Object.assign(d.slots,o.slots)})}}}catch(e){}
-if(!save.owned[save.cur])save.cur=Object.keys(save.owned)[0]||'mono';
-if(!save.owned[save.cur])save.owned[save.cur]=newCar(save.cur);
-if(!EVENTS[save.ev])save.ev='s1';
-save.settings=Object.assign({sound:true,shake:true,quality:'high'},save.settings||{});
-function persist(){try{localStorage.setItem(SAVE_KEY,JSON.stringify(save))}catch(e){}}
+function normalize(raw){
+  const sv={settings:{sound:true,shake:true,quality:'high'},money:3000,cur:'mono',owned:{mono:newCar('mono')},inv:{},career:{},tire:'medium',ev:'s1',xp:0,stats:{races:0,wins:0,podiums:0,earned:0,topSpeed:0,km:0,started:Date.now()}};
+  if(raw&&raw.owned){Object.assign(sv,raw);sv.owned={};for(const id in raw.owned){if(!CAR[id])continue;const d=newCar(id),o=raw.owned[id];sv.owned[id]=Object.assign(d,o,{lv:Object.assign(d.lv,o.lv),slots:Object.assign(d.slots,o.slots)})}}
+  if(!sv.owned[sv.cur])sv.cur=Object.keys(sv.owned)[0]||'mono';
+  if(!sv.owned[sv.cur])sv.owned[sv.cur]=newCar(sv.cur);
+  if(!EVENTS[sv.ev])sv.ev='s1';
+  sv.settings=Object.assign({sound:true,shake:true,quality:'high'},sv.settings||{});
+  sv.stats=Object.assign({races:0,wins:0,podiums:0,earned:0,topSpeed:0,km:0,started:Date.now()},sv.stats||{});
+  sv.xp=sv.xp||0;
+  sv.free=Object.assign({ev:'s1',laps:2,opp:7,diff:'normal'},sv.free||{});if(!EVENTS[sv.free.ev])sv.free.ev='s1';sv.freeBest=sv.freeBest||{};
+  return sv;
+}
+let accounts=lsGet(ACC_KEY);if(!accounts||!accounts.users)accounts={users:{},order:[]};
+let uid=null,guest=false,guestSave=null,save=normalize(null),lastSaved=0;
+const me=()=>guest?{nick:'게스트',icon:-1,guest:true}:uid&&accounts.users[uid];
+function saveAccounts(){lsSet(ACC_KEY,accounts)}
+function cyrb53(str,seed=0){let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)}
+function hashPw(pw,salt){let h='';for(let i=0;i<3000;i++)h=cyrb53(salt+'|'+h+'|'+pw,i).toString(36);return h}
+const AVATARS=['🏎️','🔥','⚡','🦊','🐯','🦅','🐉','👑','🚀','🐺','🌙','🦈'];
+const AVCOL=['#ff7a1a','#e8352f','#f5c400','#ff9a3a','#ffb000','#3fd7ff','#18c48f','#ffcf3f','#9b5cff','#8a97ab','#2f7bff','#3fa0ff'];
+function lvInfo(xp){let lv=1,need=400;while(xp>=need){xp-=need;lv++;need=400+lv*150}return{lv,cur:xp,need}}
+function photoBoxHTML(cur){return cur?`${avHTML({photo:cur},false)}<button type="button" class="btn sm" data-act="photoclrnew">사진 빼기</button>`:`<button type="button" class="btn sm" data-act="photonew">📷 사진 선택</button>`}
+function avHTML(u,big){const c=big?'av big':'av',guest=u&&u.guest,col=guest?'var(--warn)':(AVCOL[u&&u.icon]||'var(--line)');if(u&&u.photo)return`<span class="${c}" style="--avc:${col}"><img src="${u.photo}" alt=""></span>`;return`<span class="${c}" style="--avc:${col}">${guest?'👀':(AVATARS[u&&u.icon]||'🏎️')}</span>`}
+function pickPhoto(cb){try{const inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.onchange=()=>{const f=inp.files&&inp.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{const img=new Image();img.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=160;const g=c.getContext('2d');const sz=Math.min(img.width,img.height),sx=(img.width-sz)/2,sy=(img.height-sz)/2;g.drawImage(img,sx,sy,sz,sz,0,0,160,160);cb(c.toDataURL('image/jpeg',0.82))}catch(e){}};img.onerror=()=>{};img.src=rd.result};rd.onerror=()=>{};rd.readAsDataURL(f)};inp.click()}catch(e){}}
+function persist(){if(!uid||guest)return;save.savedAt=Date.now();if(lsSet(saveKey(uid),save))lastSaved=Date.now()}
 
 /* ================= STATS ================= */
 function bonus(st){const b={};for(const p of PARTS)b[p.k]=0;for(const k in st.slots)for(const it of st.slots[k])if(it&&SPEC[it])b[k]+=SPEC[it].val;return b}
@@ -474,14 +694,18 @@ function carStats(id,st){
   const drift=(1-0.1*l.brake)*(1-b.brake);
   const brake=1+0.1*l.brake;
   const aero=(1-0.05*l.aero)*(1-b.aero);
-  const pr=Math.round(top*1.6+900/t200+grip*120+(nitroPow-1)*300+(1-aero)*200+(1-drift)*100-120);
-  return{top,t200,grip,nitroPow,drain,drift,brake,aero,pr,max:U(top),accel:U(200)/t200};
+  const tl=l.tire||0,grip2=grip*(1+0.03*tl)*(1+b.tire),wear=(1-0.1*tl)*(1-b.tire*2);
+  const pr=Math.round(top*1.6+900/t200+grip2*120+(nitroPow-1)*300+(1-aero)*200+(1-drift)*100+(1-wear)*60-120);
+  return{top,t200,grip:grip2,wear,nitroPow,drain,drift,brake,aero,pr,max:U(top),accel:U(200)/t200};
 }
 const tuneCost=(id,lv)=>Math.round((400+lv*350)*CLSMUL[CAR[id].cls]/50)*50;
 const starsOf=id=>{const c=save.career[id];return c&&c.place<=3?4-c.place:0};
 const totalStars=()=>Object.keys(EVENTS).reduce((s,id)=>s+starsOf(id),0);
-const cityOpen=c=>totalStars()>=c.need;
-function eventOpen(e){if(e.final)return totalStars()>=e.need;if(!cityOpen(e.city))return false;if(e.idx===0)return true;const p=save.career[e.city.events[e.idx-1].id];return!!(p&&p.place<=3)}
+const leagueStars=lg=>Object.values(EVENTS).filter(e=>e.league===lg).reduce((s,e)=>s+starsOf(e.id),0);
+const CHAIN=['kr','jp','us','de','ae'],FINAL_ID={kr:'kf',jp:'jf',us:'uf',de:'df',ae:'af'};
+function leagueUnlocked(lg){const i=CHAIN.indexOf(lg);if(i<=0)return true;const pf=FINAL_ID[CHAIN[i-1]];return !!(save.career[pf]&&save.career[pf].place===1)}
+const cityOpen=c=>leagueUnlocked(c.league)&&leagueStars(c.league)>=c.need;
+function eventOpen(e){if(!leagueUnlocked(e.league))return false;if(e.final)return leagueStars(e.league)>=e.need;if(!cityOpen(e.city))return false;if(e.idx===0)return true;const p=save.career[e.city.events[e.idx-1].id];return!!(p&&p.place<=3)}
 function myLook(){const st=save.owned[save.cur];return{body:CAR[save.cur].body,color:st.paint.color,finish:st.paint.finish,sticker:st.sticker.style,stickColor:st.sticker.color,plate:st.plate,wheel:st.wheel.style,rim:st.wheel.color}}
 
 /* ================= CAR ART ================= */
@@ -570,15 +794,28 @@ function drawCarSide(g,cx,gy,len,L){
 /* ================= TRACK ================= */
 const cv=$('#game'),ctx=cv.getContext('2d');
 let W=0,H=0,DPR=1;
-const SEG=200,RUMBLE=3,ROADW=2000,LANES=3,CAMH=1000,CARW=560,FOG=5;let DRAW=save.settings.quality==='high'?240:160;
+const SEG=200,RUMBLE=3,ROADW=2000,LANES=3,CAMH=1000,CARW=560,FOG=5;const DRAWQ={normal:150,high:230,ultra:320},DPRQ={normal:1,high:1.5,ultra:2};
+const qDraw=()=>DRAWQ[save.settings.quality]||230;let DRAW=qDraw();
 const BASEDEPTH=1/Math.tan(50*Math.PI/180),playerZ=CAMH*BASEDEPTH;
 let camDepth=BASEDEPTH,fov=100;
 const THEMES={
-  seoul:{sky:['#04050d','#141032','#2c1a55'],fog:'#1d1538',grass:['#10131f','#0d1019'],water:['#0b1430','#0a1229'],rumble:['#ff3fa4','#1a1e2d'],road:['#2b2e3a','#272a35'],lane:'#c8d0ff',glow:'#9fe9ff',chev:'#ff3fa4',lamps:true,night:true,every:6,sprites:['tower','tower','apt','apt','sign'],signs:['OVERDRIVE','서울','한강','24시','노래방','PC방']},
-  busan:{sky:['#0e1640','#4a2f6e','#ff8f5a'],fog:'#6a4466',grass:['#20232a','#1c1f25'],water:['#1d2f63','#1a2a59'],rumble:['#ffffff','#2a62d6'],road:['#34343e','#2f2f39'],lane:'#fff1d6',glow:'#ffd08a',chev:'#ffb000',lamps:true,pylon:true,night:true,every:6,sprites:['apt','apt','tower','palm','sign'],signs:['부산','해운대','광안리','회센터','OVERDRIVE']},
+  seoul:{stars:true,sky:['#04050d','#141032','#2c1a55'],fog:'#1d1538',grass:['#10131f','#0d1019'],water:['#0b1430','#0a1229'],rumble:['#ff3fa4','#1a1e2d'],road:['#2b2e3a','#272a35'],lane:'#c8d0ff',glow:'#9fe9ff',chev:'#ff3fa4',lamps:true,night:true,wet:true,every:6,sprites:['tower','tower','apt','apt','sign'],signs:['OVERDRIVE','서울','한강','24시','노래방','PC방']},
+  busan:{sky:['#0e1640','#4a2f6e','#ff8f5a'],fog:'#6a4466',grass:['#20232a','#1c1f25'],water:['#1d2f63','#1a2a59'],rumble:['#ffffff','#2a62d6'],road:['#34343e','#2f2f39'],lane:'#fff1d6',glow:'#ffd08a',chev:'#ffb000',lamps:true,pylon:true,night:true,wet:true,sunLow:true,every:6,sprites:['apt','apt','tower','palm','sign'],signs:['부산','해운대','광안리','회센터','OVERDRIVE']},
+  tokyo:{sky:['#05030f','#1a0b3a','#3a1660'],fog:'#24123f',grass:['#12111f','#0f0e1a'],water:['#0d1530','#0b122a'],rumble:['#ff2a6d','#1a1e2d'],road:['#2a2b38','#262733'],lane:'#e6e9ff',glow:'#ffd6f0',chev:'#ff2a6d',lamps:true,night:true,wet:true,stars:true,every:5,sprites:['tower','tower','sign','sign','vending'],signs:['東京','渋谷','ラーメン','カラオケ','OVERDRIVE','TOKYO']},
+  osaka:{sky:['#1a1240','#7a3a6a','#ffb26b'],fog:'#8a5068',grass:['#2a2a30','#25252b'],water:['#24406a','#203a62'],rumble:['#ffffff','#e8352f'],road:['#38363f','#33313a'],lane:'#fff1d6',glow:'#ffd08a',chev:'#ffb000',lamps:true,night:true,wet:true,sunLow:true,every:5,sprites:['tower','sign','sign','torii','vending'],signs:['大阪','たこ焼き','道頓堀','OSAKA','OVERDRIVE']},
+  hokkaido:{sky:['#5f86b8','#a9c6e4','#e9f2fa'],fog:'#dde8f2',grass:['#f2f6fa','#e6edf4'],water:['#7fa6c6','#789fbf'],rumble:['#d23b3b','#f4f7fb'],road:['#5b6370','#565e6b'],lane:'#ffffff',glow:'#ffffff',chev:'#ff7a1a',lamps:false,night:false,arrows:true,every:3,sprites:['pine','pine','pine','snowbank','snowbank'],signs:[]},
+  la:{sunLow:true,sky:['#2a1648','#b8486a','#ff9a52'],fog:'#c06a5a',grass:['#2a2230','#25202b'],water:['#3a3560','#343056'],rumble:['#ffffff','#e8352f'],road:['#38343c','#332f37'],lane:'#fff1d6',glow:'#ffd08a',chev:'#ffb000',lamps:true,night:true,every:5,sprites:['palm','palm','sign','tower','sign'],signs:['HOLLYWOOD','SUNSET','LA','MOTEL','OVERDRIVE']},
+  vegas:{stars:true,sky:['#05030e','#140a2e','#2a1250'],fog:'#1c1038',grass:['#12101c','#0e0c18'],water:['#0d1530','#0b122a'],rumble:['#ffd23a','#1a1e2d'],road:['#2a2b36','#262731'],lane:'#ffe9a8',glow:'#ffe88a',chev:'#ff2a6d',lamps:true,night:true,wet:true,every:5,sprites:['tower','tower','sign','sign','vending'],signs:['VEGAS','CASINO','777','JACKPOT','OVERDRIVE']},
+  ny:{stars:true,sky:['#060814','#1a1838','#40355f'],fog:'#241f3a',grass:['#14151f','#111219'],water:['#0f1830','#0d1529'],rumble:['#ffd23a','#1a1e2d'],road:['#2b2c38','#272833'],lane:'#ffe9a8',glow:'#cfe0ff',chev:'#ff2a6d',lamps:true,night:true,wet:true,every:5,sprites:['tower','apt','tower','sign','apt'],signs:['NYC','BROADWAY','TAXI','SUBWAY','OVERDRIVE']},
+  nur:{sky:['#5a86c0','#9cc0e4','#d6e8f6'],fog:'#cdddee',grass:['#3a6b3a','#356335'],water:['#2f7fa8','#2b78a0'],rumble:['#e8352f','#f4f7fb'],road:['#4a4f58','#454a53'],lane:'#ffffff',glow:'#ffffff',chev:'#ff7a1a',lamps:false,night:false,every:4,sprites:['pine','pine','pine','rail','sign'],signs:['NÜRBURG','PIT','DRS','OVERDRIVE']},
+  berlin:{sunLow:true,sky:['#2a2448','#6a5578','#e8a56a'],fog:'#9a7868',grass:['#2a2c32','#26282e'],water:['#3a4a66','#36465f'],rumble:['#ffffff','#e8352f'],road:['#3a383f','#35333a'],lane:'#fff1d6',glow:'#ffd08a',chev:'#ffb000',lamps:true,night:true,wet:true,every:5,sprites:['apt','tower','apt','sign','apt'],signs:['BERLIN','AUTOBAHN','OST','OVERDRIVE']},
+  alps:{sky:['#4a78b0','#8fb4dc','#dcebf6'],fog:'#d4e2ee',grass:['#f0f5fa','#e4ecf3'],water:['#7fa6c6','#789fbf'],rumble:['#d23b3b','#f4f7fb'],road:['#565e6b','#515966'],lane:'#ffffff',glow:'#ffffff',chev:'#ff7a1a',lamps:false,night:false,arrows:true,every:3,sprites:['pine','pine','snowbank','pine','snowbank'],signs:[]},
+  dubai:{stars:true,sky:['#0a1026','#2a2a5a','#d9935a'],fog:'#5a4a66',grass:['#1a1c26','#161822'],water:['#14305a','#122c54'],rumble:['#ffd23a','#1a1e2d'],road:['#2c2d38','#282934'],lane:'#ffe9a8',glow:'#ffe0b0',chev:'#ffb000',lamps:true,night:true,wet:true,every:5,sprites:['tower','tower','palm','sign','tower'],signs:['DUBAI','MARINA','GOLD','OVERDRIVE']},
+  abudhabi:{stars:true,sky:['#0c1230','#3a2a62','#8a4a7a'],fog:'#3a2f52',grass:['#1a1c26','#161822'],water:['#163056','#142c50'],rumble:['#ff2a6d','#f4f7fb'],road:['#2c2d38','#282934'],lane:'#e6e9ff',glow:'#c0d8ff',chev:'#ff2a6d',lamps:true,night:true,wet:true,every:5,sprites:['palm','tower','palm','sign','tower'],signs:['ABU DHABI','YAS','CORNICHE','OVERDRIVE']},
+  dune:{sunLow:true,sky:['#3a2a50','#c87a5a','#ffcf7a'],fog:'#d89a66',grass:['#d6a862','#caa058'],water:['#3a5a8a','#365484'],rumble:['#f2f2f2','#d2863b'],road:['#6a5e52','#655a4e'],lane:'#fff3d6',glow:'#ffe0a0',chev:'#e8542a',lamps:false,night:false,every:4,sprites:['cactus','cactus','rock','cactus','rock'],signs:[]},
   jeju:{sky:['#2f7fd0','#7fbcea','#d6edf8'],fog:'#cfe5ef',grass:['#8fb843','#84ad3d'],water:['#1f9cc4','#1b93b9'],rumble:['#eeeeee','#d23b3b'],road:['#5a5f68','#555a63'],lane:'#ffffff',glow:'#ffffff',chev:'#ff7a1a',lamps:false,night:false,every:3,sprites:['canola','canola','palm','dolwall','orange','harubang','palm','canola'],signs:[]}
 };
-const OFF={tower:[2.6,4.6],apt:[2.2,3.4],sign:[1.5,2.1],palm:[1.35,2.4],dolwall:[1.3,1.7],orange:[1.6,3],canola:[1.4,3.4],harubang:[1.3,1.6]};
+const OFF={cactus:[1.5,3],rock:[1.3,1.8],rail:[1.1,1.25],vending:[1.3,1.6],torii:[1.5,2.3],pine:[1.4,3.2],snowbank:[1.2,1.6],tower:[2.6,4.6],apt:[2.2,3.4],sign:[1.5,2.1],palm:[1.35,2.4],dolwall:[1.3,1.7],orange:[1.6,3],canola:[1.4,3.4],harubang:[1.3,1.6]};
 let track=EVENTS.s1,theme=THEMES.seoul,segs=[],trackLen=0,layers=null;
 const lastY=()=>segs.length?segs[segs.length-1].p2.world.y:0;
 function addSeg(curve,y){const n=segs.length;segs.push({index:n,p1:{world:{y:lastY(),z:n*SEG},camera:{},screen:{}},p2:{world:{y,z:(n+1)*SEG},camera:{},screen:{}},curve,sprites:[],cars:[],dark:Math.floor(n/RUMBLE)%2,clip:0,looped:false,fog:1,water:false})}
@@ -618,8 +855,11 @@ function buildTrack(ev){
       continue;
     }
     if(th.lamps&&i%10===0)s.sprites.push({type:'lamp',offset:-1.18},{type:'lamp',offset:1.18});
-    if(i%th.every===0){const side=r()<0.5?-1:1,type=th.sprites[Math.floor(r()*th.sprites.length)],o=OFF[type];
-      s.sprites.push({type,offset:side*(o[0]+r()*(o[1]-o[0])),v:r(),text:th.signs.length?th.signs[Math.floor(r()*th.signs.length)]:''})}
+    if(th.arrows&&i%8===0)s.sprites.push({type:'arrowpole',offset:-1.16},{type:'arrowpole',offset:1.16});
+    const dens=Math.max(2,th.every-(save.settings.quality==='normal'?0:1));
+    if(i%dens===0){const side=r()<0.5?-1:1,type=th.sprites[Math.floor(r()*th.sprites.length)],o=OFF[type];
+      s.sprites.push({type,offset:side*(o[0]+r()*(o[1]-o[0])),v:r(),text:th.signs.length?th.signs[Math.floor(r()*th.signs.length)]:''});
+      if(r()<0.55){const t2=th.sprites[Math.floor(r()*th.sprites.length)],o2=OFF[t2];s.sprites.push({type:t2,offset:-side*(o2[0]*1.3+r()*(o2[1]-o2[0])),v:r(),text:th.signs.length?th.signs[Math.floor(r()*th.signs.length)]:''})}}
   }
   segs[2].sprites.push({type:'gate',offset:0});
   buildBg();
@@ -647,8 +887,8 @@ function buildBg(){
   const sky=mk(4,256),sg=sky.getContext('2d'),gr=sg.createLinearGradient(0,0,0,256);
   gr.addColorStop(0,th.sky[0]);gr.addColorStop(0.6,th.sky[1]);gr.addColorStop(1,th.sky[2]);sg.fillStyle=gr;sg.fillRect(0,0,4,256);
   const stars=mk(LW,Math.round(H*0.55)),far=mk(LW,LH),near=mk(LW,LH),fg=far.getContext('2d'),ng=near.getContext('2d');
+  if(th.stars){const sg2=stars.getContext('2d'),r2=rng(5);for(let i=0;i<200;i++){sg2.fillStyle=`rgba(255,255,255,${0.2+r2()*0.7})`;const s=r2()<0.1?2:1;sg2.fillRect(r2()*LW,r2()*stars.height*0.8,s*DPR,s*DPR)}}
   if(key==='seoul'){
-    const sg2=stars.getContext('2d'),r2=rng(5);for(let i=0;i<200;i++){sg2.fillStyle=`rgba(255,255,255,${0.2+r2()*0.7})`;const s=r2()<0.1?2:1;sg2.fillRect(r2()*LW,r2()*stars.height*0.8,s*DPR,s*DPR)}
     const hx=LW*0.3;fg.fillStyle='#160f30';fg.beginPath();fg.ellipse(hx,LH,LW*0.09,LH*0.55,0,Math.PI,0);fg.fill();
     fg.fillStyle='#d8e4ff';fg.fillRect(hx-1.5*DPR,LH*0.13,3*DPR,LH*0.34);fg.fillRect(hx-6*DPR,LH*0.2,12*DPR,5*DPR);fg.fillRect(hx-0.75*DPR,LH*0.02,1.5*DPR,LH*0.12);
     fg.fillStyle='#ff3f6a';fg.fillRect(hx-1.5*DPR,LH*0.02,3*DPR,3*DPR);
@@ -661,6 +901,63 @@ function buildBg(){
     fg.strokeStyle='rgba(255,220,170,.55)';fg.lineWidth=1*DPR;fg.beginPath();fg.moveTo(LW*0.12,dy);fg.quadraticCurveTo((LW*0.12+t1)/2,dy-LH*0.05,t1,dy-LH*0.42);fg.quadraticCurveTo((t1+t2)/2,dy+LH*0.1,t2,dy-LH*0.42);fg.quadraticCurveTo((t2+LW*0.78)/2,dy-LH*0.05,LW*0.78,dy);fg.stroke();
     for(let x=LW*0.12,i=0;x<LW*0.78;x+=5*DPR,i++){fg.fillStyle=['#ff6ad5','#6ae0ff','#ffe36a'][i%3];fg.fillRect(x,dy-1*DPR,2*DPR,2*DPR)}
     skyline(ng,LW,LH,r,'#211735',0.25,0.95,10,26,0.18,false);
+  }else if(key==='tokyo'){
+    const tx=LW*0.36,th2=LH*0.95,bw=LH*0.22;fg.fillStyle='#ff4a2a';fg.beginPath();fg.moveTo(tx-bw/2,LH);fg.quadraticCurveTo(tx-bw*0.12,LH*0.45,tx-2*DPR,LH-th2);fg.lineTo(tx+2*DPR,LH-th2);fg.quadraticCurveTo(tx+bw*0.12,LH*0.45,tx+bw/2,LH);fg.closePath();fg.fill();
+    fg.strokeStyle='rgba(255,255,255,.55)';fg.lineWidth=1*DPR;for(let i=1;i<9;i++){const y=LH-th2*i/9,hw=bw/2*(1-i/9)**1.6+1.5*DPR;fg.beginPath();fg.moveTo(tx-hw,y);fg.lineTo(tx+hw,y);fg.stroke()}
+    fg.fillStyle='#ffffff';fg.fillRect(tx-bw*0.18,LH-th2*0.42,bw*0.36,3*DPR);fg.fillRect(tx-bw*0.1,LH-th2*0.7,bw*0.2,2.5*DPR);
+    skyline(fg,LW,LH,r,'#1a1040',0.12,0.55,12,34,0.22,false);
+    skyline(ng,LW,LH,r,'#0d0a20',0.15,0.62,24,60,0.06,true);
+  }else if(key==='osaka'){
+    ridge(far,LW,LH,'#4a2a55',0.1,0.45,track.seed);
+    const cx=LW*0.56,base=LH*0.92,cw=LH*0.34;fg.fillStyle='#3a3340';fg.beginPath();fg.moveTo(cx-cw*0.7,base);fg.lineTo(cx-cw*0.55,base-LH*0.16);fg.lineTo(cx+cw*0.55,base-LH*0.16);fg.lineTo(cx+cw*0.7,base);fg.closePath();fg.fill();
+    for(let k=0;k<4;k++){const w=cw*(0.95-k*0.2),y=base-LH*0.16-k*LH*0.11;fg.fillStyle='#ece6da';fg.fillRect(cx-w*0.4,y-LH*0.08,w*0.8,LH*0.08);fg.fillStyle='#2b4a48';fg.beginPath();fg.moveTo(cx-w*0.58,y-LH*0.075);fg.quadraticCurveTo(cx,y-LH*0.13,cx+w*0.58,y-LH*0.075);fg.lineTo(cx+w*0.4,y-LH*0.1);fg.lineTo(cx-w*0.4,y-LH*0.1);fg.closePath();fg.fill()}
+    fg.fillStyle='#e8b84a';fg.fillRect(cx-2*DPR,base-LH*0.62,4*DPR,3*DPR);
+    skyline(ng,LW,LH,r,'#2a1a38',0.15,0.7,16,44,0.16,true);
+  }else if(key==='hokkaido'){
+    ridge(far,LW,LH,'#8fa8c6',0.3,1,track.seed);
+    fg.globalCompositeOperation='source-atop';const sgd=fg.createLinearGradient(0,0,0,LH);sgd.addColorStop(0,'#f6fbff');sgd.addColorStop(0.42,'#f6fbff');sgd.addColorStop(0.43,'rgba(246,251,255,0)');fg.fillStyle=sgd;fg.fillRect(0,0,LW,LH);fg.globalCompositeOperation='source-over';
+    for(let x=-50;x<LW;){const w=(80+r()*140)*DPR,h=(0.12+r()*0.25)*LH;ng.fillStyle=r()<0.5?'#eef3f8':'#e2eaf2';ng.beginPath();ng.ellipse(x+w/2,LH,w/2,h,0,Math.PI,0);ng.fill();x+=w*(0.6+r()*0.5)}
+    ng.fillStyle='#2e4a5e';for(let i=0;i<120;i++){const x=r()*LW,h=(8+r()*16)*DPR,y=LH-r()*LH*0.18;ng.beginPath();ng.moveTo(x,y-h);ng.lineTo(x+h*0.32,y);ng.lineTo(x-h*0.32,y);ng.fill()}
+  }else if(key==='la'){
+    ridge(far,LW,LH,'#4a3558',0.2,0.72,track.seed);
+    const hx=LW*0.5,hy=LH*0.34;fg.fillStyle='#ece4d6';for(let i=0;i<9;i++)fg.fillRect(hx-LW*0.05+i*LW*0.012,hy-LH*0.12,2.5*DPR,LH*0.12);
+    skyline(ng,LW,LH,r,'#2a2038',0.08,0.34,22,54,0.08,true);
+    ng.fillStyle='#120e1e';for(let i=0;i<6;i++){const px=LW*(0.1+i*0.17),h=LH*(0.3+r()*0.3);ng.strokeStyle='#120e1e';ng.lineWidth=4*DPR;ng.beginPath();ng.moveTo(px,LH);ng.lineTo(px,LH-h);ng.stroke();ng.beginPath();for(let a=0;a<6;a++){const an=-Math.PI/2+(a-2.5)*0.5;ng.moveTo(px,LH-h);ng.lineTo(px+Math.cos(an)*LH*0.1,LH-h+Math.sin(an)*LH*0.08)}ng.stroke()}
+  }else if(key==='vegas'){
+    skyline(fg,LW,LH,r,'#1a1038',0.12,0.5,14,36,0.24,true);
+    const tx=LW*0.5;fg.fillStyle='#2a1a4a';fg.beginPath();fg.moveTo(tx-LH*0.1,LH);fg.lineTo(tx,LH-LH*0.95);fg.lineTo(tx+LH*0.1,LH);fg.closePath();fg.fill();
+    fg.globalCompositeOperation='lighter';fg.fillStyle='rgba(255,220,120,.5)';fg.fillRect(tx-2*DPR,LH-LH*0.95,4*DPR,LH*0.95);fg.globalCompositeOperation='source-over';
+    skyline(ng,LW,LH,r,'#0d0a20',0.15,0.6,24,58,0.05,true);
+  }else if(key==='ny'){
+    skyline(fg,LW,LH,r,'#1a1838',0.25,0.78,12,28,0.28,false);
+    skyline(ng,LW,LH,r,'#0d0c1c',0.3,0.92,20,46,0.1,true);
+    const bx=LW*0.72,by=LH*0.6;ng.strokeStyle='#241f38';ng.lineWidth=5*DPR;ng.beginPath();ng.moveTo(bx-LH*0.5,by);ng.quadraticCurveTo(bx,by-LH*0.28,bx+LH*0.5,by);ng.stroke();ng.fillStyle='#241f38';ng.fillRect(bx-LH*0.18,by-LH*0.22,5*DPR,LH*0.22);ng.fillRect(bx+LH*0.18,by-LH*0.22,5*DPR,LH*0.22);
+  }else if(key==='nur'){
+    ridge(far,LW,LH,'#3a5a4a',0.25,0.85,track.seed);
+    const g=ng;g.fillStyle='#24402e';for(let i=0;i<40;i++){const x=r()*LW,h=(0.12+r()*0.3)*LH,w=h*0.45;g.beginPath();g.moveTo(x,LH);g.lineTo(x+w/2,LH-h*0.6);g.lineTo(x,LH-h);g.lineTo(x-w/2,LH-h*0.6);g.closePath();g.fill()}
+  }else if(key==='berlin'){
+    skyline(fg,LW,LH,r,'#5a4866',0.1,0.4,18,48,0.06,false);
+    const tx=LW*0.42,th2=LH*0.92;fg.strokeStyle='#4a3f55';fg.lineWidth=4*DPR;fg.beginPath();fg.moveTo(tx,LH);fg.lineTo(tx,LH-th2);fg.stroke();fg.fillStyle='#8a6a9a';fg.beginPath();fg.arc(tx,LH-th2*0.78,LH*0.07,0,7);fg.fill();fg.fillStyle='#c9a0d8';fg.fillRect(tx-2*DPR,LH-th2,4*DPR,th2*0.14);
+    const gx=LW*0.62,gw=LH*0.4;fg.fillStyle='#4a4050';for(let c=0;c<6;c++)fg.fillRect(gx-gw/2+c*gw/5.5,LH-LH*0.3,gw*0.06,LH*0.3);fg.fillRect(gx-gw/2,LH-LH*0.34,gw,LH*0.05);
+    skyline(ng,LW,LH,r,'#2a2434',0.12,0.42,20,50,0.08,true);
+  }else if(key==='alps'){
+    ridge(far,LW,LH,'#9ab0cc',0.35,1,track.seed);
+    fg.globalCompositeOperation='source-atop';const sgd=fg.createLinearGradient(0,0,0,LH);sgd.addColorStop(0,'#f8fbff');sgd.addColorStop(0.5,'#f8fbff');sgd.addColorStop(0.51,'rgba(248,251,255,0)');fg.fillStyle=sgd;fg.fillRect(0,0,LW,LH);fg.globalCompositeOperation='source-over';
+    for(let x=-50;x<LW;){const w=(90+r()*150)*DPR,h=(0.1+r()*0.22)*LH;ng.fillStyle=r()<0.5?'#eef4fa':'#e0e9f2';ng.beginPath();ng.ellipse(x+w/2,LH,w/2,h,0,Math.PI,0);ng.fill();x+=w*(0.6+r()*0.4)}
+    ng.fillStyle='#1f4a3a';for(let i=0;i<70;i++){const x=r()*LW,h=(10+r()*20)*DPR,y=LH-r()*LH*0.16;ng.beginPath();ng.moveTo(x,y-h);ng.lineTo(x+h*0.32,y);ng.lineTo(x-h*0.32,y);ng.fill()}
+  }else if(key==='dubai'){
+    skyline(fg,LW,LH,r,'#2a2452',0.1,0.4,14,34,0.1,false);
+    const bx=LW*0.5,bh=LH*1.1;fg.fillStyle='#3a3560';fg.beginPath();fg.moveTo(bx-LH*0.06,LH);fg.lineTo(bx-LH*0.012,LH-bh*0.82);fg.lineTo(bx,LH-bh);fg.lineTo(bx+LH*0.012,LH-bh*0.82);fg.lineTo(bx+LH*0.06,LH);fg.closePath();fg.fill();
+    fg.globalCompositeOperation='lighter';for(let y2=LH-bh*0.82;y2<LH;y2+=5*DPR)if(r()<0.5){fg.fillStyle='rgba(255,220,150,.4)';const hw=(LH*0.06)*(y2-(LH-bh))/(bh);fg.fillRect(bx-hw*0.6,y2,hw*1.2,2*DPR)}fg.globalCompositeOperation='source-over';
+    skyline(ng,LW,LH,r,'#171430',0.15,0.58,22,52,0.06,true);
+  }else if(key==='abudhabi'){
+    skyline(fg,LW,LH,r,'#3a2a52',0.1,0.42,16,42,0.08,false);
+    const hx=LW*0.6,hw=LH*0.5;fg.fillStyle='#4a3a5e';fg.beginPath();fg.moveTo(hx-hw/2,LH);fg.lineTo(hx-hw*0.3,LH-LH*0.4);fg.quadraticCurveTo(hx,LH-LH*0.62,hx+hw*0.3,LH-LH*0.4);fg.lineTo(hx+hw/2,LH);fg.closePath();fg.fill();
+    fg.globalCompositeOperation='lighter';fg.fillStyle='rgba(255,120,220,.25)';fg.fillRect(hx-hw/2,LH-LH*0.42,hw,LH*0.42);fg.globalCompositeOperation='source-over';
+    skyline(ng,LW,LH,r,'#1c1830',0.12,0.46,20,48,0.08,true);
+  }else if(key==='dune'){
+    for(let L2=0;L2<3;L2++){const col=['#b98a52','#c99a5e','#d9aa6a'][L2],base=LH*(0.5+L2*0.22),amp=LH*(0.18-L2*0.04);fg.fillStyle=col;fg.beginPath();fg.moveTo(0,LH);for(let x=0;x<=LW;x+=6){fg.lineTo(x,base+Math.sin(x*0.004+L2*2+track.seed)*amp+Math.sin(x*0.013+L2)*amp*0.4)}fg.lineTo(LW,LH);fg.closePath();fg.fill()}
+    ng.fillStyle='rgba(255,240,200,.25)';for(let L2=0;L2<3;L2++){const base=LH*(0.52+L2*0.22),amp=LH*(0.18-L2*0.04);ng.beginPath();ng.moveTo(0,LH);for(let x=0;x<=LW;x+=6)ng.lineTo(x,base+Math.sin(x*0.004+L2*2+track.seed)*amp+Math.sin(x*0.013+L2)*amp*0.4);ng.lineTo(LW,LH);ng.closePath();ng.fill()}
   }else{
     const c1=LW*0.4;fg.fillStyle='#6d8fb3';fg.beginPath();fg.moveTo(0,LH);for(let x=0;x<=LW;x+=4){const d=(x-c1)/(LW*0.28);fg.lineTo(x,LH-LH*0.85*Math.exp(-d*d)-LH*0.08)}fg.lineTo(LW,LH);fg.closePath();fg.fill();
     fg.fillStyle='rgba(255,255,255,.75)';for(let i=0;i<14;i++){const cx=r()*LW,cy=LH*(0.05+r()*0.35),s=(20+r()*50)*DPR;for(let j=0;j<4;j++){fg.beginPath();fg.ellipse(cx+j*s*0.4,cy+(j%2)*s*0.08,s*0.4,s*0.16,0,0,7);fg.fill()}}
@@ -671,17 +968,17 @@ function buildBg(){
 }
 
 /* ================= RACE STATE ================= */
-let cars=[],state='menu',position=0,pDist=0,playerX=0,speed=0,nitro=0,tireWear=1,tire=save.tire||'medium';
+let raceTop=0,cars=[],state='menu',position=0,pDist=0,playerX=0,speed=0,nitro=0,tireWear=1,tire=save.tire||'medium';
 let raceTime=0,lapStart=0,lapTimes=[],lastLap=1,countT=0,finishT=0,finishOrder=[],place=0,shake=0,skyOff=0,drifting=false,nitroOn=false,offroad=false,steerVis=0,particles=[],warnedTire=false,clock=0,pausedFrom=null,lastCountShown='',PST=null,LOOK=null,standings=[];
 const keys={left:0,right:0,brake:0,nitro:0};
 function initCars(attractMode){
   for(const s of segs)s.cars.length=0;cars=[];
-  const r=rng(track.seed*3+(attractMode?5:1)),lo=track.final?0.84:0.8,hi=track.final?0.99:0.96;
+  const r=rng(track.seed*3+(attractMode?5:1)),lo=track.final?0.84:0.8,hi=track.final?0.99:0.96,n=attractMode?7:(track.opp==null?7:track.opp),dm=track.diffMul||1;
   const names=[...RIVALS].sort(()=>r()-0.5);
-  for(let i=0;i<7;i++){
+  for(let i=0;i<n;i++){
     const z=playerZ+SEG*(5+i*3.2),lane=i%2?0.42:-0.42,cc=CARS[Math.floor(r()*CARS.length)];
     const look={body:cc.body,color:PAINTS[Math.floor(r()*PAINTS.length)],finish:FINISHES[Math.floor(r()*4)].k,sticker:r()<0.35?STICKERS[1+Math.floor(r()*4)].k:'none',stickColor:STCOL[Math.floor(r()*STCOL.length)],plate:''};
-    const c={z,dist:z,offset:lane,lane,base:U(track.pace)*(lo+(hi-lo)*(i/6)*(0.85+r()*0.3)),speed:0,look,name:names[i],car:cc.name,wasAhead:true,finished:false,ftime:0,laneT:3+r()*6,seg:null};
+    const c={z,dist:z,offset:lane,lane,base:U(track.pace*dm)*(lo+(hi-lo)*(n>1?i/(n-1):0.5)*(0.85+r()*0.3)),speed:0,look,name:names[i],car:cc.name,wasAhead:true,finished:false,ftime:0,laneT:3+r()*6,seg:null};
     if(attractMode){c.z=r()*trackLen;c.dist=c.z;c.speed=c.base*0.8}
     c.seg=findSeg(c.z);c.seg.cars.push(c);cars.push(c);
   }
@@ -725,9 +1022,10 @@ function update(dt){
       playerX=clamp(playerX,-2.3,2.3);speed=Math.max(0,speed);
       if(nitroOn)nitro-=st.drain*dt;
       nitro=clamp(nitro+dt*(0.012+(drifting?0.17:0)),0,1);
-      tireWear=Math.max(0,tireWear-dt*TIRES[tire].wear*(0.0034+Math.abs(steer)*Math.min(sp,1)*0.004+(drifting?0.011:0)));
+      tireWear=Math.max(0,tireWear-dt*TIRES[tire].wear*st.wear*(0.0034+Math.abs(steer)*Math.min(sp,1)*0.004+(drifting?0.011:0)));
       if(tireWear<0.25&&!warnedTire){warnedTire=true;pop('타이어가 다 닳아 가!','warn')}
     }
+    if(state==='race'){const kk=speed/B*KMH;if(kk>raceTop)raceTop=kk}
     position+=speed*dt;pDist+=speed*dt;while(position>=trackLen)position-=trackLen;
   }
   const tf=(nitroOn?114:100)+Math.min(sp,1.3)*4;fov+=(tf-fov)*Math.min(1,dt*3);camDepth=1/Math.tan(fov/2*Math.PI/180);
@@ -779,8 +1077,8 @@ function project(p,cx,cy,cz){p.camera.x=-cx;p.camera.y=p.world.y-cy;p.camera.z=p
 function drawBg(pY){
   const L=layers;if(!L)return;const off=clamp(pY*0.004*DPR,-H*0.1,H*0.1),hz=H*0.5+off;
   ctx.drawImage(L.sky,0,0,L.sky.width,L.sky.height,0,0,W,hz+2);
-  if(L.key==='seoul'){const x=-((skyOff*0.15%1+1)%1)*L.LW;ctx.drawImage(L.stars,x,0);ctx.drawImage(L.stars,x+L.LW,0);const R=Math.min(W,H)*0.035;ctx.fillStyle='#f3efe4';ctx.beginPath();ctx.arc(W*0.78,hz-L.LH*1.3,R,0,7);ctx.fill()}
-  else{const big=L.key==='busan',sx=W*(big?0.6:0.72),sy=big?hz-L.LH*0.35:hz-H*0.3,R=Math.min(W,H)*(big?0.1:0.045),col=big?'#ffb36b':'#fff6d8';const g=ctx.createRadialGradient(sx,sy,R*0.2,sx,sy,R*4);g.addColorStop(0,col);g.addColorStop(0.25,col+'88');g.addColorStop(1,col+'00');ctx.fillStyle=g;ctx.fillRect(sx-R*4,sy-R*4,R*8,R*8);ctx.fillStyle=col;ctx.beginPath();ctx.arc(sx,sy,R,0,7);ctx.fill()}
+  if(theme.stars){const x=-((skyOff*0.15%1+1)%1)*L.LW;ctx.drawImage(L.stars,x,0);ctx.drawImage(L.stars,x+L.LW,0);const R=Math.min(W,H)*0.035;ctx.fillStyle='#f3efe4';ctx.beginPath();ctx.arc(W*0.78,hz-L.LH*1.3,R,0,7);ctx.fill()}
+  else{const big=!!theme.sunLow,sx=W*(big?0.6:0.72),sy=big?hz-L.LH*0.35:hz-H*0.3,R=Math.min(W,H)*(big?0.1:0.045),col=big?(L.key==='osaka'?'#ffc07a':'#ffb36b'):'#fff6d8';const g=ctx.createRadialGradient(sx,sy,R*0.2,sx,sy,R*4);g.addColorStop(0,col);g.addColorStop(0.25,col+'88');g.addColorStop(1,col+'00');ctx.fillStyle=g;ctx.fillRect(sx-R*4,sy-R*4,R*8,R*8);ctx.fillStyle=col;ctx.beginPath();ctx.arc(sx,sy,R,0,7);ctx.fill()}
   const fx=-((skyOff*0.4%1+1)%1)*L.LW,nx=-((skyOff%1+1)%1)*L.LW;
   ctx.drawImage(L.far,fx,hz-L.LH);ctx.drawImage(L.far,fx+L.LW,hz-L.LH);
   ctx.drawImage(L.near,nx,hz-L.LH+1);ctx.drawImage(L.near,nx+L.LW,hz-L.LH+1);
@@ -805,8 +1103,8 @@ function drawSprite(sp,x,y,k,clip,s){
     case'lamp':{const h=2200*k,pw=Math.max(1,55*k),dir=-Math.sign(sp.offset);ctx.fillStyle='#1c2133';ctx.fillRect(x-pw/2,y-h,pw,h);ctx.fillRect(Math.min(x,x+dir*500*k),y-h,500*k,pw);const lx=x+dir*500*k,ly=y-h+pw;ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(lx,ly,0,lx,ly,600*k);g.addColorStop(0,th.glow+'cc');g.addColorStop(1,th.glow+'00');ctx.fillStyle=g;ctx.fillRect(lx-600*k,ly-600*k,1200*k,1200*k);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#e8fbff';ctx.fillRect(lx-110*k,ly,220*k,40*k);break}
     case'tower':{const w=(2000+sp.v*1800)*k,h=(3500+sp.v*5200)*k;ctx.fillStyle=th.night?'#120d24':'#2a2440';ctx.fillRect(x-w/2,y-h,w,h);if(w>30){const cols=6,rows=Math.min(16,Math.floor(h/(w/cols)));const cw=w/cols,rh=h/Math.max(1,rows);for(let i=0;i<rows;i++)for(let j=0;j<cols;j++){if(((i*7+j*3+Math.floor(sp.v*50))%5)<2)continue;ctx.fillStyle=((i+j)%4)?'rgba(255,210,122,.75)':'rgba(140,210,255,.7)';ctx.fillRect(x-w/2+j*cw+cw*0.25,y-h+i*rh+rh*0.3,cw*0.5,rh*0.4)}}ctx.fillStyle=sp.v>0.5?'#ff3fa4':'#3fd7ff';ctx.fillRect(x-w/2,y-h,w,Math.max(1,60*k));break}
     case'apt':{const w=(2200+sp.v*900)*k,h=(4400+sp.v*2400)*k;ctx.fillStyle=th.night?'#1a1d2e':'#3a3150';ctx.fillRect(x-w/2,y-h,w,h);const fl=Math.min(22,Math.max(2,Math.floor(h/Math.max(3,w*0.09))));if(w>24){const fh=h/fl;for(let i=1;i<fl;i++){ctx.fillStyle='rgba(255,255,255,.06)';ctx.fillRect(x-w/2,y-h+i*fh,w,Math.max(1,fh*0.12));for(let j=0;j<5;j++)if(((i*5+j*3+Math.floor(sp.v*40))%7)<3){ctx.fillStyle=(i+j)%3?'rgba(255,214,140,.7)':'rgba(190,225,255,.6)';ctx.fillRect(x-w/2+w*(0.06+j*0.19),y-h+i*fh+fh*0.3,w*0.13,fh*0.45)}}
-      if(w>70)txt(`${101+Math.floor(sp.v*9)}동`,x,y-h+w*0.12,w*0.13,'rgba(233,238,246,.85)',w*0.6)}break}
-    case'sign':{const pw=Math.max(1,70*k),ph=1300*k,bw=1900*k,bh=850*k;ctx.fillStyle='#2a2f3a';ctx.fillRect(x-bw*0.3,y-ph,pw,ph);ctx.fillRect(x+bw*0.3-pw,y-ph,pw,ph);ctx.fillStyle='#16102c';ctx.fillRect(x-bw/2,y-ph-bh,bw,bh);ctx.fillStyle='#3fd7ff';ctx.fillRect(x-bw/2,y-ph-bh,bw,bh*0.1);if(bw>40)txt(sp.text,x,y-ph-bh*0.45,bh*0.48,'#ff3fa4',bw*0.88);break}
+      if(w>70&&track.league==='kr')txt(`${101+Math.floor(sp.v*9)}동`,x,y-h+w*0.12,w*0.13,'rgba(233,238,246,.85)',w*0.6)}break}
+    case'sign':{const pw=Math.max(1,70*k),ph=1300*k,bw=1900*k,bh=850*k;if(th.night&&bw>40){ctx.globalCompositeOperation='lighter';const gx=x,gy=y-ph-bh*0.45,gg=ctx.createRadialGradient(gx,gy,0,gx,gy,bw*0.9);gg.addColorStop(0,th.chev+'66');gg.addColorStop(1,th.chev+'00');ctx.fillStyle=gg;ctx.fillRect(gx-bw,gy-bh,bw*2,bh*2.4);ctx.globalCompositeOperation='source-over'}ctx.fillStyle='#2a2f3a';ctx.fillRect(x-bw*0.3,y-ph,pw,ph);ctx.fillRect(x+bw*0.3-pw,y-ph,pw,ph);ctx.fillStyle='#16102c';ctx.fillRect(x-bw/2,y-ph-bh,bw,bh);ctx.fillStyle='#3fd7ff';ctx.fillRect(x-bw/2,y-ph-bh,bw,bh*0.1);if(bw>40)txt(sp.text,x,y-ph-bh*0.45,bh*0.48,'#ff3fa4',bw*0.88);break}
     case'rail':{const h=420*k,w=Math.max(1,60*k);ctx.fillStyle='#4a505c';ctx.fillRect(x-w/2,y-h,w,h);ctx.fillStyle='#c8ccd4';ctx.fillRect(x-500*k,y-h,1000*k,Math.max(1,110*k));ctx.fillStyle=sp.offset<0?'#ff8a3a':'#6ad0ff';ctx.fillRect(x-w,y-h*0.6,w*2,w*1.2);break}
     case'pylon':{const h=9000*k,w=Math.max(1,420*k);ctx.fillStyle='#2b2f44';ctx.fillRect(x-w/2,y-h,w,h);for(let i=1;i<4;i++)ctx.fillRect(x-w*1.4,y-h*i/4,w*2.8,w*0.35);ctx.fillStyle='#ff4a5a';ctx.fillRect(x-w*0.3,y-h-w*0.6,w*0.6,w*0.6);ctx.fillStyle='rgba(255,230,190,.8)';for(let i=0;i<10;i++)ctx.fillRect(x-w*0.1,y-h+h*i/10,w*0.2,w*0.2);break}
     case'palm':{const h=(2300+sp.v*900)*k,lean=(sp.v-0.5)*900*k;ctx.strokeStyle='#6b4e34';ctx.lineWidth=Math.max(1,120*k);ctx.beginPath();ctx.moveTo(x,y);ctx.quadraticCurveTo(x+lean*0.2,y-h*0.6,x+lean,y-h);ctx.stroke();ctx.strokeStyle=th.night?'#183a2a':'#2f8a3e';ctx.lineWidth=Math.max(1,110*k);ctx.beginPath();for(let i=0;i<7;i++){const a=-Math.PI/2+(i-3)*0.5,Ln=900*k;ctx.moveTo(x+lean,y-h);ctx.quadraticCurveTo(x+lean+Math.cos(a)*Ln*0.6,y-h+Math.sin(a)*Ln*0.6-200*k,x+lean+Math.cos(a)*Ln,y-h+Math.sin(a)*Ln*0.4+350*k)}ctx.stroke();break}
@@ -814,6 +1112,13 @@ function drawSprite(sp,x,y,k,clip,s){
     case'harubang':{const h=1000*k,w=380*k;ctx.fillStyle='#55595f';ctx.beginPath();ctx.ellipse(x,y-h*0.32,w*0.5,h*0.33,0,0,7);ctx.fill();ctx.beginPath();ctx.ellipse(x,y-h*0.72,w*0.42,h*0.2,0,0,7);ctx.fill();ctx.fillStyle='#4a4e54';ctx.beginPath();ctx.ellipse(x,y-h*0.86,w*0.36,h*0.13,0,Math.PI,0);ctx.fill();if(w>14){ctx.fillStyle='#2a2d31';ctx.beginPath();ctx.arc(x-w*0.15,y-h*0.73,w*0.08,0,7);ctx.arc(x+w*0.15,y-h*0.73,w*0.08,0,7);ctx.fill();ctx.fillRect(x-w*0.35,y-h*0.42,w*0.7,h*0.04)}break}
     case'orange':{const h=1300*k,r=560*k;ctx.fillStyle='#5a3e28';ctx.fillRect(x-60*k,y-h*0.5,120*k,h*0.5);ctx.fillStyle='#2f6b2f';ctx.beginPath();ctx.arc(x,y-h*0.62,r,0,7);ctx.fill();if(r>8){ctx.fillStyle='#ff9a1f';for(let i=0;i<8;i++){const a=i*0.8+sp.v*6;ctx.beginPath();ctx.arc(x+Math.cos(a)*r*0.6,y-h*0.62+Math.sin(a)*r*0.6,r*0.11,0,7);ctx.fill()}}break}
     case'canola':{const w=(1300+sp.v*800)*k,h=360*k;ctx.fillStyle='#6f9a35';ctx.beginPath();ctx.ellipse(x,y,w/2,h*0.5,0,Math.PI,0);ctx.fill();ctx.fillStyle='#f1d42a';ctx.beginPath();ctx.ellipse(x,y-h*0.2,w*0.48,h*0.75,0,Math.PI,0);ctx.fill();if(w>30){ctx.fillStyle='#d9b812';for(let i=0;i<10;i++)ctx.fillRect(x-w*0.4+w*0.08*i,y-h*(0.2+((i*37)%5)/10),w*0.03,w*0.03)}break}
+    case'vending':{const w=520*k,h=1050*k,col=sp.v<.33?'#e8352f':sp.v<.66?'#eef1f5':'#2f7bff';ctx.fillStyle=col;ctx.fillRect(x-w/2,y-h,w,h);ctx.fillStyle=th.night?'#d9f0ff':'#bcd6ea';ctx.fillRect(x-w*0.4,y-h*0.9,w*0.8,h*0.45);if(w>14){const cs=['#ff5a5a','#ffd23a','#5ad1ff','#7be07b'];for(let r2=0;r2<3;r2++)for(let c2=0;c2<4;c2++){ctx.fillStyle=cs[(r2+c2)%4];ctx.fillRect(x-w*0.34+c2*w*0.18,y-h*0.86+r2*h*0.14,w*0.1,h*0.09)}}ctx.fillStyle='#1a1d24';ctx.fillRect(x-w*0.3,y-h*0.25,w*0.6,h*0.1);if(th.night){ctx.globalCompositeOperation='lighter';ctx.fillStyle='rgba(180,220,255,.18)';ctx.fillRect(x-w*0.7,y-h*1.05,w*1.4,h*0.75);ctx.globalCompositeOperation='source-over'}break}
+    case'torii':{const pw=Math.max(1,95*k),h=1600*k,gap=600*k;ctx.fillStyle='#d8361f';ctx.fillRect(x-gap-pw/2,y-h,pw,h);ctx.fillRect(x+gap-pw/2,y-h,pw,h);ctx.fillRect(x-gap*1.25,y-h*0.8,gap*2.5,Math.max(1,80*k));ctx.fillStyle='#1d1a1a';ctx.beginPath();ctx.moveTo(x-gap*1.5,y-h*1.02);ctx.quadraticCurveTo(x,y-h*0.94,x+gap*1.5,y-h*1.02);ctx.lineTo(x+gap*1.42,y-h*0.94);ctx.quadraticCurveTo(x,y-h*0.88,x-gap*1.42,y-h*0.94);ctx.closePath();ctx.fill();break}
+    case'pine':{const h=(1700+sp.v*1100)*k,w=h*0.5;ctx.fillStyle='#4a3424';ctx.fillRect(x-w*0.06,y-h*0.2,w*0.12,h*0.2);for(let i=0;i<3;i++){const ty=y-h*0.15-i*h*0.27,tw=w*(1-i*0.25);ctx.fillStyle='#1f4a3a';ctx.beginPath();ctx.moveTo(x,ty-h*0.42);ctx.lineTo(x+tw/2,ty);ctx.lineTo(x-tw/2,ty);ctx.fill();ctx.fillStyle='#eef4fa';ctx.beginPath();ctx.moveTo(x,ty-h*0.42);ctx.lineTo(x+tw*0.16,ty-h*0.28);ctx.lineTo(x-tw*0.16,ty-h*0.28);ctx.fill()}break}
+    case'snowbank':{const w=(1200+sp.v*800)*k,h=320*k;ctx.fillStyle='#c9d8e6';ctx.beginPath();ctx.ellipse(x,y,w/2,h,0,Math.PI,0);ctx.fill();ctx.fillStyle='#f6f9fc';ctx.beginPath();ctx.ellipse(x-w*0.04,y-h*0.08,w*0.46,h*0.9,0,Math.PI,0);ctx.fill();break}
+    case'arrowpole':{const h=2700*k,pw=Math.max(1,55*k),aw=Math.max(1,150*k),ah=650*k,dir=-Math.sign(sp.offset);ctx.fillStyle='#3a3f48';ctx.fillRect(x-pw/2,y-h,pw,h);ctx.fillRect(Math.min(x,x+dir*260*k),y-h,260*k,pw);const ax=x+dir*260*k;for(let i=0;i<5;i++){ctx.fillStyle=i%2?'#f4f7fb':'#d82b2b';ctx.fillRect(ax-aw/2,y-h+i*ah/5,aw,ah/5+0.5)}ctx.fillStyle='#d82b2b';ctx.beginPath();ctx.moveTo(ax-aw,y-h+ah);ctx.lineTo(ax+aw,y-h+ah);ctx.lineTo(ax,y-h+ah+aw*1.4);ctx.closePath();ctx.fill();break}
+    case'cactus':{const w=170*k,h=(1100+sp.v*600)*k;ctx.fillStyle='#3f7a3a';ctx.fillRect(x-w/2,y-h,w,h);ctx.fillRect(x-w*2.2,y-h*0.6,w*1.7,w*0.8);ctx.fillRect(x-w*2.2,y-h*0.85,w*0.8,h*0.3);ctx.fillRect(x+w/2,y-h*0.45,w*1.4,w*0.8);ctx.fillRect(x+w*1.2,y-h*0.75,w*0.8,h*0.33);ctx.fillStyle='#2f5f2c';ctx.fillRect(x+w*0.1,y-h,w*0.4,h);break}
+    case'rock':{const w=(700+sp.v*900)*k,h=w*0.55;ctx.fillStyle='#b07a4a';ctx.beginPath();ctx.moveTo(x-w/2,y);ctx.lineTo(x-w*0.4,y-h*0.7);ctx.lineTo(x-w*0.1,y-h);ctx.lineTo(x+w*0.3,y-h*0.85);ctx.lineTo(x+w/2,y);ctx.fill();ctx.fillStyle='#8a5a34';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+w*0.3,y-h*0.85);ctx.lineTo(x+w/2,y);ctx.fill();break}
     case'chev':{const bw=700*k,bh=420*k,py=y-300*k;ctx.fillStyle='#333a46';ctx.fillRect(x-30*k,py,60*k,300*k);ctx.fillStyle='#14161c';ctx.fillRect(x-bw/2,py-bh,bw,bh);ctx.fillStyle=th.chev;const d=sp.dir;for(let i=0;i<2;i++){const cx=x+(i-0.5)*bw*0.42;ctx.beginPath();ctx.moveTo(cx-d*bw*0.14,py-bh*0.85);ctx.lineTo(cx+d*bw*0.12,py-bh*0.5);ctx.lineTo(cx-d*bw*0.14,py-bh*0.15);ctx.lineTo(cx-d*bw*0.02,py-bh*0.15);ctx.lineTo(cx+d*bw*0.24,py-bh*0.5);ctx.lineTo(cx-d*bw*0.02,py-bh*0.85);ctx.closePath();ctx.fill()}break}
   }
   ctx.restore();
@@ -848,6 +1153,10 @@ function render(){
       ctx.save();ctx.beginPath();ctx.rect(0,0,W,s.clip);ctx.clip();ctx.globalAlpha=clamp(s.fog*1.3,0,1);drawCarRear(ctx,cx,cy,sc*CARW*W/2,c.look,{night:theme.night});ctx.restore()}
   }
   for(const p of particles){if(p.spark)continue;ctx.globalAlpha=(1-p.life/p.max)*0.45;ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()}ctx.globalAlpha=1;
+  if(theme.wet&&save.settings.quality!=='normal'){const hz=H*0.5+clamp(pY*0.004*DPR,-H*0.1,H*0.1);ctx.save();ctx.globalCompositeOperation='lighter';
+    const rg=ctx.createLinearGradient(0,hz,0,H);rg.addColorStop(0,theme.glow+'00');rg.addColorStop(0.5,theme.glow+'14');rg.addColorStop(1,theme.glow+'05');ctx.fillStyle=rg;ctx.fillRect(0,hz,W,H-hz);
+    const sx=theme.stars?W*0.78:W*0.62,sm=ctx.createLinearGradient(sx,hz,sx,H);sm.addColorStop(0,theme.glow+'40');sm.addColorStop(1,theme.glow+'00');ctx.fillStyle=sm;ctx.fillRect(sx-W*0.04,hz,W*0.08,H-hz);
+    ctx.globalCompositeOperation='source-over';ctx.restore()}
   const ps=camDepth/playerZ,pw=ps*CARW*W/2;
   let py=H/2-ps*lerp(pSeg.p1.camera.y,pSeg.p2.camera.y,pPct)*H/2;
   py=Math.min(py,H)-H*0.015+(offroad?(Math.random()-0.5)*4*DPR:Math.sin(clock*38)*Math.min(speed/B,1)*0.8*DPR);
@@ -855,6 +1164,7 @@ function render(){
   drawCarRear(ctx,0,0,pw,LOOK||myLook(),{steer:steerVis,brake:keys.brake&&state==='race',night:theme.night,nitro:nitroOn});
   ctx.restore();
   for(const p of particles){if(!p.spark)continue;ctx.fillStyle=p.c;ctx.globalAlpha=1-p.life/p.max;ctx.fillRect(p.x,p.y,p.r*2,p.r*2)}ctx.globalAlpha=1;
+  {const vg=ctx.createRadialGradient(W/2,H*0.46,Math.min(W,H)*0.3,W/2,H*0.5,Math.max(W,H)*0.78);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,theme.night?'rgba(0,0,0,.42)':'rgba(10,8,20,.2)');ctx.fillStyle=vg;ctx.fillRect(0,0,W,H)}
   if(nitroOn&&!reduceMotion){ctx.strokeStyle='rgba(200,240,255,.35)';ctx.lineWidth=2*DPR;ctx.beginPath();for(let i=0;i<18;i++){const a=Math.random()*Math.PI*2,r1=Math.max(W,H)*(0.35+Math.random()*0.2),r2=r1+Math.max(W,H)*0.25;ctx.moveTo(W/2+Math.cos(a)*r1,H*0.45+Math.sin(a)*r1*0.7);ctx.lineTo(W/2+Math.cos(a)*r2,H*0.45+Math.sin(a)*r2*0.7)}ctx.stroke()}
   ctx.restore();
 }
@@ -874,81 +1184,90 @@ const popEl=$('#pop');
 function pop(t,cls){popEl.className='pop';void popEl.offsetWidth;popEl.textContent=t;popEl.className='pop show '+(cls||'')}
 
 /* ================= FLOW ================= */
-const SCREENS=['sHub','sPrep','sResult','sPause'];
+const SCREENS=['sHub','sPrep','sResult','sPause','sLogin'];
 function show(id){for(const s of SCREENS)$('#'+s).hidden=s!==id;$('#hud').hidden=!(id===null||id==='sPause')}
+let curEv=null,raceKind='career',raceMode=null,curLeague='kr';
+function freeEvent(){const F=save.free,b=EVENTS[F.ev];return{...b,id:'free',base:b.id,laps:F.laps,opp:F.opp,diffMul:{easy:.9,normal:1,hard:1.07}[F.diff]||1,free:true,final:false}}
 function attract(ev){buildTrack(ev||EVENTS[save.ev]||EVENTS.s1);initCars(true);PST=carStats(save.cur);LOOK=myLook();speed=PST.max*0.78;position=0;playerX=0;state='menu'}
 function startRace(){
   initAudio();if(audio&&audio.ac.state==='suspended')audio.ac.resume();
-  const ev=EVENTS[save.ev];buildTrack(ev);PST=carStats(save.cur);LOOK=myLook();
-  position=0;pDist=playerZ;playerX=0;speed=0;nitro=0.3;tireWear=1;raceTime=0;lapStart=0;lapTimes=[];lastLap=1;finishOrder=[];finishT=0;particles=[];warnedTire=false;place=0;
+  const ev=curEv=raceKind==='free'?freeEvent():EVENTS[save.ev];buildTrack(ev);PST=carStats(save.cur);LOOK=myLook();
+  raceTop=0;position=0;pDist=playerZ;playerX=0;speed=0;nitro=0.3;tireWear=1;raceTime=0;lapStart=0;lapTimes=[];lastLap=1;finishOrder=[];finishT=0;particles=[];warnedTire=false;place=0;
   for(const k in keys)keys[k]=0;
   initCars(false);state='count';countT=5;lastCountShown='';$('#count').textContent='';
-  $('#banner').innerHTML=`<small>${esc(ev.city.name)} · ${ev.laps}랩 · ${cars.length+1}대</small><b>${esc(ev.name)}</b>`;
+  $('#banner').innerHTML=`<small>${ev.free?'자유 모드 · ':''}${esc(ev.city.name)} · ${ev.laps}랩 · ${cars.length+1}대</small><b>${esc(ev.name)}</b>`;
   show(null);
 }
 function finishRace(){
   state='finish';place=finishOrder.length+1;lapTimes.push(raceTime-lapStart);$('#count').textContent='';
   const fl=finishLine();
-  standings=[{name:'나',car:CAR[save.cur].name,time:raceTime,me:true},...cars.map(c=>({name:c.name,car:c.car,time:c.finished?c.ftime:raceTime+(fl-c.dist)/Math.max(1500,c.speed)+0.05}))].sort((a,b)=>a.time-b.time);
+  standings=[{name:me()?me().nick:'나',car:CAR[save.cur].name,time:raceTime,me:true},...cars.map(c=>({name:c.name,car:c.car,time:c.finished?c.ftime:raceTime+(fl-c.dist)/Math.max(1500,c.speed)+0.05}))].sort((a,b)=>a.time-b.time);
   pop(place===1?'우승!':place+'위 골인','go');for(const k in keys)keys[k]=0;
 }
-function rollDrop(ev){
-  const ch=place===1?0.5:place<=3?0.3:0.12;if(Math.random()>ch)return null;
-  const tier=(ev.final?3:ev.city.need>=12?2:ev.city.need>=5?1:0);
+function rollDrop(ev,free){
+  const ch=(place===1?0.5:place<=3?0.3:0.12)*(free?0.5:1);if(Math.random()>ch)return null;
+  const tier=Math.min(3,(ev.final?3:ev.city.need>=12?2:ev.city.need>=5?1:0)+(ev.league==='jp'?1:0));
   const w=[70-tier*12,25+tier*7,5+tier*5],t=Math.random()*(w[0]+w[1]+w[2]),rar=t<w[0]?0:t<w[0]+w[1]?1:2;
   const pool=SPECIALS.filter(s=>s.rar===rar),it=pool[Math.floor(Math.random()*pool.length)];
   save.inv[it.id]=(save.inv[it.id]||0)+1;return it;
 }
 function showResult(){
   state='result';$('#hud').hidden=true;
-  const ev=EVENTS[save.ev],prize=Math.round(ev.prize*PLACEMUL[place-1]/10)*10,before=starsOf(ev.id),starsBefore=totalStars();
+  const ev=curEv,free=!!ev.free,lgId=ev.league,lg=LEAGUES[lgId],oppScale=free?ev.opp/7:1;
+  const prize=Math.round(ev.prize*(free?0.4*oppScale:1)*PLACEMUL[place-1]/10)*10;
+  const before=free?0:starsOf(ev.id),lsBefore=leagueStars(lgId),wasChamp=!free&&!!(save.career[ev.id]&&save.career[ev.id].place===1);
   save.money+=prize;
-  const prev=save.career[ev.id]||{};const best=!prev.best||raceTime<prev.best;
-  save.career[ev.id]={place:Math.min(prev.place||99,place),best:best?raceTime:prev.best};
-  const drop=rollDrop(ev);persist();
-  const after=starsOf(ev.id),gained=after-before,starsNow=totalStars();
-  const unlocks=[];for(const c of CITIES)if(c.need>starsBefore&&c.need<=starsNow)unlocks.push(c.name+' 리그가 열렸어!');if(FINAL.need>starsBefore&&FINAL.need<=starsNow)unlocks.push('코리아 챔피언십이 열렸어!');
-  if(ev.final&&place===1)unlocks.push('한국 리그 우승! 일본 리그는 다음 업데이트에서 열려.');
-  const nextEv=ev.final?null:ev.city.events[ev.idx+1];
-  const note=place===1?'완벽해. 상금으로 차를 키우고 다음 레이스로 가자.':tireWear<0.2?`타이어가 ${Math.round(tireWear*100)}%까지 닳았어. 더 단단한 타이어를 고르거나 드리프트를 아껴 봐.`:place>3?'3위 안에 들어야 트로피를 받고 다음 레이스가 열려. 차고에서 튜닝하고 다시 도전해 봐.':'좋아! 1위를 하면 트로피 3개를 받아.';
+  const bkey=ev.base+'-'+ev.laps,prevBest=free?save.freeBest[bkey]:(save.career[ev.id]||{}).best,best=!prevBest||raceTime<prevBest,bestNow=best?raceTime:prevBest;
+  if(free){if(best)save.freeBest[bkey]=raceTime}else{const prev=save.career[ev.id]||{};save.career[ev.id]={place:Math.min(prev.place||99,place),best:bestNow}}
+  const drop=free&&ev.opp===0?null:rollDrop(ev,free);
+  const S=save.stats;S.races++;if(place===1)S.wins++;if(place<=3)S.podiums++;S.earned+=prize;S.topSpeed=Math.max(S.topSpeed,Math.round(raceTop));S.km+=(pDist-playerZ)*(KMH/3.6/B)/1000;
+  const lvBefore=lvInfo(save.xp).lv,xpGain=Math.round((60+(9-place)*20+(place===1?120:0)+(ev.final?200:0))*(free?0.5:1));save.xp+=xpGain;const lvAfter=lvInfo(save.xp).lv;let lvBonus=0;for(let L=lvBefore+1;L<=lvAfter;L++)lvBonus+=500+L*250;save.money+=lvBonus;S.earned+=lvBonus;
+  persist();
+  const after=free?0:starsOf(ev.id),gained=after-before,lsNow=leagueStars(lgId),unlocks=[];
+  if(!free){for(const c of lg.cities)if(c.need>lsBefore&&c.need<=lsNow)unlocks.push(c.name+' 리그가 열렸어!');if(lg.final.need>lsBefore&&lg.final.need<=lsNow)unlocks.push(`리그 최종전 '${lg.final.name}'에 도전할 수 있어!`);
+    const fi=Object.entries(FINAL_ID).find(x=>x[1]===ev.id);if(fi&&place===1&&!wasChamp){const nx=CHAIN[CHAIN.indexOf(fi[0])+1];if(nx&&LEAGUES[nx])unlocks.push(`${lg.name} 리그 우승! ${LEAGUES[nx].name} ${LEAGUES[nx].tier}가 열렸어. 월드맵에서 ${LEAGUES[nx].name}을 눌러 봐.`);else unlocks.push(`${lg.name} 리그 우승! 모든 리그를 제패했어. 네가 오버드라이브의 왕이야! 👑`)}}
+  const nextEv=free||ev.final?null:ev.city.events[ev.idx+1];
+  const note=free?(ev.opp===0?'혼자 달리는 타임 어택이었어. 기록을 더 줄여 봐!':place===1?'자유 모드 우승! 커리어에서도 트로피를 모아 봐.':'자유 모드는 상금이 적어. 커리어에서 트로피를 모으면 새 도시가 열려.'):place===1?'완벽해. 상금으로 차를 키우고 다음 레이스로 가자.':tireWear<0.2?`타이어가 ${Math.round(tireWear*100)}%까지 닳았어. 더 단단한 타이어를 고르거나 드리프트를 아껴 봐.`:place>3?'3위 안에 들어야 트로피를 받고 다음 레이스가 열려. 차고에서 튜닝하고 다시 도전해 봐.':'좋아! 1위를 하면 트로피 3개를 받아.';
   $('#resWrap').innerHTML=`
-    <h3>${esc(ev.city.name)} · ${esc(ev.name)}</h3>
+    <h3>${free?'자유 모드 · ':''}${esc(ev.city.name)} · ${esc(ev.name)}${free?' · '+ev.laps+'랩':''}</h3>
     <div class="resgrid">
       <div class="sec">
         <div class="place">${place}<small>위 / ${cars.length+1}</small></div>
-        <div class="stars" style="font-size:26px">${starRow(after)}${gained>0?` <span style="font-size:14px;color:var(--fg)">+${gained} 트로피</span>`:''}</div>
+        ${free?'':`<div class="stars" style="font-size:26px">${starRow(after)}${gained>0?` <span style="font-size:14px;color:var(--fg)">+${gained} 트로피</span>`:''}</div>`}
         <div class="prepgrid two">
           <div><small>기록</small><b>${fmt(raceTime)}</b></div>
           <div><small>최고 랩</small><b>${fmt(Math.min(...lapTimes))}</b></div>
-          <div><small>이 레이스 최고 기록</small><b>${fmt(save.career[ev.id].best)}${best?' <span class="good" style="font-size:14px">신기록</span>':''}</b></div>
+          <div><small>${free?`최고 기록 (${ev.laps}랩)`:'이 레이스 최고 기록'}</small><b>${fmt(bestNow)}${best?' <span class="good" style="font-size:14px">신기록</span>':''}</b></div>
           <div><small>상금</small><b style="color:var(--warn)">+${won(prize)}</b></div>
         </div>
         ${drop?`<div class="drop" style="border-color:var(--r${drop.rar})"><div><span class="rar r${drop.rar}">특수 부품 획득 · ${RAR[drop.rar].name}</span><div style="font-weight:700;margin-top:2px">${esc(drop.name)}</div><div class="keys">${PART(drop.cat).name} · ${drop.eff}</div></div></div>`:''}
+        <div class="xpline"><span>레이서 경험치 <b>+${xpGain} XP</b></span>${lvAfter>lvBefore?`<span class="good">레벨 업! Lv ${lvAfter} · 보너스 +${won(lvBonus)} CR</span>`:`<span class="keys">Lv ${lvAfter}</span>`}</div>
         ${unlocks.map(u=>`<div class="note">${esc(u)}</div>`).join('')}
         <p class="keys">${note}</p>
       </div>
       <div class="sec"><h3>순위표</h3><div class="tablebox"><table class="stand">${standings.map((s,i)=>`<tr class="${s.me?'me':''}"><td class="p">${i+1}</td><td><b>${esc(s.name)}</b></td><td class="c">${esc(s.car)}</td><td class="t">${i===0?fmt(s.time):'+'+(s.time-standings[0].time).toFixed(2)}</td></tr>`).join('')}</table></div></div>
     </div>
-    <div class="cta"><button class="btn" data-act="again" type="button">다시 달리기</button>${nextEv&&eventOpen(nextEv)?`<button class="btn" data-act="event" data-v="${nextEv.id}" type="button">다음: ${esc(nextEv.name)} ▸</button>`:''}<button class="btn primary" data-act="hub" type="button">리그로 ▸</button></div>`;
+    <div class="cta"><button class="btn" data-act="again" type="button">다시 달리기</button>${free?'<button class="btn primary" data-act="freeback" type="button">자유 모드로 ▸</button>':`${nextEv&&eventOpen(nextEv)?`<button class="btn" data-act="event" data-v="${nextEv.id}" type="button">다음: ${esc(nextEv.name)} ▸</button>`:''}<button class="btn primary" data-act="hub" type="button">리그로 ▸</button>`}</div>`;
   show('sResult');$('#sResult').scrollTop=0;
 }
-function pause(){if(state!=='race'&&state!=='count')return;pausedFrom=state;state='paused';for(const k in keys)keys[k]=0;show('sPause');if(audio)audio.g.gain.value=0}
+function pause(){if(state!=='race'&&state!=='count')return;pausedFrom=state;state='paused';$('#pauseCtrl').innerHTML=ctrlHTML();for(const k in keys)keys[k]=0;show('sPause');if(audio)audio.g.gain.value=0}
 function resume(){if(state!=='paused')return;state=pausedFrom;show(null)}
 
 /* ================= UI ================= */
 const PART=k=>PARTS.find(p=>p.k===k);
 const starRow=n=>'★'.repeat(n)+`<span class="off">${'★'.repeat(3-n)}</span>`;
-let showBrand=null,resetAsk=false,tab='world',leagueOpen=false,gTab='perf',picking=null;
-function renderTop(){$('#hMoney').textContent=won(save.money);$('#hStars').textContent=totalStars()+'/'+MAXSTARS}
+let profMsg='',loginMode='list',loginPick=null,loginErr='',delAsk=false,newIcon=0,newPhoto=null,showBrand=null,resetAsk=false,tab='world',leagueOpen=false,gTab='perf',picking=null;
+function renderTop(){const u=me();if(u){const L=lvInfo(save.xp);$('#pchip').innerHTML=u.guest?`<span class="av" style="--avc:var(--warn)">👀</span><span><b>게스트</b><small>저장 안 됨</small></span>`:`${avHTML(u)}<span><b>${esc(u.nick)}</b><small>Lv ${L.lv}</small></span>`}$('#guestBar').hidden=!guest;$('#hMoney').textContent=won(save.money);$('#hStars').textContent=totalStars()+'/'+MAXSTARS}
 function setTab(t){tab=t;picking=null;document.querySelectorAll('#tabs .btab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.v===t)));
-  $('#pWorld').hidden=!(t==='world'&&!leagueOpen);$('#pLeague').hidden=!(t==='world'&&leagueOpen);$('#pGarage').hidden=t!=='garage';$('#pShow').hidden=t!=='show';$('#pShop').hidden=t!=='shop';$('#pSet').hidden=t!=='settings';resetAsk=false;renderAll();$('#sHub').scrollTop=0}
-function renderAll(){renderTop();if(tab==='world')leagueOpen?renderLeague():renderWorld();else if(tab==='garage')renderGarage();else if(tab==='show')renderShow();else if(tab==='shop')renderShop();else renderSettings()}
+  const rp=t==='world'?racePanel():'';$('#pMode').hidden=rp!=='mode';$('#pFree').hidden=rp!=='free';$('#pWorld').hidden=rp!=='world';$('#pLeague').hidden=rp!=='league';$('#pGarage').hidden=t!=='garage';$('#pShow').hidden=t!=='show';$('#pShop').hidden=t!=='shop';$('#pSet').hidden=t!=='settings';$('#pProf').hidden=t!=='profile';profMsg='';resetAsk=false;renderAll();$('#sHub').scrollTop=0}
+const racePanel=()=>!raceMode?'mode':raceMode==='free'?'free':leagueOpen?'league':'world';
+function renderAll(){renderTop();if(tab==='world'){const rp=racePanel();rp==='mode'?renderModes():rp==='free'?renderFree():rp==='league'?renderLeague():renderWorld()}else if(tab==='garage')renderGarage();else if(tab==='show')renderShow();else if(tab==='shop')renderShop();else if(tab==='profile')renderProfile();else renderSettings()}
 
 const LAND=["00000030effffc0050000000000000","0000018f807ff8000001007fc03400","00003f93e03ff000000416fffe1c00","07fdfb74bc1fe0007f08d3fffffff7","effffffe1e3f0200ff3fffffffffff","07fffffc0c1c0003dfffffffffffff","0fc3fff038000003c3fffffffffe30","0181fffc3f0000609fffffffffc0c0","0000ffffbf800051ffffffffffe080","00007fffff000037fffffffffff000","00003ffffec0003ffffffffffff000","00001ffffe00000f7dffffffffd000","00001ffff0000078b83ffffffe0000","00001fffc000007857ffffffea0000","00001fffc000000f00fffffff26000","000007ff8000007f00fffffff10000","000007fd8000007ffff7fffff80000","000003f0000000fffefbfffff00000","000000e0000001ffff7e3fffe80000","00000072300003ffff7f1f9f000000","0000003e200001ffffbe0f1e080000","00000007000003fffff80607080000","00000001000001ffffc00603000000","00000000df0000fffff80000000000","000000003f800073fff00004000000","000000003fe00001fff00008600000","000000047ff00001ffc00006e00000","000000007ffe0001ff80000368e200","000000007fff0000ff800000003800","000000003fff0000ff800000001400","000000003ffe00007fc0000000d000","000000001ffe0000ffc80000039000","000000000ffe0000ff10000007f801","0000000007fc00007f1200001ffc00","000000000ff800007f1000003ffc00","000000000ff000007e0000003ffe00","000000000fe000003c0000003ffe00","000000000fc0000038000000187e00","000000000f80000000000000003c00","000000000f00000000000000000002","000000000c00000000000000000804","000000000c00000000000000000008","000000001c00000000000000000000","000000001800000000000000000000","000000000c00000000000000000000","000000000000000000000000000000"];
+const cOpen=c=>!!LEAGUES[c.id]&&leagueUnlocked(c.id);
 function renderWorld(){
-  const champ=save.career.kf&&save.career.kf.place===1;
-  $('#pWorld').innerHTML=`<div class="mapbox"><canvas id="worldMap" width="1200" height="460" aria-label="월드 투어 지도"></canvas></div>
-  <div class="countries">${COUNTRIES.map((c,i)=>c.open?`<button type="button" class="ctry open" data-act="league"><span class="tier">${String(i+1).padStart(2,'0')} · ${c.tier}</span><span class="t">${c.name}${champ?' · 우승':''}</span><span class="s">${c.cities}</span><span class="stars">${totalStars()} / ${MAXSTARS} ★</span><span class="btn sm primary" style="align-self:flex-start">리그 입장 ▸</span></button>`:`<div class="ctry locked"><span class="tier">${String(i+1).padStart(2,'0')} · ${c.tier}</span><span class="t">${c.name}</span><span class="s">${c.cities}</span><span class="s">잠김 · 다음 업데이트</span></div>`).join('')}</div>`;
+  $('#pWorld').innerHTML=`<div class="lhead"><button class="btn sm" type="button" data-act="modes">◂ 모드 선택</button><h2>커리어 · 월드 투어</h2></div><div class="mapbox"><canvas id="worldMap" width="1200" height="460" aria-label="월드 투어 지도"></canvas></div>
+  <div class="countries">${COUNTRIES.map((c,i)=>cOpen(c)?`<button type="button" class="ctry open" data-act="league" data-v="${c.id}"><span class="tier">${String(i+1).padStart(2,'0')} · ${c.tier}</span><span class="t">${c.name}${save.career[LEAGUES[c.id].final.id]&&save.career[LEAGUES[c.id].final.id].place===1?' · 우승':''}</span><span class="s">${c.cities}</span><span class="stars">${leagueStars(c.id)} / ${leagueMax(c.id)} ★</span><span class="btn sm primary" style="align-self:flex-start">리그 입장 ▸</span></button>`:`<div class="ctry locked"><span class="tier">${String(i+1).padStart(2,'0')} · ${c.tier}</span><span class="t">${c.name}</span><span class="s">${c.cities}</span><span class="s">${LEAGUES[c.id]?'잠김 · 코리아 챔피언십 1위 하면 열려':'잠김 · 다음 업데이트'}</span></div>`).join('')}</div>`;
   drawWorld();
 }
 function drawWorld(){
@@ -959,27 +1278,27 @@ function drawWorld(){
   g.fillStyle='#2a3a52';LAND.forEach((row,j)=>{const bits=BigInt('0x'+row).toString(2).padStart(120,'0');for(let i=0;i<120;i++)if(bits[i]==='1'){g.beginPath();g.arc(i*10+5,j*10+5,3.1,0,7);g.fill()}});
   const pts=COUNTRIES.map(c=>P(c.lon,c.lat));
   g.setLineDash([6,6]);g.lineWidth=2;
-  for(let i=0;i<pts.length-1;i++){const a=pts[i],b=pts[i+1];const mx=(a[0]+b[0])/2,my=Math.min(a[1],b[1])-60-Math.abs(a[0]-b[0])*0.08;g.strokeStyle=i===0?'rgba(63,215,255,.6)':'rgba(140,155,175,.3)';g.beginPath();g.moveTo(a[0],a[1]);g.quadraticCurveTo(mx,my,b[0],b[1]);g.stroke()}
+  for(let i=0;i<pts.length-1;i++){const a=pts[i],b=pts[i+1];const mx=(a[0]+b[0])/2,my=Math.min(a[1],b[1])-60-Math.abs(a[0]-b[0])*0.08;g.strokeStyle=cOpen(COUNTRIES[i+1])?'rgba(63,215,255,.6)':'rgba(140,155,175,.3)';g.beginPath();g.moveTo(a[0],a[1]);g.quadraticCurveTo(mx,my,b[0],b[1]);g.stroke()}
   g.setLineDash([]);
-  COUNTRIES.forEach((c,i)=>{const[x,y]=pts[i];if(c.open){const gr=g.createRadialGradient(x,y,0,x,y,36);gr.addColorStop(0,'rgba(63,215,255,.55)');gr.addColorStop(1,'rgba(63,215,255,0)');g.fillStyle=gr;g.fillRect(x-36,y-36,72,72)}
-    g.fillStyle=c.open?'#3fd7ff':'#5a6678';g.beginPath();g.arc(x,y,c.open?8:6,0,7);g.fill();g.strokeStyle='#0b111b';g.lineWidth=3;g.stroke();
-    const side=c.id==='jp',lx=side?x+14:x,al=side?'left':'center';g.font="700 22px 'IBM Plex Sans KR',sans-serif";g.textAlign=al;g.textBaseline='bottom';g.fillStyle=c.open?'#e9eef6':'#8a97ab';g.fillText(c.name,lx,side?y+2:y-16);
-    g.font="italic 800 16px 'Saira Condensed',sans-serif";g.textBaseline='top';g.fillStyle=c.open?'#3fd7ff':'#5a6678';g.fillText(c.id==='kr'?'ROOKIE':c.id==='jp'?'PRO':c.id==='us'?'MASTER':c.id==='de'?'ELITE':'LEGEND',lx,side?y+4:y+14)});
+  COUNTRIES.forEach((c,i)=>{const[x,y]=pts[i],op=cOpen(c);if(op){const gr=g.createRadialGradient(x,y,0,x,y,36);gr.addColorStop(0,'rgba(63,215,255,.55)');gr.addColorStop(1,'rgba(63,215,255,0)');g.fillStyle=gr;g.fillRect(x-36,y-36,72,72)}
+    g.fillStyle=op?'#3fd7ff':'#5a6678';g.beginPath();g.arc(x,y,op?8:6,0,7);g.fill();g.strokeStyle='#0b111b';g.lineWidth=3;g.stroke();
+    const side=c.id==='jp',lx=side?x+14:x,al=side?'left':'center';g.font="700 22px 'IBM Plex Sans KR',sans-serif";g.textAlign=al;g.textBaseline='bottom';g.fillStyle=op?'#e9eef6':'#8a97ab';g.fillText(c.name,lx,side?y+2:y-16);
+    g.font="italic 800 16px 'Saira Condensed',sans-serif";g.textBaseline='top';g.fillStyle=op?'#3fd7ff':'#5a6678';g.fillText(c.id==='kr'?'ROOKIE':c.id==='jp'?'PRO':c.id==='us'?'MASTER':c.id==='de'?'ELITE':'LEGEND',lx,side?y+4:y+14)});
 }
 function evRow(e,i){
   const open=eventOpen(e),c=save.career[e.id],my=carStats(save.cur).pr;
   return`<button type="button" class="ev" data-act="event" data-v="${e.id}" ${open?'':'disabled'}><span class="ix">${String(i+1).padStart(2,'0')}</span><span class="n">${esc(e.name)}</span><span class="st"><span class="stars">${starRow(starsOf(e.id))}</span><span class="m">권장 PR <b class="${my>=e.rec?'good':my>=e.rec*0.9?'warnc':'badc'}">${e.rec}</b></span></span><span class="m">${open?esc(e.sub)+(c?` · 최고 ${c.place}위`:''):'이전 레이스 3위 안에 들면 열려'}</span></button>`;
 }
 function renderLeague(){
-  const ts=totalStars(),fo=eventOpen(FINAL),fc=save.career.kf;
-  $('#pLeague').innerHTML=`<div class="lhead"><button class="btn sm" type="button" data-act="world">◂ 월드맵</button><h2>대한민국 · 루키 리그</h2>
-    <div class="prog"><div class="bar"><i style="width:${ts/MAXSTARS*100}%"></i>${[5,12,20].map(n=>`<u style="left:${n/MAXSTARS*100}%"></u>`).join('')}</div><small>트로피 ${ts}/${MAXSTARS} · 부산 5개, 제주 12개, 챔피언십 20개에 열려</small></div></div>
-    <div class="cities">${CITIES.map(c=>{const o=cityOpen(c);return`<div class="city ${o?'':'locked'}"><div class="hd"><b>${c.name}</b><small>${o?esc(c.sub):'★ '+c.need+'개 필요'}</small></div>${c.events.map(evRow).join('')}</div>`}).join('')}</div>
-    <div class="final ${fo?'':'locked'}"><div><h3>리그 최종전 · ${FINAL.laps}랩</h3><b>${FINAL.name}</b><p class="keys">${fo?esc(FINAL.sub)+` · 권장 PR ${FINAL.rec} · 1위 상금 ${won(FINAL.prize)}`:'트로피 20개를 모으면 열려'}${fc?` · 최고 ${fc.place}위`:''}</p></div><div class="stars" style="font-size:22px">${starRow(starsOf('kf'))}</div><button class="btn primary" type="button" data-act="event" data-v="kf" ${fo?'':'disabled'}>도전 ▸</button></div>`;
+  const lg=LEAGUES[curLeague],F=lg.final,ts=leagueStars(lg.id),mx=leagueMax(lg.id),fo=eventOpen(F),fc=save.career[F.id];
+  $('#pLeague').innerHTML=`<div class="lhead"><button class="btn sm" type="button" data-act="world">◂ 월드맵</button><h2>${lg.name} · ${lg.tier}</h2>
+    <div class="prog"><div class="bar"><i style="width:${ts/mx*100}%"></i>${[...lg.cities.slice(1).map(c=>c.need),F.need].map(n=>`<u style="left:${n/mx*100}%"></u>`).join('')}</div><small>트로피 ${ts}/${mx} · ${lg.cities.slice(1).map(c=>c.name+' '+c.need+'개').join(', ')}, 최종전 ${F.need}개에 열려</small></div></div>
+    <div class="cities">${lg.cities.map(c=>{const o=cityOpen(c);return`<div class="city ${o?'':'locked'}"><div class="hd"><b>${c.name}</b><small>${o?esc(c.sub):'★ '+c.need+'개 필요'}</small></div>${c.events.map(evRow).join('')}</div>`}).join('')}</div>
+    <div class="final ${fo?'':'locked'}"><div><h3>리그 최종전 · ${F.laps}랩</h3><b>${F.name}</b><p class="keys">${fo?esc(F.sub)+` · 권장 PR ${F.rec} · 1위 상금 ${won(F.prize)}`:`트로피 ${F.need}개를 모으면 열려`}${fc?` · 최고 ${fc.place}위`:''}</p></div><div class="stars" style="font-size:22px">${starRow(starsOf(F.id))}</div><button class="btn primary" type="button" data-act="event" data-v="${F.id}" ${fo?'':'disabled'}>도전 ▸</button></div>`;
 }
 function statRows(id){
   const s=carStats(id);
-  const rows=[['최고속도',Math.round(s.top)+' km/h',s.top/450],['니트로 최고',Math.round(s.top*s.nitroPow)+' km/h',s.top*s.nitroPow/680],['0→200 km/h',s.t200.toFixed(2)+'초',1.6/s.t200],['코너 접지',s.grip.toFixed(2)+'×',s.grip/2],['드리프트 감속',Math.round(s.drift*100)+'%',1.15-s.drift],['고속 밀림',Math.round(s.aero*100)+'%',1.15-s.aero]];
+  const rows=[['최고속도',Math.round(s.top)+' km/h',s.top/450],['니트로 최고',Math.round(s.top*s.nitroPow)+' km/h',s.top*s.nitroPow/680],['0→200 km/h',s.t200.toFixed(2)+'초',1.6/s.t200],['코너 접지',s.grip.toFixed(2)+'×',s.grip/2],['드리프트 감속',Math.round(s.drift*100)+'%',1.15-s.drift],['고속 밀림',Math.round(s.aero*100)+'%',1.15-s.aero],['타이어 마모',Math.round(s.wear*100)+'%',1.15-s.wear]];
   return rows.map(r=>`<dt>${r[0]}</dt><dd><div class="meter"><i style="width:${Math.round(clamp(r[2],0.03,1)*100)}%"></i></div></dd><dd class="val">${r[1]}</dd>`).join('');
 }
 function ownedChips(act){return`<div class="chips">${Object.keys(save.owned).map(id=>`<button type="button" data-act="${act}" data-v="${id}" aria-pressed="${id===save.cur}">${esc(CAR[id].name)}</button>`).join('')}</div>`}
@@ -1014,21 +1333,43 @@ function studio(g,w,h){const bg=g.createLinearGradient(0,0,0,h);bg.addColorStop(
 function drawGarageCar(){const cvs=$('#gCar');if(!cvs)return;const g=cvs.getContext('2d');studio(g,cvs.width,cvs.height);drawCarSide(g,cvs.width/2,cvs.height*0.86,cvs.width*0.74,myLook());g.font="italic 800 22px 'Saira Condensed','IBM Plex Sans KR',sans-serif";g.fillStyle='rgba(233,238,246,.45)';g.textAlign='left';g.textBaseline='alphabetic';g.fillText(save.owned[save.cur].plate||'',16,30)}
 function renderShow(){
   if(!showBrand){
-    $('#pShow').innerHTML=`<h2>쇼룸</h2><p class="keys">제조사를 골라.</p><div class="brands">${BRANDS.map(b=>{const list=CARS.filter(c=>c.brand===b.id),own=list.filter(c=>save.owned[c.id]).length,openN=list.filter(c=>OPENCLS.includes(c.cls)||save.owned[c.id]).length;
-      return`<button type="button" class="brand-t ${openN?'':'lockb'}" data-act="brand" data-v="${b.id}"><canvas width="560" height="220" data-bcar="${list[list.length-1].id}"></canvas><span class="bd"><span class="bn">${b.name}</span><span class="bs">${b.sub}</span><span class="bm"><span>${list.length}대 · 보유 ${own}대</span>${openN?'<span class="btn sm primary">둘러보기 ▸</span>':'<span class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>전부 잠김</span>'}</span></span></button>`}).join('')}</div>`;
+    $('#pShow').innerHTML=`<h2>쇼룸</h2><p class="keys">제조사를 골라.</p><div class="brands">${BRANDS.map(b=>{const list=CARS.filter(c=>c.brand===b.id),own=list.filter(c=>save.owned[c.id]).length;
+      return`<button type="button" class="brand-t" data-act="brand" data-v="${b.id}"><canvas width="560" height="220" data-bcar="${list[list.length-1].id}"></canvas><span class="bd"><span class="bn">${b.name}</span><span class="bs">${b.sub}</span><span class="bm"><span>${list.length}대 · 보유 ${own}대</span><span class="btn sm primary">둘러보기 ▸</span></span></span></button>`}).join('')}</div>`;
     document.querySelectorAll('#pShow canvas[data-bcar]').forEach(cvs=>{const id=cvs.dataset.bcar,g=cvs.getContext('2d'),st=save.owned[id]||newCar(id);studio(g,cvs.width,cvs.height);drawCarSide(g,cvs.width/2,cvs.height*0.86,cvs.width*0.76,{body:CAR[id].body,color:st.paint.color,finish:st.paint.finish,sticker:st.sticker.style,stickColor:st.sticker.color,wheel:st.wheel.style,rim:st.wheel.color})});
     return;
   }
   const B0=BRANDS.find(b=>b.id===showBrand);
-  $('#pShow').innerHTML=`<div class="showhead"><button class="btn sm" type="button" data-act="brandback">◂ 제조사</button><h2>${B0.name}</h2><span class="keys">${B0.sub}</span></div>${['D','C','B','A','S'].map(cl=>{const list=CARS.filter(c=>c.cls===cl&&c.brand===showBrand);if(!list.length)return'';const open=OPENCLS.includes(cl);return`<div class="sec"><h3><span class="cls ${cl}">${cl}</span>&nbsp; ${cl}등급 · ${list.length}대${open?'':' · 잠김'}</h3><div class="cars">${list.map(c=>{const own=!!save.owned[c.id],cur=save.cur===c.id,lk=!own&&!OPENCLS.includes(c.cls),s=carStats(c.id,own?undefined:newCar(c.id));
+  $('#pShow').innerHTML=`<div class="showhead"><button class="btn sm" type="button" data-act="brandback">◂ 제조사</button><h2>${B0.name}</h2><span class="keys">${B0.sub}</span></div>${['D','C','B','A','S'].map(cl=>{const list=CARS.filter(c=>c.cls===cl&&c.brand===showBrand);if(!list.length)return'';return`<div class="sec"><h3><span class="cls ${cl}">${cl}</span>&nbsp; ${cl}등급 · ${list.length}대</h3><div class="cars">${list.map(c=>{const own=!!save.owned[c.id],cur=save.cur===c.id,lk=!own&&carLocked(c),s=carStats(c.id,own?undefined:newCar(c.id));
     return`<div class="car ${cur?'cur':''} ${lk?'locked':''}"><canvas width="500" height="220" data-car="${c.id}"></canvas><div class="bd"><div class="nm"><span class="cls ${c.cls}">${c.cls}</span><b>${esc(c.name)}</b><span class="pr" style="margin-left:auto">PR <b style="font-size:20px">${s.pr}</b></span></div><p class="ds">${esc(c.desc)}</p>
     <div class="kv"><span>최고속도<b>${Math.round(s.top)}</b></span><span>0→200<b>${s.t200.toFixed(1)}s</b></span><span>접지<b>${s.grip.toFixed(2)}</b></span></div>
-    <div class="ft"><span class="price">${own?'보유 중':c.price?won(c.price)+' CR':'기본 지급'}</span>${lk?'<span class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>잠김</span>':cur?'<span class="keys">타는 중</span>':own?`<button class="btn sm" type="button" data-act="usecar" data-v="${c.id}">이 차 타기</button>`:`<button class="btn buy" type="button" data-act="buycar" data-v="${c.id}" ${save.money<c.price?'disabled':''}>구매</button>`}</div></div></div>`}).join('')}</div></div>`}).join('')}`;
+    <div class="ft"><span class="price">${own?'보유 중':c.price?won(c.price)+' CR':'기본 지급'}</span>${lk?`<span class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Lv ${c.reqLv} 필요</span>`:cur?'<span class="keys">타는 중</span>':own?`<button class="btn sm" type="button" data-act="usecar" data-v="${c.id}">이 차 타기</button>`:`<button class="btn buy" type="button" data-act="buycar" data-v="${c.id}" ${save.money<c.price?'disabled':''}>구매</button>`}</div></div></div>`}).join('')}</div></div>`}).join('')}`;
   document.querySelectorAll('#pShow canvas[data-car]').forEach(cvs=>{const id=cvs.dataset.car,g=cvs.getContext('2d'),st=save.owned[id]||newCar(id);studio(g,cvs.width,cvs.height);drawCarSide(g,cvs.width/2,cvs.height*0.85,cvs.width*0.8,{body:CAR[id].body,color:st.paint.color,finish:st.paint.finish,sticker:st.sticker.style,stickColor:st.sticker.color,wheel:st.wheel.style,rim:st.wheel.color})});
 }
 function renderShop(){
   $('#pShop').innerHTML=`<p class="keys">특수 부품은 같은 종류 부품 칸에 끼울 수 있어. 칸은 차고에서 부품을 LV2, LV4, LV6까지 강화하면 열려. 레이스에서 좋은 순위를 하면 가끔 공짜로 떨어져.</p>
   <div class="shop">${PARTS.map(p=>`<div class="pgrp"><h4>${p.name}</h4>${SPECIALS.filter(s=>s.cat===p.k).map(s=>`<div class="pitem"><span class="n"><span class="rar r${s.rar}">${RAR[s.rar].name}</span> ${esc(s.name)}</span><span class="e">${s.eff} · 보유 ${save.inv[s.id]||0}개</span><button class="btn buy sm" type="button" data-act="buyitem" data-v="${s.id}" ${save.money<RAR[s.rar].price?'disabled':''}>${won(RAR[s.rar].price)}</button></div>`).join('')}</div>`).join('')}</div>`;
+}
+function renderModes(){
+  const nTracks=Object.keys(EVENTS).length;
+  $('#pMode').innerHTML=`<h2>레이스</h2><p class="keys">모드를 골라.</p><div class="modes">
+    <button type="button" class="mode" data-act="career"><span class="mk">CAREER</span><b>커리어 모드</b><p>월드 투어를 돌면서 나라별 리그를 깨고 다음 나라로 가. 트로피를 모으면 새 도시랑 최종전이 열려.</p><span class="meta"><span class="stars">트로피 ${totalStars()} / ${MAXSTARS}</span><span class="btn sm primary">시작 ▸</span></span></button>
+    <button type="button" class="mode fr" data-act="free"><span class="mk">FREE RACE</span><b>자유 모드</b><p>트랙, 랩 수, 상대 수, 난이도를 마음대로 정해서 달려. 잠긴 트랙도 전부 달릴 수 있어. 대신 상금은 적고 트로피는 없어.</p><span class="meta"><span class="keys">트랙 ${nTracks}개</span><span class="btn sm buy">시작 ▸</span></span></button></div>`;
+}
+function renderFree(){
+  const F=save.free,ev=EVENTS[F.ev],fb=save.freeBest[F.ev+'-'+F.laps];
+  const chip=(k,v,l)=>`<button type="button" data-act="fset" data-v="${k}:${v}" aria-pressed="${String(F[k])===String(v)}">${l}</button>`;
+  const groups=Object.values(LEAGUES).map(lg=>`<div class="lgroup"><h3>${lg.name} · ${lg.tier}</h3>${[...lg.cities.map(c=>({name:c.name,evs:c.events})),{name:'최종전',evs:[lg.final]}].map(g=>`<div class="fcity"><b>${g.name}</b><div class="ftracks">${g.evs.map(e=>`<button type="button" class="ftrack" data-act="freeev" data-v="${e.id}" aria-pressed="${e.id===F.ev}"><b>${esc(e.name)}</b><small>${trackKm(e).toFixed(1)} km · 접지 ${e.grip.toFixed(2)}</small></button>`).join('')}</div></div>`).join('')}</div>`).join('');
+  $('#pFree').innerHTML=`<div class="lhead"><button class="btn sm" type="button" data-act="modes">◂ 모드 선택</button><h2>자유 모드</h2><span class="keys">원하는 트랙을 골라서 마음대로 달려.</span></div>
+  <div class="freegrid"><div class="sec">${groups}</div>
+  <div class="bay fset"><h3>${esc(ev.city.name)}${ev.final?' · 최종전':''}</h3><b class="fname">${esc(ev.name)}</b><span class="keys">${esc(ev.sub)} · ${trackKm(ev).toFixed(1)} km</span>
+    <div class="sec"><h3>랩 수</h3><div class="sub">${[1,2,3,4,5].map(n=>chip('laps',n,n+'랩')).join('')}</div></div>
+    <div class="sec"><h3>상대</h3><div class="sub">${[[0,'없음 (타임 어택)'],[3,'3대'],[5,'5대'],[7,'7대']].map(([n,l])=>chip('opp',n,l)).join('')}</div></div>
+    <div class="sec"><h3>난이도</h3><div class="sub">${[['easy','쉬움'],['normal','보통'],['hard','어려움']].map(([n,l])=>chip('diff',n,l)).join('')}</div></div>
+    <div class="sec"><h3>차</h3>${ownedChips('freecar')}</div>
+    <div class="sec"><h3>타이어</h3><div class="sub">${Object.entries(TIRES).map(([k,t])=>`<button type="button" data-act="freetire" data-v="${k}" aria-pressed="${k===tire}">${t.name}</button>`).join('')}</div></div>
+    <div class="prepgrid two"><div><small>내 차 PR</small><b>${carStats(save.cur).pr}</b></div><div><small>최고 기록 (${F.laps}랩)</small><b>${fb?fmt(fb):'-'}</b></div></div>
+    <button class="btn primary" type="button" data-act="freestart">출발 ▸</button>
+    <p class="keys">상금은 커리어의 40%${F.opp<7?'이고, 상대가 적을수록 더 줄어':''}. 트로피는 없어.</p></div></div>`;
 }
 function renderPrep(){
   const ev=EVENTS[save.ev],s=carStats(save.cur),km=trackKm(ev),cls=s.pr>=ev.rec?'good':s.pr>=ev.rec*0.9?'warnc':'badc';
@@ -1041,41 +1382,129 @@ function renderPrep(){
     <p class="keys"><kbd>←</kbd> <kbd>→</kbd> 핸들 · <kbd>↓</kbd> 브레이크 (핸들이랑 같이 누르면 드리프트) · <kbd>Space</kbd> 니트로 · <kbd>Esc</kbd> 일시정지. 드리프트하거나 아슬아슬하게 추월하면 니트로가 차.</p>`;
 }
 
+function ctrlHTML(){return`<div class="ctrl">
+    <span style="grid-column:1/-1;color:var(--muted);font-size:12px;letter-spacing:.1em">키보드</span>
+    <span><kbd>←</kbd> <kbd>→</kbd> 또는 <kbd>A</kbd> <kbd>D</kbd></span><span>핸들</span>
+    <span><kbd>↓</kbd> 또는 <kbd>S</kbd></span><span>브레이크. 핸들이랑 같이 누르면 드리프트</span>
+    <span><kbd>Space</kbd> <kbd>↑</kbd> <kbd>Shift</kbd></span><span>니트로</span>
+    <span><kbd>Esc</kbd> 또는 <kbd>P</kbd></span><span>일시정지</span>
+    <span style="grid-column:1/-1;color:var(--muted);font-size:12px;letter-spacing:.1em;margin-top:6px">터치 (폰 · 태블릿)</span>
+    <span><kbd>◀</kbd> <kbd>▶</kbd></span><span>핸들 (왼쪽 아래)</span>
+    <span><kbd>브레이크</kbd></span><span>브레이크. ◀ ▶랑 같이 누르면 드리프트 (오른쪽 아래)</span>
+    <span><kbd>니트로</kbd></span><span>누르고 있는 동안 니트로 (오른쪽 아래 큰 버튼)</span>
+    <span><kbd>II</kbd></span><span>일시정지 (오른쪽 위)</span>
+    <span style="grid-column:1/-1;color:var(--muted);font-size:13px;margin-top:6px">드리프트하거나 다른 차를 아슬아슬하게 추월하면 니트로가 차. 폰은 가로로 눕히는 게 편해.</span>
+  </div>`}
 function renderSettings(){
   const st=save.settings,opt=(k,v,label)=>`<button type="button" data-act="set" data-v="${k}:${v}" aria-pressed="${String(st[k])===String(v)}">${label}</button>`;
   $('#pSet').innerHTML=`<h2>설정</h2>
   <div class="setlist">
     <div class="setrow"><div><b>소리</b><small>레이스 중 엔진 소리</small></div><div class="sub">${opt('sound',true,'켜짐')}${opt('sound',false,'꺼짐')}</div></div>
     <div class="setrow"><div><b>화면 흔들림</b><small>부딪힐 때 화면이 흔들려</small></div><div class="sub">${opt('shake',true,'켜짐')}${opt('shake',false,'꺼짐')}</div></div>
-    <div class="setrow"><div><b>그래픽 품질</b><small>느리면 보통으로 바꿔 봐. 시야 거리랑 해상도가 줄어.</small></div><div class="sub">${opt('quality','high','높음')}${opt('quality','normal','보통')}</div></div>
+    <div class="setrow"><div><b>그래픽 품질</b><small>울트라는 해상도·시야 거리·반사 효과가 최고. 느리면 낮춰 봐.</small></div><div class="sub">${opt('quality','normal','보통')}${opt('quality','high','높음')}${opt('quality','ultra','울트라')}</div></div>
   </div>
-  <div class="sec"><h3>조작법</h3><div class="ctrl">
-    <span><kbd>←</kbd> <kbd>→</kbd> 또는 <kbd>A</kbd> <kbd>D</kbd></span><span>핸들</span>
-    <span><kbd>↓</kbd> 또는 <kbd>S</kbd></span><span>브레이크. 핸들이랑 같이 누르면 드리프트</span>
-    <span><kbd>Space</kbd> <kbd>↑</kbd> <kbd>Shift</kbd></span><span>니트로</span>
-    <span><kbd>Esc</kbd> 또는 <kbd>P</kbd></span><span>일시정지</span>
-    <span>폰</span><span>화면 아래 버튼으로 조작해. 가로로 눕히는 게 편해.</span>
-  </div></div>
-  <div class="danger"><div><b>세이브 초기화</b><p class="keys">상금, 산 차, 튜닝, 특수 부품, 리그 기록이 전부 지워지고 처음부터 시작해.</p></div>
+  <div class="sec"><h3>조작법</h3>${ctrlHTML()}</div>
+  <div class="danger"><div><b>세이브 초기화</b><p class="keys">이 프로필의 상금, 산 차, 튜닝, 특수 부품, 리그 기록, 레벨이 전부 지워지고 처음부터 시작해. 프로필이랑 비밀번호는 남아.</p></div>
     ${resetAsk?`<div class="cta" style="justify-content:flex-start"><b class="badc">정말 지울까? 되돌릴 수 없어.</b><button class="btn red sm" type="button" data-act="resetyes">전부 지우기</button><button class="btn sm" type="button" data-act="resetno">취소</button></div>`:`<div><button class="btn sm" type="button" data-act="reset">초기화</button></div>`}</div>
-  <p class="keys">OVERDRIVE v0.3 · 한국 리그 · 저장 데이터는 이 브라우저에만 남아.</p>`;
+  <p class="keys">OVERDRIVE v0.4 · 한국 리그 · 로그인한 프로필에 자동 저장돼.</p>`;
 }
+
+function ago(t){if(!t)return'-';const d=(Date.now()-t)/1000;if(d<60)return'방금';if(d<3600)return Math.floor(d/60)+'분 전';if(d<86400)return Math.floor(d/3600)+'시간 전';return Math.floor(d/86400)+'일 전'}
+function avPicker(sel,act){return`<div class="avpick">${AVATARS.map((a,i)=>`<button type="button" data-act="${act}" data-v="${i}" aria-pressed="${i===sel}" style="${i===sel?'border-color:'+AVCOL[i]:''}">${a}</button>`).join('')}</div>`}
+function renderLogin(){
+  const ids=accounts.order.filter(id=>accounts.users[id]);let h='';
+  if(loginMode==='list'&&!ids.length)loginMode='new';
+  if(loginMode==='list'){
+    h=`<h2>프로필 선택</h2><div class="ulist">${ids.map(id=>{const u=accounts.users[id],sv=lsGet(saveKey(id)),L=lvInfo(sv&&sv.xp||0);return`<button type="button" class="ucard" data-act="pickuser" data-v="${id}">${avHTML(u)}<span style="flex:1;min-width:0"><b>${esc(u.nick)}</b><small>Lv ${L.lv} · 마지막 플레이 ${ago(u.last)}</small></span><span class="btn sm">▸</span></button>`}).join('')}</div>
+    <div class="cta" style="justify-content:flex-start"><button class="btn" type="button" data-act="loginnew">+ 새 프로필</button></div><div class="guestlink"><button class="btn" type="button" data-act="guest">로그인 없이 둘러보기 ▸</button><span class="keys">프로필 없이 바로 해 볼 수 있어. 대신 아무것도 저장되지 않아.</span></div>`;
+  }else if(loginMode==='pw'){
+    const u=accounts.users[loginPick];
+    h=`<form class="fbox" data-form="login"><div class="ucard" style="cursor:default;padding:0;border:0;background:none">${avHTML(u,true)}<span><b style="font-size:24px">${esc(u.nick)}</b><small>비밀번호를 입력해</small></span></div>
+      <div class="field"><label for="pwIn">비밀번호</label><input id="pwIn" type="password" autocomplete="current-password" required></div>
+      <div class="err">${esc(loginErr)}</div>
+      <div class="cta" style="justify-content:space-between"><button class="btn sm" type="button" data-act="loginlist">◂ 다른 프로필</button><button class="btn primary" type="submit">로그인 ▸</button></div></form>`;
+  }else{
+    const legacy=lsGet(LEGACY_KEY),canImport=legacy&&legacy.owned&&!accounts.legacyImported;
+    h=`<form class="fbox" data-form="create"><h2>새 프로필 만들기</h2>
+      <div class="field"><label for="nickIn">닉네임 (2~10글자)</label><input id="nickIn" maxlength="10" autocomplete="nickname" required></div>
+      <div class="field"><label>아이콘</label>${avPicker(newIcon,'newicon')}<div class="sub" id="photoBox" style="margin-top:8px;align-items:center">${photoBoxHTML(newPhoto)}</div></div>
+      <div class="field"><label for="pw1">비밀번호 (4글자 이상)</label><input id="pw1" type="password" autocomplete="new-password" required></div>
+      <div class="field"><label for="pw2">비밀번호 확인</label><input id="pw2" type="password" autocomplete="new-password" required></div>
+      ${guestSave?`<label class="check"><input id="impGuest" type="checkbox" checked> 둘러보기에서 한 거 이어서 하기 (상금 ${won(guestSave.money)} CR)</label>`:canImport?`<label class="check"><input id="impIn" type="checkbox" checked> 예전에 하던 게임 이어서 하기 (상금 ${won(legacy.money||0)} CR)</label>`:''}
+      <div class="err">${esc(loginErr)}</div>
+      <p class="keys">비밀번호는 잊어버리면 찾을 수 없어. 꼭 기억해 둬.</p>
+      <div class="cta" style="justify-content:space-between">${ids.length?'<button class="btn sm" type="button" data-act="loginlist">◂ 프로필 목록</button>':'<span></span>'}<button class="btn primary" type="submit">만들기 ▸</button></div></form>${guestSave?'':'<div class="guestlink"><button class="btn" type="button" data-act="guest">로그인 없이 둘러보기 ▸</button><span class="keys">프로필 없이 바로 해 볼 수 있어. 대신 아무것도 저장되지 않아.</span></div>'}`;
+  }
+  $('#loginBody').innerHTML=h;
+  const f=$('#loginBody input');if(f&&matchMedia('(pointer:fine)').matches)f.focus();
+}
+function showLogin(){uid=null;guest=false;save=normalize(null);loginErr='';delAsk=false;newPhoto=null;attract();renderLogin();show('sLogin')}
+function startSession(){raceMode=null;curLeague='kr';tire=save.tire||'medium';DRAW=qDraw();syncMute();resize();leagueOpen=false;showBrand=null;attract();show('sHub');setTab('world')}
+function enterGuest(){uid=null;guest=true;guestSave=null;save=normalize(null);startSession()}
+function enterGame(id){
+  guest=false;uid=id;try{sessionStorage.setItem(SESS_KEY,id)}catch(e){}
+  accounts.users[id].last=Date.now();saveAccounts();
+  save=normalize(lsGet(saveKey(id)));tire=save.tire||'medium';DRAW=qDraw();syncMute();resize();
+  persist();leagueOpen=false;showBrand=null;attract();show('sHub');setTab('world');
+}
+function renderProfile(){
+  if(guest){$('#pProf').innerHTML=`<div class="profhead"><span class="av big" style="--avc:var(--warn)">👀</span><div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span class="nm">게스트</span><span class="keys">둘러보기 중이야. 여기서 한 레이스, 산 차, 튜닝은 저장되지 않아.<br>프로필을 만들면 지금까지 한 걸 그대로 이어서 할 수 있어.</span></div></div>
+    <div class="cta" style="justify-content:flex-start"><button class="btn primary" type="button" data-act="guestsignup">프로필 만들고 이어하기 ▸</button><button class="btn" type="button" data-act="logout">둘러보기 끝내기</button></div>`;return}
+  const u=me(),L=lvInfo(save.xp),S=save.stats,wr=S.races?Math.round(S.wins/S.races*100):0;
+  $('#pProf').innerHTML=`<div class="profhead">${avHTML(u,true)}
+    <div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span class="nm">${esc(u.nick)}</span><span class="keys">레이서 레벨 <b style="color:var(--fg)">Lv ${L.lv}</b> · 다음 레벨까지 ${L.need-L.cur} XP</span><div class="xpbar"><i style="width:${L.cur/L.need*100}%"></i></div></div>
+    <span class="keys" style="margin-left:auto">자동 저장됨 · ${ago(lastSaved)}</span></div>
+  <div class="sec"><h3>기록</h3><div class="statgrid">
+    <div><small>레이스</small><b>${S.races}</b></div><div><small>우승</small><b>${S.wins}</b></div><div><small>3위 안</small><b>${S.podiums}</b></div><div><small>우승률</small><b>${wr}%</b></div>
+    <div><small>번 상금</small><b>${won(S.earned)}</b></div><div><small>최고 속도</small><b>${S.topSpeed} km/h</b></div><div><small>달린 거리</small><b>${S.km.toFixed(1)} km</b></div><div><small>보유 차</small><b>${Object.keys(save.owned).length}대</b></div>
+    <div><small>트로피</small><b>${totalStars()}/${MAXSTARS}</b></div><div><small>시작한 날</small><b style="font-size:20px">${new Date(S.started).toLocaleDateString('ko-KR')}</b></div></div></div>
+  ${profMsg?`<div class="okmsg">${esc(profMsg)}</div>`:''}
+  <div class="twocol">
+    <form class="fbox" data-form="nick"><h3>닉네임 · 아이콘</h3><div class="field"><label for="nickEd">닉네임</label><input id="nickEd" maxlength="10" value="${esc(u.nick)}"></div>${avPicker(u.icon,'seticon')}<div class="sub" style="margin-top:4px"><button type="button" class="btn sm" data-act="photoset">📷 사진 올리기</button>${u.photo?'<button type="button" class="btn sm" data-act="photoclr">사진 빼기</button>':''}</div><div class="cta"><button class="btn sm buy" type="submit">닉네임·아이콘 저장</button></div></form>
+    <form class="fbox" data-form="pw"><h3>비밀번호 바꾸기</h3><div class="field"><label for="pwOld">지금 비밀번호</label><input id="pwOld" type="password" autocomplete="current-password"></div><div class="field"><label for="pwNew">새 비밀번호 (4글자 이상)</label><input id="pwNew" type="password" autocomplete="new-password"></div><div class="err" id="pwErr"></div><div class="cta"><button class="btn sm buy" type="submit">바꾸기</button></div></form>
+  </div>
+  <div class="cta" style="justify-content:flex-start"><button class="btn" type="button" data-act="logout">로그아웃</button></div>
+  <div class="danger"><div><b>프로필 삭제</b><p class="keys">이 프로필이랑 세이브가 전부 지워져. 비밀번호가 필요해.</p></div>
+    ${delAsk?`<form data-form="del" class="cta" style="justify-content:flex-start"><div class="field" style="flex:1;min-width:180px"><input id="pwDel" type="password" placeholder="비밀번호" aria-label="비밀번호"></div><button class="btn red sm" type="submit">삭제</button><button class="btn sm" type="button" data-act="delno">취소</button><span class="err" id="delErr"></span></form>`:`<div><button class="btn sm" type="button" data-act="delask">프로필 삭제</button></div>`}</div>
+  <p class="keys">프로필이랑 세이브는 이 브라우저 안에만 저장돼. 다른 기기나 다른 브라우저에서는 보이지 않아.</p>`;
+}
+document.addEventListener('submit',e=>{
+  const f=e.target.closest('form[data-form]');if(!f)return;e.preventDefault();const k=f.dataset.form,v=id=>($('#'+id)||{}).value||'';
+  if(k==='login'){const u=accounts.users[loginPick];if(hashPw(v('pwIn'),u.salt)===u.hash){loginErr='';enterGame(loginPick)}else{loginErr='비밀번호가 틀렸어.';renderLogin()}}
+  else if(k==='create'){const nick=v('nickIn').trim(),p1=v('pw1'),p2=v('pw2');
+    loginErr=nick.length<2?'닉네임은 2글자 이상이어야 해.':Object.values(accounts.users).some(u=>u.nick===nick)?'이미 있는 닉네임이야.':p1.length<4?'비밀번호는 4글자 이상이어야 해.':p1!==p2?'비밀번호 두 개가 서로 달라.':'';
+    if(loginErr){const keep={nick,icon:newIcon};renderLogin();$('#nickIn').value=keep.nick;return}
+    const id='u'+Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36),salt=Math.random().toString(36).slice(2)+Date.now().toString(36);
+    accounts.users[id]={nick,icon:newIcon,photo:newPhoto||null,salt,hash:hashPw(p1,salt),created:Date.now(),last:Date.now()};accounts.order.push(id);newPhoto=null;
+    let start=null;const imp=$('#impIn'),ig=$('#impGuest');if(ig&&ig.checked&&guestSave)start=guestSave;else if(imp&&imp.checked){start=lsGet(LEGACY_KEY);accounts.legacyImported=true}guestSave=null;
+    saveAccounts();lsSet(saveKey(id),normalize(start));enterGame(id)}
+  else if(k==='nick'){const nick=v('nickEd').trim(),u=me();if(nick.length<2){profMsg='닉네임은 2글자 이상이어야 해.'}else if(Object.entries(accounts.users).some(([i,x])=>i!==uid&&x.nick===nick)){profMsg='이미 있는 닉네임이야.'}else{u.nick=nick;saveAccounts();profMsg='닉네임을 저장했어.'}renderTop();renderProfile()}
+  else if(k==='pw'){const u=me();if(hashPw(v('pwOld'),u.salt)!==u.hash){$('#pwErr').textContent='지금 비밀번호가 틀렸어.';return}if(v('pwNew').length<4){$('#pwErr').textContent='새 비밀번호는 4글자 이상이어야 해.';return}u.salt=Math.random().toString(36).slice(2);u.hash=hashPw(v('pwNew'),u.salt);saveAccounts();profMsg='비밀번호를 바꿨어.';renderProfile()}
+  else if(k==='del'){const u=me();if(hashPw(v('pwDel'),u.salt)!==u.hash){$('#delErr').textContent='비밀번호가 틀렸어.';return}
+    delete accounts.users[uid];accounts.order=accounts.order.filter(x=>x!==uid);saveAccounts();try{localStorage.removeItem(saveKey(uid));sessionStorage.removeItem(SESS_KEY)}catch(_){}loginMode='list';showLogin()}
+});
 
 /* ---------- actions */
 const curSt=()=>save.owned[save.cur];
 function cosChanged(){persist();LOOK=myLook();renderGarage()}
 const ACT={
-  tab:v=>{if(v==='show')showBrand=null;setTab(v)},
+  tab:v=>{if(v==='show')showBrand=null;if(v==='world'&&tab==='world')raceMode=null;setTab(v)},
+  modes:()=>{raceMode=null;setTab('world')},career:()=>{raceMode='career';leagueOpen=false;setTab('world')},free:()=>{raceMode='free';attract(EVENTS[save.free.ev]);setTab('world')},
+  freeev:v=>{save.free.ev=v;persist();attract(EVENTS[v]);renderFree()},
+  fset:v=>{const[k,val]=v.split(':');save.free[k]=k==='diff'?val:+val;persist();renderFree()},
+  freecar:v=>{save.cur=v;persist();attract(EVENTS[save.free.ev]);renderFree()},freetire:v=>{tire=v;save.tire=v;persist();renderFree()},
+  freestart:()=>{raceKind='free';startRace()},
+  freeback:()=>{raceMode='free';attract(EVENTS[save.free.ev]);show('sHub');setTab('world')},
   brand:v=>{showBrand=v;renderShow();$('#sHub').scrollTop=0},brandback:()=>{showBrand=null;renderShow()},
   world:()=>{leagueOpen=false;setTab('world')},
-  league:()=>{leagueOpen=true;setTab('world')},
-  event:v=>{save.ev=v;persist();attract(EVENTS[v]);renderPrep();show('sPrep');$('#sPrep').scrollTop=0},
-  hub:()=>{leagueOpen=true;attract();show('sHub');setTab('world')},
+  league:v=>{curLeague=v||'kr';leagueOpen=true;setTab('world')},
+  event:v=>{save.ev=v;curLeague=EVENTS[v].league;persist();attract(EVENTS[v]);renderPrep();show('sPrep');$('#sPrep').scrollTop=0},
+  hub:()=>{raceMode='career';leagueOpen=true;curLeague=(EVENTS[save.ev]||{}).league||'kr';attract();show('sHub');setTab('world')},
   tire:v=>{tire=v;save.tire=v;persist();renderPrep()},
   prepcar:v=>{save.cur=v;persist();attract();renderPrep()},
   usecar:v=>{save.cur=v;persist();attract();renderAll()},
-  start:startRace,again:startRace,
-  resume:()=>resume(),quit:()=>ACT.hub(),
+  start:()=>{raceKind='career';startRace()},again:()=>startRace(),
+  resume:()=>resume(),quit:()=>raceKind==='free'?ACT.freeback():ACT.hub(),
   gtab:v=>{gTab=v;picking=null;renderGarage()},
   upg:v=>{const st=curSt(),lv=st.lv[v],c=tuneCost(save.cur,lv);if(lv>=MAXLV||save.money<c)return;save.money-=c;st.lv[v]=lv+1;persist();PST=carStats(save.cur);renderAll()},
   slot:v=>{const[cat,i]=v.split(':');picking=picking&&picking.cat===cat&&picking.i===+i?null:{cat,i:+i};renderGarage()},
@@ -1084,11 +1513,23 @@ const ACT={
   paint:v=>{curSt().paint.color=v;cosChanged()},finish:v=>{curSt().paint.finish=v;cosChanged()},
   wheel:v=>{curSt().wheel.style=v;cosChanged()},rim:v=>{curSt().wheel.color=v;cosChanged()},
   sticker:v=>{curSt().sticker.style=v;cosChanged()},stcol:v=>{curSt().sticker.color=v;cosChanged()},
-  buycar:v=>{const c=CAR[v];if(save.owned[v]||save.money<c.price||!OPENCLS.includes(c.cls))return;save.money-=c.price;save.owned[v]=newCar(v);save.cur=v;persist();attract();renderAll()},
+  buycar:v=>{const c=CAR[v];if(save.owned[v]||save.money<c.price||carLocked(c))return;save.money-=c.price;save.owned[v]=newCar(v);save.cur=v;persist();attract();renderAll()},
   set:v=>{const[k,val]=v.split(':');const st=save.settings;st[k]=val==='true'?true:val==='false'?false:val;persist();
-    if(k==='sound')syncMute();if(k==='quality'){DRAW=st.quality==='high'?240:160;resize()}renderSettings()},
+    if(k==='sound')syncMute();if(k==='quality'){DRAW=qDraw();resize()}renderSettings()},
   reset:()=>{resetAsk=true;renderSettings()},resetno:()=>{resetAsk=false;renderSettings()},
-  resetyes:()=>{try{localStorage.removeItem(SAVE_KEY)}catch(e){}location.reload()},
+  resetyes:()=>{save=normalize(null);persist();resetAsk=false;attract();setTab('world')},
+  profile:()=>{delAsk=false;setTab('profile')},
+  guest:()=>enterGuest(),
+  photonew:()=>pickPhoto(d=>{newPhoto=d;if($('#photoBox'))$('#photoBox').innerHTML=photoBoxHTML(newPhoto)}),
+  photoclrnew:()=>{newPhoto=null;if($('#photoBox'))$('#photoBox').innerHTML=photoBoxHTML(newPhoto)},
+  photoset:()=>pickPhoto(d=>{me().photo=d;saveAccounts();renderTop();renderProfile()}),
+  photoclr:()=>{me().photo=null;saveAccounts();renderTop();renderProfile()},
+  guestsignup:()=>{const gs=save;loginMode='new';showLogin();guestSave=gs;renderLogin()},
+  pickuser:v=>{loginPick=v;loginMode='pw';loginErr='';renderLogin()},loginlist:()=>{loginMode='list';loginErr='';guestSave=null;renderLogin()},loginnew:()=>{loginMode='new';loginErr='';renderLogin()},
+  newicon:v=>{newIcon=+v;const n=($('#nickIn')||{}).value||'';renderLogin();if($('#nickIn'))$('#nickIn').value=n},
+  seticon:v=>{me().icon=+v;saveAccounts();renderTop();renderProfile()},
+  logout:()=>{persist();guestSave=null;try{sessionStorage.removeItem(SESS_KEY)}catch(e){}loginMode='list';showLogin()},
+  delask:()=>{delAsk=true;renderProfile()},delno:()=>{delAsk=false;renderProfile()},
   buyitem:v=>{const p=RAR[SPEC[v].rar].price;if(save.money<p)return;save.money-=p;save.inv[v]=(save.inv[v]||0)+1;persist();renderAll()}
 };
 document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b||b.disabled)return;const f=ACT[b.dataset.act];if(f)f(b.dataset.v)});
@@ -1113,9 +1554,11 @@ document.querySelectorAll('.touch button').forEach(b=>{
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
 
 /* ---------- boot */
-function resize(){DPR=Math.min(window.devicePixelRatio||1,save.settings.quality==='high'?1.5:1);W=cv.width=Math.max(1,Math.round(cv.clientWidth*DPR));H=cv.height=Math.max(1,Math.round(cv.clientHeight*DPR));buildBg()}
+function resize(){DPR=Math.min(window.devicePixelRatio||1,DPRQ[save.settings.quality]||1.5);W=cv.width=Math.max(1,Math.round(cv.clientWidth*DPR));H=cv.height=Math.max(1,Math.round(cv.clientHeight*DPR));buildBg()}
 addEventListener('resize',resize);
-resize();attract();show('sHub');setTab('world');
+resize();
+(()=>{let sid=null;try{sid=sessionStorage.getItem(SESS_KEY)}catch(e){}if(sid&&accounts.users[sid])enterGame(sid);else showLogin()})();
+setInterval(()=>{if(uid&&tab==='profile'&&!$('#sHub').hidden){const el=$('#pProf .profhead > .keys');if(el)el.textContent='자동 저장됨 · '+ago(lastSaved)}},20000);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{if(tab==='world'&&!leagueOpen)drawWorld();drawGarageCar()});
 let last=performance.now();
 function frame(now){const dt=Math.min(0.05,(now-last)/1000);last=now;if(state!=='paused'){update(dt);render()}requestAnimationFrame(frame)}
