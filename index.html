@@ -76,6 +76,16 @@ p{margin:0}
 .danger{border:1px solid rgba(255,77,94,.45);background:var(--panel);padding:14px 16px;display:flex;flex-direction:column;gap:10px}
 .btn.red{background:var(--bad);color:#200307}
 /* profile & login */
+.homebtns{display:flex;flex-direction:column;gap:12px}
+.bigbtn{background:var(--panel);border:1px solid var(--line);padding:18px 20px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:5px;position:relative;overflow:hidden}
+.bigbtn:hover{border-color:var(--nitro)}
+.bigbtn.new:hover{border-color:var(--signal)}
+.bigbtn::after{content:"";position:absolute;right:-40px;top:0;bottom:0;width:140px;background:linear-gradient(90deg,transparent,rgba(63,215,255,.1));transform:skewX(-14deg);pointer-events:none}
+.bigbtn.new::after{background:linear-gradient(90deg,transparent,rgba(255,122,26,.12))}
+.bigbtn .bk{font-family:var(--disp);font-style:italic;font-weight:800;font-size:14px;letter-spacing:.16em;color:var(--nitro)}
+.bigbtn.new .bk{color:var(--signal)}
+.bigbtn b{font-family:var(--disp);font-style:italic;font-weight:800;font-size:clamp(26px,4.5vw,34px);line-height:1}
+.bigbtn span:last-child{color:var(--muted);font-size:14px}
 .pchip{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);padding:5px 13px 5px 6px;cursor:pointer;text-align:left}
 .pchip:hover{border-color:var(--nitro)}
 .pchip b{display:block;font-size:14px;line-height:1.2;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -207,7 +217,9 @@ p{margin:0}
 .pips i{width:22px;height:7px;background:var(--line);transform:skewX(-24deg);position:relative}
 .pips i.on{background:var(--nitro)}
 .pips i.slot::after{content:"";position:absolute;left:50%;top:-6px;width:4px;height:4px;background:var(--warn);transform:translateX(-50%) skewX(24deg) rotate(45deg)}
-.urow .btn{grid-column:2;grid-row:1 / span 3}
+.urow .ubtns{grid-column:2;grid-row:1 / span 3;display:flex;flex-direction:column;gap:6px;align-items:stretch;justify-content:center}
+.btn.dg{background:var(--panel2);border:1px solid var(--line);color:var(--muted);font-size:14px;padding:6px 14px}
+.btn.dg:hover{color:var(--fg);border-color:var(--good)}
 .srow{padding-block:12px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
 .srow .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
 .srow .hd b{font-size:15px}
@@ -447,14 +459,14 @@ const CARS=[
   {id:'hauler',name:'SY 8',cls:'D',body:'pickup',top:232,t200:4.6,grip:0.96,nitro:1.34,price:10000,color:'#7bc142',desc:'힘 좋은 픽업트럭. 니트로가 제일 세.'},
   {id:'zip',name:'SY 9',cls:'D',body:'wedge',top:226,t200:3.9,grip:1.03,nitro:1.27,price:11000,color:'#18c48f',desc:'작은 전기차. 가속은 D등급 1등.'},
   {id:'vela',name:'SY 10',cls:'D',body:'gt',top:246,t200:4.6,grip:1.08,nitro:1.3,price:12500,color:'#9b5cff',desc:'D등급 최상위 그랜드 투어러. 다 잘해.'},
-{id:'ve1',name:'VELOCE 01',cls:'C',body:'coupe',top:261,t200:4.2,grip:0.957,nitro:1.3,price:15000,color:'#e8352f',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve2',name:'VELOCE 02',cls:'C',body:'muscle',top:286,t200:4.0,grip:0.987,nitro:1.3,price:32000,color:'#2f7bff',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve3',name:'VELOCE 03',cls:'B',body:'gt',top:309,t200:3.45,grip:1.067,nitro:1.32,price:48000,color:'#f5c400',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve4',name:'VELOCE 04',cls:'B',body:'wedge',top:338,t200:3.29,grip:1.1,nitro:1.32,price:100000,color:'#18c48f',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve5',name:'VELOCE 05',cls:'A',body:'super',top:386,t200:2.75,grip:1.158,nitro:1.36,price:160000,color:'#9b5cff',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve6',name:'VELOCE 06',cls:'A',body:'gt',top:422,t200:2.62,grip:1.194,nitro:1.36,price:300000,color:'#ff6a00',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve7',name:'VELOCE 07',cls:'S',body:'hyper',top:487,t200:2.15,grip:1.258,nitro:1.42,price:400000,color:'#ff5fa8',brand:'veloce',desc:'속도형 · 직선 최강'},
-  {id:'ve8',name:'VELOCE 08',cls:'S',body:'super',top:548,t200:2.05,grip:1.297,nitro:1.42,price:750000,color:'#3fd7ff',brand:'veloce',reqLv:8,desc:'속도형 · 직선 최강'},
+{id:'vl1',name:'VELOCE 01',cls:'C',body:'coupe',top:261,t200:4.2,grip:0.957,nitro:1.3,price:15000,color:'#e8352f',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl2',name:'VELOCE 02',cls:'C',body:'muscle',top:286,t200:4.0,grip:0.987,nitro:1.3,price:32000,color:'#2f7bff',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl3',name:'VELOCE 03',cls:'B',body:'gt',top:309,t200:3.45,grip:1.067,nitro:1.32,price:48000,color:'#f5c400',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl4',name:'VELOCE 04',cls:'B',body:'wedge',top:338,t200:3.29,grip:1.1,nitro:1.32,price:100000,color:'#18c48f',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl5',name:'VELOCE 05',cls:'A',body:'super',top:386,t200:2.75,grip:1.158,nitro:1.36,price:160000,color:'#9b5cff',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl6',name:'VELOCE 06',cls:'A',body:'gt',top:422,t200:2.62,grip:1.194,nitro:1.36,price:300000,color:'#ff6a00',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl7',name:'VELOCE 07',cls:'S',body:'hyper',top:487,t200:2.15,grip:1.258,nitro:1.42,price:400000,color:'#ff5fa8',brand:'veloce',desc:'속도형 · 직선 최강'},
+  {id:'vl8',name:'VELOCE 08',cls:'S',body:'super',top:548,t200:2.05,grip:1.297,nitro:1.42,price:750000,color:'#3fd7ff',brand:'veloce',reqLv:8,desc:'속도형 · 직선 최강'},
   {id:'ap1',name:'APEX 01',cls:'C',body:'muscle',top:230,t200:4.2,grip:1.11,nitro:1.3,price:15000,color:'#eef1f5',brand:'apex',desc:'코너형 · 접지력 최고'},
   {id:'ap2',name:'APEX 02',cls:'C',body:'sedan',top:251,t200:4.0,grip:1.145,nitro:1.3,price:32000,color:'#2a303c',brand:'apex',desc:'코너형 · 접지력 최고'},
   {id:'ap3',name:'APEX 03',cls:'B',body:'wedge',top:272,t200:3.45,grip:1.237,nitro:1.32,price:48000,color:'#7bc142',brand:'apex',desc:'코너형 · 접지력 최고'},
@@ -471,30 +483,30 @@ const CARS=[
   {id:'ax6',name:'AXIS 06',cls:'A',body:'super',top:391,t200:2.62,grip:1.27,nitro:1.38,price:300000,color:'#3fd7ff',brand:'axis',desc:'균형형 · 다 잘함'},
   {id:'ax7',name:'AXIS 07',cls:'S',body:'hyper',top:451,t200:2.15,grip:1.339,nitro:1.44,price:400000,color:'#eef1f5',brand:'axis',desc:'균형형 · 다 잘함'},
   {id:'ax8',name:'AXIS 08',cls:'S',body:'super',top:508,t200:2.05,grip:1.38,nitro:1.44,price:750000,color:'#2a303c',brand:'axis',reqLv:12,desc:'균형형 · 다 잘함'},
-  {id:'ze1',name:'ZEN 01',cls:'C',body:'rally',top:235,t200:4.28,grip:1.059,nitro:1.36,price:15000,color:'#7bc142',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze2',name:'ZEN 02',cls:'C',body:'coupe',top:257,t200:4.08,grip:1.092,nitro:1.36,price:32000,color:'#c4124a',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze3',name:'ZEN 03',cls:'B',body:'sedan',top:277,t200:3.52,grip:1.18,nitro:1.38,price:48000,color:'#8a929e',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze4',name:'ZEN 04',cls:'B',body:'gt',top:304,t200:3.35,grip:1.217,nitro:1.38,price:100000,color:'#0d0f13',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze5',name:'ZEN 05',cls:'A',body:'super',top:346,t200:2.81,grip:1.281,nitro:1.42,price:160000,color:'#e8352f',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze6',name:'ZEN 06',cls:'A',body:'gt',top:379,t200:2.67,grip:1.321,nitro:1.42,price:300000,color:'#2f7bff',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze7',name:'ZEN 07',cls:'S',body:'super',top:438,t200:2.19,grip:1.392,nitro:1.48,price:400000,color:'#f5c400',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'ze8',name:'ZEN 08',cls:'S',body:'hyper',top:492,t200:2.09,grip:1.435,nitro:1.48,price:750000,color:'#18c48f',brand:'zen',reqLv:14,desc:'드리프트형 · 니트로가 잘 참'},
-  {id:'vo1',name:'VOLTA 01',cls:'C',body:'coupe',top:230,t200:3.65,grip:1.018,nitro:1.3,price:15000,color:'#9b5cff',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo2',name:'VOLTA 02',cls:'C',body:'muscle',top:251,t200:3.48,grip:1.05,nitro:1.3,price:32000,color:'#ff6a00',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo3',name:'VOLTA 03',cls:'B',body:'gt',top:272,t200:3.0,grip:1.135,nitro:1.32,price:48000,color:'#ff5fa8',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo4',name:'VOLTA 04',cls:'B',body:'wedge',top:297,t200:2.86,grip:1.17,nitro:1.32,price:100000,color:'#3fd7ff',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo5',name:'VOLTA 05',cls:'A',body:'gt',top:339,t200:2.39,grip:1.232,nitro:1.36,price:160000,color:'#eef1f5',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo6',name:'VOLTA 06',cls:'A',body:'wedge',top:371,t200:2.28,grip:1.27,nitro:1.36,price:300000,color:'#2a303c',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo7',name:'VOLTA 07',cls:'S',body:'hyper',top:429,t200:1.87,grip:1.339,nitro:1.42,price:400000,color:'#7bc142',brand:'volta',desc:'가속형 · 전기 파워트레인'},
-  {id:'vo8',name:'VOLTA 08',cls:'S',body:'super',top:482,t200:1.78,grip:1.38,nitro:1.42,price:750000,color:'#c4124a',brand:'volta',reqLv:16,desc:'가속형 · 전기 파워트레인'},
-  {id:'ze1',name:'ZENITH 01',cls:'C',body:'muscle',top:256,t200:3.99,grip:1.09,nitro:1.33,price:15000,color:'#8a929e',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze2',name:'ZENITH 02',cls:'C',body:'sedan',top:280,t200:3.8,grip:1.124,nitro:1.33,price:32000,color:'#0d0f13',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze3',name:'ZENITH 03',cls:'B',body:'wedge',top:303,t200:3.28,grip:1.214,nitro:1.35,price:48000,color:'#e8352f',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze4',name:'ZENITH 04',cls:'B',body:'coupe',top:332,t200:3.12,grip:1.252,nitro:1.35,price:100000,color:'#2f7bff',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze5',name:'ZENITH 05',cls:'A',body:'wedge',top:379,t200:2.61,grip:1.318,nitro:1.39,price:160000,color:'#f5c400',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze6',name:'ZENITH 06',cls:'A',body:'super',top:414,t200:2.49,grip:1.359,nitro:1.39,price:300000,color:'#18c48f',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze7',name:'ZENITH 07',cls:'S',body:'super',top:478,t200:2.04,grip:1.432,nitro:1.45,price:400000,color:'#9b5cff',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
-  {id:'ze8',name:'ZENITH 08',cls:'S',body:'hyper',top:538,t200:1.95,grip:1.477,nitro:1.45,price:750000,color:'#ff6a00',brand:'zenith',reqLv:22,desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zn1',name:'ZEN 01',cls:'C',body:'rally',top:235,t200:4.28,grip:1.059,nitro:1.36,price:15000,color:'#7bc142',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn2',name:'ZEN 02',cls:'C',body:'coupe',top:257,t200:4.08,grip:1.092,nitro:1.36,price:32000,color:'#c4124a',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn3',name:'ZEN 03',cls:'B',body:'sedan',top:277,t200:3.52,grip:1.18,nitro:1.38,price:48000,color:'#8a929e',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn4',name:'ZEN 04',cls:'B',body:'gt',top:304,t200:3.35,grip:1.217,nitro:1.38,price:100000,color:'#0d0f13',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn5',name:'ZEN 05',cls:'A',body:'super',top:346,t200:2.81,grip:1.281,nitro:1.42,price:160000,color:'#e8352f',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn6',name:'ZEN 06',cls:'A',body:'gt',top:379,t200:2.67,grip:1.321,nitro:1.42,price:300000,color:'#2f7bff',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn7',name:'ZEN 07',cls:'S',body:'super',top:438,t200:2.19,grip:1.392,nitro:1.48,price:400000,color:'#f5c400',brand:'zen',desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'zn8',name:'ZEN 08',cls:'S',body:'hyper',top:492,t200:2.09,grip:1.435,nitro:1.48,price:750000,color:'#18c48f',brand:'zen',reqLv:14,desc:'드리프트형 · 니트로가 잘 참'},
+  {id:'vt1',name:'VOLTA 01',cls:'C',body:'coupe',top:230,t200:3.65,grip:1.018,nitro:1.3,price:15000,color:'#9b5cff',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt2',name:'VOLTA 02',cls:'C',body:'muscle',top:251,t200:3.48,grip:1.05,nitro:1.3,price:32000,color:'#ff6a00',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt3',name:'VOLTA 03',cls:'B',body:'gt',top:272,t200:3.0,grip:1.135,nitro:1.32,price:48000,color:'#ff5fa8',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt4',name:'VOLTA 04',cls:'B',body:'wedge',top:297,t200:2.86,grip:1.17,nitro:1.32,price:100000,color:'#3fd7ff',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt5',name:'VOLTA 05',cls:'A',body:'gt',top:339,t200:2.39,grip:1.232,nitro:1.36,price:160000,color:'#eef1f5',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt6',name:'VOLTA 06',cls:'A',body:'wedge',top:371,t200:2.28,grip:1.27,nitro:1.36,price:300000,color:'#2a303c',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt7',name:'VOLTA 07',cls:'S',body:'hyper',top:429,t200:1.87,grip:1.339,nitro:1.42,price:400000,color:'#7bc142',brand:'volta',desc:'가속형 · 전기 파워트레인'},
+  {id:'vt8',name:'VOLTA 08',cls:'S',body:'super',top:482,t200:1.78,grip:1.38,nitro:1.42,price:750000,color:'#c4124a',brand:'volta',reqLv:16,desc:'가속형 · 전기 파워트레인'},
+  {id:'zt1',name:'ZENITH 01',cls:'C',body:'muscle',top:256,t200:3.99,grip:1.09,nitro:1.33,price:15000,color:'#8a929e',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt2',name:'ZENITH 02',cls:'C',body:'sedan',top:280,t200:3.8,grip:1.124,nitro:1.33,price:32000,color:'#0d0f13',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt3',name:'ZENITH 03',cls:'B',body:'wedge',top:303,t200:3.28,grip:1.214,nitro:1.35,price:48000,color:'#e8352f',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt4',name:'ZENITH 04',cls:'B',body:'coupe',top:332,t200:3.12,grip:1.252,nitro:1.35,price:100000,color:'#2f7bff',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt5',name:'ZENITH 05',cls:'A',body:'wedge',top:379,t200:2.61,grip:1.318,nitro:1.39,price:160000,color:'#f5c400',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt6',name:'ZENITH 06',cls:'A',body:'super',top:414,t200:2.49,grip:1.359,nitro:1.39,price:300000,color:'#18c48f',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt7',name:'ZENITH 07',cls:'S',body:'super',top:478,t200:2.04,grip:1.432,nitro:1.45,price:400000,color:'#9b5cff',brand:'zenith',desc:'프리미엄 · 최상급 하이퍼카'},
+  {id:'zt8',name:'ZENITH 08',cls:'S',body:'hyper',top:538,t200:1.95,grip:1.477,nitro:1.45,price:750000,color:'#ff6a00',brand:'zenith',reqLv:22,desc:'프리미엄 · 최상급 하이퍼카'},
 ];
 CARS.forEach(c=>{if(!c.brand)c.brand=c.cls==='D'?'SY':'etc'});
 const BRANDS=[
@@ -646,7 +658,7 @@ const AE_CITIES=[
 ];
 const AEFINAL={id:'af',name:'데저트 킹',sub:'두바이 야경 3랩 결승 · 레전드 리그 최강자들',pace:482,laps:3,prize:90000,rec:2340,grip:1,seed:2001,gen:{len:1600,straight:.45,sharp:.35,hill:30},water:[[.3,.45]],hint:'최종 리그 최종전. 세계 최강 레이서들과의 마지막 승부.',final:true,need:20};
 const LEAGUES={kr:{id:'kr',name:'대한민국',tier:'루키 리그',cities:CITIES,final:FINAL},jp:{id:'jp',name:'일본',tier:'프로 리그',cities:JP_CITIES,final:JFINAL},us:{id:'us',name:'미국',tier:'마스터 리그',cities:US_CITIES,final:USFINAL},de:{id:'de',name:'독일',tier:'엘리트 리그',cities:DE_CITIES,final:DEFINAL},ae:{id:'ae',name:'UAE',tier:'레전드 리그',cities:AE_CITIES,final:AEFINAL}};
-const EVENTS={};for(const lg of Object.values(LEAGUES)){for(const c of lg.cities){c.league=lg.id;c.events.forEach((e,i)=>{e.city=c;e.idx=i;e.league=lg.id;EVENTS[e.id]=e})}const F=lg.final;F.city={...lg.cities[0]};F.idx=0;F.league=lg.id;EVENTS[F.id]=F}
+const EVENTS={};for(const lg of Object.values(LEAGUES)){for(const c of lg.cities){c.league=lg.id;c.events.forEach((e,i)=>{e.city=c;e.idx=i;e.league=lg.id;EVENTS[e.id]=e})}const F=lg.final;F.city={...lg.cities[0],name:lg.name};F.idx=0;F.league=lg.id;EVENTS[F.id]=F}
 const leagueMax=lg=>(LEAGUES[lg].cities.reduce((s,c)=>s+c.events.length,0)+1)*3;
 const MAXSTARS=Object.keys(LEAGUES).reduce((s,k)=>s+leagueMax(k),0);
 
@@ -1213,7 +1225,7 @@ function rollDrop(ev,free){
 }
 function showResult(){
   state='result';$('#hud').hidden=true;
-  const ev=curEv,free=!!ev.free,lgId=ev.league,lg=LEAGUES[lgId],oppScale=free?ev.opp/7:1;
+  const ev=curEv,free=!!ev.free,lgId=ev.league,lg=LEAGUES[lgId],oppScale=free?Math.max(0.3,ev.opp/7):1;
   const prize=Math.round(ev.prize*(free?0.4*oppScale:1)*PLACEMUL[place-1]/10)*10;
   const before=free?0:starsOf(ev.id),lsBefore=leagueStars(lgId),wasChamp=!free&&!!(save.career[ev.id]&&save.career[ev.id].place===1);
   save.money+=prize;
@@ -1256,7 +1268,7 @@ function resume(){if(state!=='paused')return;state=pausedFrom;show(null)}
 /* ================= UI ================= */
 const PART=k=>PARTS.find(p=>p.k===k);
 const starRow=n=>'★'.repeat(n)+`<span class="off">${'★'.repeat(3-n)}</span>`;
-let profMsg='',loginMode='list',loginPick=null,loginErr='',delAsk=false,newIcon=0,newPhoto=null,showBrand=null,resetAsk=false,tab='world',leagueOpen=false,gTab='perf',picking=null;
+let profMsg='',loginMode='home',loginPick=null,loginErr='',delAsk=false,newIcon=0,newPhoto=null,showBrand=null,resetAsk=false,tab='world',leagueOpen=false,gTab='perf',picking=null;
 function renderTop(){const u=me();if(u){const L=lvInfo(save.xp);$('#pchip').innerHTML=u.guest?`<span class="av" style="--avc:var(--warn)">👀</span><span><b>게스트</b><small>저장 안 됨</small></span>`:`${avHTML(u)}<span><b>${esc(u.nick)}</b><small>Lv ${L.lv}</small></span>`}$('#guestBar').hidden=!guest;$('#hMoney').textContent=won(save.money);$('#hStars').textContent=totalStars()+'/'+MAXSTARS}
 function setTab(t){tab=t;picking=null;document.querySelectorAll('#tabs .btab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.v===t)));
   const rp=t==='world'?racePanel():'';$('#pMode').hidden=rp!=='mode';$('#pFree').hidden=rp!=='free';$('#pWorld').hidden=rp!=='world';$('#pLeague').hidden=rp!=='league';$('#pGarage').hidden=t!=='garage';$('#pShow').hidden=t!=='show';$('#pShop').hidden=t!=='shop';$('#pSet').hidden=t!=='settings';$('#pProf').hidden=t!=='profile';profMsg='';resetAsk=false;renderAll();$('#sHub').scrollTop=0}
@@ -1306,7 +1318,7 @@ function renderGarage(){
   const id=save.cur,c=CAR[id],st=save.owned[id],s=carStats(id);
   let work='';
   if(gTab==='perf'){
-    work=PARTS.map(p=>{const lv=st.lv[p.k],cost=tuneCost(id,lv),max=lv>=MAXLV;return`<div class="urow"><div class="nm">${p.name}<span>LV ${lv}/${MAXLV}</span></div><div class="ds">${p.desc}</div><div class="pips">${Array.from({length:MAXLV},(_,i)=>`<i class="${i<lv?'on':''} ${SLOTLV.includes(i+1)?'slot':''}"></i>`).join('')}</div><button class="btn buy" type="button" data-act="upg" data-v="${p.k}" ${max||save.money<cost?'disabled':''}>${max?'최대':'강화 '+won(cost)}</button></div>`}).join('')+`<p class="keys" style="margin-top:10px">노란 점이 있는 칸(LV2, LV4, LV6)까지 올리면 그 부품에 특수 부품 칸이 하나씩 열려.</p>`;
+    work=PARTS.map(p=>{const lv=st.lv[p.k],cost=tuneCost(id,lv),max=lv>=MAXLV;return`<div class="urow"><div class="nm">${p.name}<span>LV ${lv}/${MAXLV}</span></div><div class="ds">${p.desc}</div><div class="pips">${Array.from({length:MAXLV},(_,i)=>`<i class="${i<lv?'on':''} ${SLOTLV.includes(i+1)?'slot':''}"></i>`).join('')}</div><div class="ubtns"><button class="btn buy" type="button" data-act="upg" data-v="${p.k}" ${max||save.money<cost?'disabled':''}>${max?'최대':'강화 '+won(cost)}</button>${lv>0?`<button class="btn dg" type="button" data-act="degrade" data-v="${p.k}">복원 +${won(tuneCost(id,lv-1))}</button>`:''}</div></div>`}).join('')+`<p class="keys" style="margin-top:10px">노란 점이 있는 칸(LV2, LV4, LV6)까지 올리면 그 부품에 특수 부품 칸이 하나씩 열려. <b style="color:var(--fg)">복원</b>을 누르면 한 단계 내려가고 강화할 때 쓴 코인을 그대로 돌려받아.</p>`;
   }else if(gTab==='spec'){
     work=PARTS.map(p=>{const lv=st.lv[p.k];const slots=[0,1,2].map(i=>{const need=SLOTLV[i],open=lv>=need,it=st.slots[p.k][i],sp=it&&SPEC[it],pk=picking&&picking.cat===p.k&&picking.i===i;
         if(!open)return`<button type="button" class="slot lock" disabled><b>잠김</b><small>LV${need} 필요</small></button>`;
@@ -1413,16 +1425,17 @@ function ago(t){if(!t)return'-';const d=(Date.now()-t)/1000;if(d<60)return'방�
 function avPicker(sel,act){return`<div class="avpick">${AVATARS.map((a,i)=>`<button type="button" data-act="${act}" data-v="${i}" aria-pressed="${i===sel}" style="${i===sel?'border-color:'+AVCOL[i]:''}">${a}</button>`).join('')}</div>`}
 function renderLogin(){
   const ids=accounts.order.filter(id=>accounts.users[id]);let h='';
-  if(loginMode==='list'&&!ids.length)loginMode='new';
-  if(loginMode==='list'){
-    h=`<h2>프로필 선택</h2><div class="ulist">${ids.map(id=>{const u=accounts.users[id],sv=lsGet(saveKey(id)),L=lvInfo(sv&&sv.xp||0);return`<button type="button" class="ucard" data-act="pickuser" data-v="${id}">${avHTML(u)}<span style="flex:1;min-width:0"><b>${esc(u.nick)}</b><small>Lv ${L.lv} · 마지막 플레이 ${ago(u.last)}</small></span><span class="btn sm">▸</span></button>`}).join('')}</div>
-    <div class="cta" style="justify-content:flex-start"><button class="btn" type="button" data-act="loginnew">+ 새 프로필</button></div><div class="guestlink"><button class="btn" type="button" data-act="guest">로그인 없이 둘러보기 ▸</button><span class="keys">프로필 없이 바로 해 볼 수 있어. 대신 아무것도 저장되지 않아.</span></div>`;
-  }else if(loginMode==='pw'){
-    const u=accounts.users[loginPick];
-    h=`<form class="fbox" data-form="login"><div class="ucard" style="cursor:default;padding:0;border:0;background:none">${avHTML(u,true)}<span><b style="font-size:24px">${esc(u.nick)}</b><small>비밀번호를 입력해</small></span></div>
+  const guestLink=`<div class="guestlink"><button class="btn" type="button" data-act="guest">로그인 없이 둘러보기 ▸</button><span class="keys">프로필 없이 바로 해 볼 수 있어. 대신 아무것도 저장되지 않아.</span></div>`;
+  if(loginMode==='home'){
+    h=`<h2>프로필</h2><p class="keys">새로 시작하거나, 쓰던 프로필로 로그인해.</p>
+      <div class="homebtns"><button type="button" class="bigbtn new" data-act="loginnew"><span class="bk">NEW</span><b>새 프로필 만들기</b><span>닉네임·비밀번호·아이콘을 정해서 새로 시작</span></button>
+      <button type="button" class="bigbtn" data-act="loginsignin"><span class="bk">LOGIN</span><b>기존 프로필 로그인</b><span>닉네임이랑 비밀번호로 쓰던 프로필 불러오기</span></button></div>${guestLink}`;
+  }else if(loginMode==='signin'){
+    h=`<form class="fbox" data-form="signin"><h2>로그인</h2>
+      <div class="field"><label for="nickLogin">닉네임</label><input id="nickLogin" maxlength="10" autocomplete="username" required></div>
       <div class="field"><label for="pwIn">비밀번호</label><input id="pwIn" type="password" autocomplete="current-password" required></div>
       <div class="err">${esc(loginErr)}</div>
-      <div class="cta" style="justify-content:space-between"><button class="btn sm" type="button" data-act="loginlist">◂ 다른 프로필</button><button class="btn primary" type="submit">로그인 ▸</button></div></form>`;
+      <div class="cta" style="justify-content:space-between"><button class="btn sm" type="button" data-act="loginhome">◂ 뒤로</button><button class="btn primary" type="submit">로그인 ▸</button></div></form>`;
   }else{
     const legacy=lsGet(LEGACY_KEY),canImport=legacy&&legacy.owned&&!accounts.legacyImported;
     h=`<form class="fbox" data-form="create"><h2>새 프로필 만들기</h2>
@@ -1433,12 +1446,12 @@ function renderLogin(){
       ${guestSave?`<label class="check"><input id="impGuest" type="checkbox" checked> 둘러보기에서 한 거 이어서 하기 (상금 ${won(guestSave.money)} CR)</label>`:canImport?`<label class="check"><input id="impIn" type="checkbox" checked> 예전에 하던 게임 이어서 하기 (상금 ${won(legacy.money||0)} CR)</label>`:''}
       <div class="err">${esc(loginErr)}</div>
       <p class="keys">비밀번호는 잊어버리면 찾을 수 없어. 꼭 기억해 둬.</p>
-      <div class="cta" style="justify-content:space-between">${ids.length?'<button class="btn sm" type="button" data-act="loginlist">◂ 프로필 목록</button>':'<span></span>'}<button class="btn primary" type="submit">만들기 ▸</button></div></form>${guestSave?'':'<div class="guestlink"><button class="btn" type="button" data-act="guest">로그인 없이 둘러보기 ▸</button><span class="keys">프로필 없이 바로 해 볼 수 있어. 대신 아무것도 저장되지 않아.</span></div>'}`;
+      <div class="cta" style="justify-content:space-between"><button class="btn sm" type="button" data-act="loginhome">◂ 뒤로</button><button class="btn primary" type="submit">만들기 ▸</button></div></form>${guestSave?'':guestLink}`;
   }
   $('#loginBody').innerHTML=h;
   const f=$('#loginBody input');if(f&&matchMedia('(pointer:fine)').matches)f.focus();
 }
-function showLogin(){uid=null;guest=false;save=normalize(null);loginErr='';delAsk=false;newPhoto=null;attract();renderLogin();show('sLogin')}
+function showLogin(){uid=null;guest=false;save=normalize(null);loginErr='';delAsk=false;newPhoto=null;loginMode='home';attract();renderLogin();show('sLogin')}
 function startSession(){raceMode=null;curLeague='kr';tire=save.tire||'medium';DRAW=qDraw();syncMute();resize();leagueOpen=false;showBrand=null;attract();show('sHub');setTab('world')}
 function enterGuest(){uid=null;guest=true;guestSave=null;save=normalize(null);startSession()}
 function enterGame(id){
@@ -1470,7 +1483,7 @@ function renderProfile(){
 }
 document.addEventListener('submit',e=>{
   const f=e.target.closest('form[data-form]');if(!f)return;e.preventDefault();const k=f.dataset.form,v=id=>($('#'+id)||{}).value||'';
-  if(k==='login'){const u=accounts.users[loginPick];if(hashPw(v('pwIn'),u.salt)===u.hash){loginErr='';enterGame(loginPick)}else{loginErr='비밀번호가 틀렸어.';renderLogin()}}
+  if(k==='signin'){const nick=v('nickLogin').trim(),ent=Object.entries(accounts.users).find(x=>x[1].nick===nick);if(ent&&hashPw(v('pwIn'),ent[1].salt)===ent[1].hash){loginErr='';enterGame(ent[0])}else{loginErr='닉네임이나 비밀번호가 틀렸어.';const kn=nick;renderLogin();if($('#nickLogin'))$('#nickLogin').value=kn}}
   else if(k==='create'){const nick=v('nickIn').trim(),p1=v('pw1'),p2=v('pw2');
     loginErr=nick.length<2?'닉네임은 2글자 이상이어야 해.':Object.values(accounts.users).some(u=>u.nick===nick)?'이미 있는 닉네임이야.':p1.length<4?'비밀번호는 4글자 이상이어야 해.':p1!==p2?'비밀번호 두 개가 서로 달라.':'';
     if(loginErr){const keep={nick,icon:newIcon};renderLogin();$('#nickIn').value=keep.nick;return}
@@ -1481,7 +1494,7 @@ document.addEventListener('submit',e=>{
   else if(k==='nick'){const nick=v('nickEd').trim(),u=me();if(nick.length<2){profMsg='닉네임은 2글자 이상이어야 해.'}else if(Object.entries(accounts.users).some(([i,x])=>i!==uid&&x.nick===nick)){profMsg='이미 있는 닉네임이야.'}else{u.nick=nick;saveAccounts();profMsg='닉네임을 저장했어.'}renderTop();renderProfile()}
   else if(k==='pw'){const u=me();if(hashPw(v('pwOld'),u.salt)!==u.hash){$('#pwErr').textContent='지금 비밀번호가 틀렸어.';return}if(v('pwNew').length<4){$('#pwErr').textContent='새 비밀번호는 4글자 이상이어야 해.';return}u.salt=Math.random().toString(36).slice(2);u.hash=hashPw(v('pwNew'),u.salt);saveAccounts();profMsg='비밀번호를 바꿨어.';renderProfile()}
   else if(k==='del'){const u=me();if(hashPw(v('pwDel'),u.salt)!==u.hash){$('#delErr').textContent='비밀번호가 틀렸어.';return}
-    delete accounts.users[uid];accounts.order=accounts.order.filter(x=>x!==uid);saveAccounts();try{localStorage.removeItem(saveKey(uid));sessionStorage.removeItem(SESS_KEY)}catch(_){}loginMode='list';showLogin()}
+    delete accounts.users[uid];accounts.order=accounts.order.filter(x=>x!==uid);saveAccounts();try{localStorage.removeItem(saveKey(uid));sessionStorage.removeItem(SESS_KEY)}catch(_){}showLogin()}
 });
 
 /* ---------- actions */
@@ -1507,6 +1520,9 @@ const ACT={
   resume:()=>resume(),quit:()=>raceKind==='free'?ACT.freeback():ACT.hub(),
   gtab:v=>{gTab=v;picking=null;renderGarage()},
   upg:v=>{const st=curSt(),lv=st.lv[v],c=tuneCost(save.cur,lv);if(lv>=MAXLV||save.money<c)return;save.money-=c;st.lv[v]=lv+1;persist();PST=carStats(save.cur);renderAll()},
+  degrade:v=>{const st=curSt(),lv=st.lv[v];if(lv<=0)return;const refund=tuneCost(save.cur,lv-1);save.money+=refund;st.lv[v]=lv-1;
+    SLOTLV.forEach((need,i)=>{if(lv-1<need&&st.slots[v][i]){const it=st.slots[v][i];save.inv[it]=(save.inv[it]||0)+1;st.slots[v][i]=null}});
+    persist();PST=carStats(save.cur);renderAll()},
   slot:v=>{const[cat,i]=v.split(':');picking=picking&&picking.cat===cat&&picking.i===+i?null:{cat,i:+i};renderGarage()},
   equip:v=>{if(!picking||!(save.inv[v]>0))return;const st=curSt(),old=st.slots[picking.cat][picking.i];if(old)save.inv[old]=(save.inv[old]||0)+1;save.inv[v]--;st.slots[picking.cat][picking.i]=v;picking=null;persist();PST=carStats(save.cur);renderAll()},
   unequip:()=>{if(!picking)return;const st=curSt(),old=st.slots[picking.cat][picking.i];if(old){save.inv[old]=(save.inv[old]||0)+1;st.slots[picking.cat][picking.i]=null}picking=null;persist();PST=carStats(save.cur);renderAll()},
@@ -1524,11 +1540,11 @@ const ACT={
   photoclrnew:()=>{newPhoto=null;if($('#photoBox'))$('#photoBox').innerHTML=photoBoxHTML(newPhoto)},
   photoset:()=>pickPhoto(d=>{me().photo=d;saveAccounts();renderTop();renderProfile()}),
   photoclr:()=>{me().photo=null;saveAccounts();renderTop();renderProfile()},
-  guestsignup:()=>{const gs=save;loginMode='new';showLogin();guestSave=gs;renderLogin()},
-  pickuser:v=>{loginPick=v;loginMode='pw';loginErr='';renderLogin()},loginlist:()=>{loginMode='list';loginErr='';guestSave=null;renderLogin()},loginnew:()=>{loginMode='new';loginErr='';renderLogin()},
+  guestsignup:()=>{const gs=save;showLogin();loginMode='new';guestSave=gs;renderLogin()},
+  loginhome:()=>{loginMode='home';loginErr='';guestSave=null;renderLogin()},loginsignin:()=>{loginMode='signin';loginErr='';renderLogin()},loginnew:()=>{loginMode='new';loginErr='';renderLogin()},
   newicon:v=>{newIcon=+v;const n=($('#nickIn')||{}).value||'';renderLogin();if($('#nickIn'))$('#nickIn').value=n},
   seticon:v=>{me().icon=+v;saveAccounts();renderTop();renderProfile()},
-  logout:()=>{persist();guestSave=null;try{sessionStorage.removeItem(SESS_KEY)}catch(e){}loginMode='list';showLogin()},
+  logout:()=>{persist();guestSave=null;try{sessionStorage.removeItem(SESS_KEY)}catch(e){}showLogin()},
   delask:()=>{delAsk=true;renderProfile()},delno:()=>{delAsk=false;renderProfile()},
   buyitem:v=>{const p=RAR[SPEC[v].rar].price;if(save.money<p)return;save.money-=p;save.inv[v]=(save.inv[v]||0)+1;persist();renderAll()}
 };
